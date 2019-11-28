@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10C5DDB82390348300031FDC /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDB72390348300031FDC /* ContractViewController.swift */; };
+		10C5DDBA239034AD00031FDC /* RoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDB9239034AD00031FDC /* RoommateViewController.swift */; };
+		10C5DDBC239034CD00031FDC /* MessageBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBB239034CD00031FDC /* MessageBoardViewController.swift */; };
+		10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */; };
 		3FC7A9AB238F4BF80013F9DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */; };
 		3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */; };
 		3FC7A9AF238F4BF80013F9DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AE238F4BF80013F9DA /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10C5DDB72390348300031FDC /* ContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
+		10C5DDB9239034AD00031FDC /* RoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateViewController.swift; sourceTree = "<group>"; };
+		10C5DDBB239034CD00031FDC /* MessageBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardViewController.swift; sourceTree = "<group>"; };
+		10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseKeepingViewController.swift; sourceTree = "<group>"; };
 		3FC7A9A7238F4BF80013F9DA /* RoommateHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoommateHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +65,7 @@
 		3FC7A9A9238F4BF80013F9DA /* RoommateHub */ = {
 			isa = PBXGroup;
 			children = (
+				10C5DDB72390348300031FDC /* ContractViewController.swift */,
 				3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */,
 				3FC7A9BE238F4C120013F9DA /* README.md */,
 				3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */,
@@ -65,6 +74,9 @@
 				3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */,
 				3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */,
 				3FC7A9B8238F4BF90013F9DA /* Info.plist */,
+				10C5DDB9239034AD00031FDC /* RoommateViewController.swift */,
+				10C5DDBB239034CD00031FDC /* MessageBoardViewController.swift */,
+				10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */,
 			);
 			path = RoommateHub;
 			sourceTree = "<group>";
@@ -140,9 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C5DDB82390348300031FDC /* ContractViewController.swift in Sources */,
+				10C5DDBA239034AD00031FDC /* RoommateViewController.swift in Sources */,
 				3FC7A9AF238F4BF80013F9DA /* ViewController.swift in Sources */,
 				3FC7A9AB238F4BF80013F9DA /* AppDelegate.swift in Sources */,
+				10C5DDBC239034CD00031FDC /* MessageBoardViewController.swift in Sources */,
 				3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */,
+				10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
