@@ -12,5 +12,10 @@ import UIKit
 
 class ContractViewController: UIViewController {
     @IBOutlet var contractTitle: UILabel!
+    
+    @IBAction func about(_ sender: Any) {
+        performSegue(withIdentifier: "about", sender: sender)
+    }
+
 
 }

@@ -20,24 +20,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Roommates"/>
+                                <connections>
+                                    <segue destination="bzo-jC-gCS" kind="show" identifier="roommatesSegue" id="naW-IK-IcH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2Z-TG-HxD">
                                 <rect key="frame" x="84" y="325" width="247" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Housekeeping"/>
+                                <connections>
+                                    <segue destination="Mvr-RF-91N" kind="show" identifier="houseKeepingSegue" id="QAC-Zu-OFt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNZ-g1-hzg">
                                 <rect key="frame" x="59" y="393" width="297" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Messaging Board"/>
+                                <connections>
+                                    <segue destination="3tu-uQ-2bH" kind="show" identifier="messageBoardSegue" id="Gju-lT-Xny"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68u-eZ-QBS">
                                 <rect key="frame" x="133" y="461" width="149" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Contract"/>
+                                <connections>
+                                    <segue destination="UnR-sl-j51" kind="show" identifier="contractSegue" id="Le3-4J-0xe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFm-yj-VUi">
                                 <rect key="frame" x="27" y="128" width="367" height="102"/>
@@ -72,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="THE CONTRACT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1i-Ih-gSG">
-                                <rect key="frame" x="20" y="44" width="374" height="100"/>
+                                <rect key="frame" x="20" y="88" width="374" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
@@ -82,6 +94,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="EFz-n7-p6U"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0iA-Cv-o2m"/>
                     <connections>
                         <outlet property="contractTitle" destination="Q1i-Ih-gSG" id="BZg-F6-5kD"/>
                     </connections>
@@ -99,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ROOMMATES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7m-oS-fPr">
-                                <rect key="frame" x="20" y="44" width="374" height="100"/>
+                                <rect key="frame" x="20" y="88" width="374" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
@@ -109,6 +122,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ubx-hj-hOa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sxy-wM-ZDx"/>
                     <connections>
                         <outlet property="roommateTitle" destination="E7m-oS-fPr" id="lzJ-Dl-gql"/>
                     </connections>
@@ -126,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HOUSE KEEPING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uv-tN-zSy">
-                                <rect key="frame" x="20" y="44" width="374" height="100"/>
+                                <rect key="frame" x="20" y="88" width="374" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
@@ -136,6 +150,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="T6f-I6-Wak"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2WM-MP-Sei"/>
                     <connections>
                         <outlet property="houseKeepingTitle" destination="6uv-tN-zSy" id="f3A-wy-BxJ"/>
                     </connections>
@@ -153,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MESSAGE BOARD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyM-v0-HuU">
-                                <rect key="frame" x="20" y="44" width="374" height="100"/>
+                                <rect key="frame" x="20" y="88" width="374" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
@@ -163,6 +178,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="a2V-we-1TY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HhN-Du-Pvk"/>
                     <connections>
                         <outlet property="messageBoardTitle" destination="yyM-v0-HuU" id="2SA-4y-qGl"/>
                     </connections>
