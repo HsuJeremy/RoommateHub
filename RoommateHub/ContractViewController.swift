@@ -35,7 +35,8 @@ class ContractViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            contractImage.image = image 
+            contractImage.image = image
+            print("Displayed!")
         }
     }
 }

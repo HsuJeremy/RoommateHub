@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UnR-sl-j51">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="118.52678571428571"/>
         </scene>
-        <!--Contract View Controller-->
+        <!--Roommate Contract-->
         <scene sceneID="By4-4e-iFC">
             <objects>
                 <viewController id="UnR-sl-j51" customClass="ContractViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,38 +83,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="THE CONTRACT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1i-Ih-gSG">
-                                <rect key="frame" x="20" y="88" width="374" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-hf-uED">
-                                <rect key="frame" x="87" y="196" width="240" height="246"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-hf-uED">
+                                <rect key="frame" x="20" y="204" width="374" height="397"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="397" id="24z-Ar-Jbd"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzG-sM-ynh">
-                                <rect key="frame" x="151" y="486" width="113" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzG-sM-ynh">
+                                <rect key="frame" x="107" y="114" width="200" height="30"/>
                                 <state key="normal" title="Upload Contract"/>
                                 <connections>
                                     <action selector="selectPhoto:" destination="UnR-sl-j51" eventType="touchUpInside" id="QcY-gu-cDx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Below image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xd-ji-enr">
+                                <rect key="frame" x="158.66666666666666" y="640" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EFz-n7-p6U" firstAttribute="trailing" secondItem="dzG-sM-ynh" secondAttribute="trailing" constant="107" id="1Y0-uG-A7L"/>
+                            <constraint firstItem="QBC-hf-uED" firstAttribute="top" secondItem="dzG-sM-ynh" secondAttribute="bottom" constant="60" id="3jt-OO-w6n"/>
+                            <constraint firstItem="QBC-hf-uED" firstAttribute="centerX" secondItem="4xd-ji-enr" secondAttribute="centerX" id="GxU-Vy-Czq"/>
+                            <constraint firstItem="4xd-ji-enr" firstAttribute="top" secondItem="QBC-hf-uED" secondAttribute="bottom" constant="39" id="Opx-j4-SR3"/>
+                            <constraint firstItem="dzG-sM-ynh" firstAttribute="leading" secondItem="EFz-n7-p6U" secondAttribute="leading" constant="107" id="Yx6-nO-otz"/>
+                            <constraint firstItem="QBC-hf-uED" firstAttribute="leading" secondItem="EFz-n7-p6U" secondAttribute="leading" constant="20" id="cwT-Xb-lDw"/>
+                            <constraint firstItem="QBC-hf-uED" firstAttribute="centerX" secondItem="dzG-sM-ynh" secondAttribute="centerX" id="cxI-IP-zrb"/>
+                            <constraint firstItem="dzG-sM-ynh" firstAttribute="top" secondItem="EFz-n7-p6U" secondAttribute="top" constant="26" id="dcb-mX-mg4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EFz-n7-p6U"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0iA-Cv-o2m"/>
+                    <navigationItem key="navigationItem" title="Roommate Contract" id="0iA-Cv-o2m"/>
                     <connections>
-                        <outlet property="contractImage" destination="QBC-hf-uED" id="LWo-vO-Vjb"/>
-                        <outlet property="contractTitle" destination="Q1i-Ih-gSG" id="BZg-F6-5kD"/>
+                        <outlet property="contractImage" destination="QBC-hf-uED" id="nov-cc-rQE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeD-yg-f4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2030.4347826086957" y="-597.32142857142856"/>
+            <point key="canvasLocation" x="2029.5999999999999" y="-597.78325123152717"/>
         </scene>
         <!--Roommate View Controller-->
         <scene sceneID="mM2-2z-nG8">
