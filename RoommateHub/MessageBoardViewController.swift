@@ -12,5 +12,4 @@ import UIKit
 
 class MessageBoardViewController: UIViewController {
     @IBOutlet var messageBoardTitle: UILabel!
-    
 }

@@ -7,67 +7,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm1-qC-LAS">
-                                <rect key="frame" x="105" y="257" width="205" height="60"/>
+                                <rect key="frame" x="105" y="312" width="204" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Roommates"/>
                                 <connections>
                                     <segue destination="bzo-jC-gCS" kind="show" identifier="roommatesSegue" id="naW-IK-IcH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2Z-TG-HxD">
-                                <rect key="frame" x="84" y="325" width="247" height="60"/>
+                                <rect key="frame" x="84" y="368" width="246" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Housekeeping"/>
                                 <connections>
-                                    <segue destination="Mvr-RF-91N" kind="show" identifier="houseKeepingSegue" id="QAC-Zu-OFt"/>
+                                    <segue destination="Mvr-RF-91N" kind="show" identifier="housekeepingSegue" id="QAC-Zu-OFt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNZ-g1-hzg">
-                                <rect key="frame" x="59" y="393" width="297" height="60"/>
+                                <rect key="frame" x="59" y="424" width="296" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Messaging Board"/>
                                 <connections>
                                     <segue destination="3tu-uQ-2bH" kind="show" identifier="messageBoardSegue" id="Gju-lT-Xny"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFm-yj-VUi">
+                                <rect key="frame" x="20" y="183" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68u-eZ-QBS">
-                                <rect key="frame" x="133" y="461" width="149" height="60"/>
+                                <rect key="frame" x="133" y="480" width="149" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Contract"/>
                                 <connections>
                                     <segue destination="UnR-sl-j51" kind="show" identifier="contractSegue" id="Le3-4J-0xe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFm-yj-VUi">
-                                <rect key="frame" x="27" y="128" width="367" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JFm-yj-VUi" secondAttribute="trailing" constant="20" id="S8O-Ox-Ceu"/>
+                            <constraint firstItem="JFm-yj-VUi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ak5-kL-G2t"/>
+                            <constraint firstItem="JFm-yj-VUi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="bhZ-yg-Rf6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="mhG-W2-9ld"/>
                     <connections>
-                        <outlet property="hpContract" destination="68u-eZ-QBS" id="2NI-g1-Lm2"/>
-                        <outlet property="hpHouseKeeping" destination="y2Z-TG-HxD" id="hnD-CM-RCr"/>
-                        <outlet property="hpMessageBoard" destination="aNZ-g1-hzg" id="LDa-eE-cdm"/>
-                        <outlet property="hpRoommate" destination="Xm1-qC-LAS" id="0kK-NC-gaf"/>
                         <outlet property="hpTitle" destination="JFm-yj-VUi" id="psq-Or-5Jp"/>
                     </connections>
                 </viewController>
@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="2029.5999999999999" y="-597.78325123152717"/>
         </scene>
-        <!--Roommate View Controller-->
+        <!--Roommates-->
         <scene sceneID="mM2-2z-nG8">
             <objects>
                 <viewController id="bzo-jC-gCS" customClass="RoommateViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -144,7 +144,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ubx-hj-hOa"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sxy-wM-ZDx"/>
+                    <navigationItem key="navigationItem" title="Roommates" id="sxy-wM-ZDx"/>
                     <connections>
                         <outlet property="roommateTitle" destination="E7m-oS-fPr" id="lzJ-Dl-gql"/>
                     </connections>

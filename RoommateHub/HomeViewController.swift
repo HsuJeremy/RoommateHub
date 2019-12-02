@@ -11,18 +11,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     var homePageList: [String] = []
-    
-    
+//
     @IBOutlet var hpTitle: UILabel! //hp stands for homepage
-    @IBOutlet var hpRoommate: UIButton!
-    @IBOutlet var hpHouseKeeping: UIButton!
-    @IBOutlet var hpMessageBoard: UIButton!
-    @IBOutlet var hpContract: UIButton!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,8 +27,5 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-
-
-
 }
 
