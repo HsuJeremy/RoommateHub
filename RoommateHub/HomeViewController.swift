@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hpTitle.text = "Roommate Hub"
+        hpTitle.text = "RoommateHub"
     
     }
     

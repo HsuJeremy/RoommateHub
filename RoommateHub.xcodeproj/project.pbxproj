@@ -71,10 +71,10 @@
 				3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */,
 				3FC7A9AE238F4BF80013F9DA /* HomeViewController.swift */,
 				3FC7A9B0238F4BF80013F9DA /* Main.storyboard */,
+				10C5DDB9239034AD00031FDC /* RoommateViewController.swift */,
 				3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */,
 				3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */,
 				3FC7A9B8238F4BF90013F9DA /* Info.plist */,
-				10C5DDB9239034AD00031FDC /* RoommateViewController.swift */,
 				10C5DDBB239034CD00031FDC /* MessageBoardViewController.swift */,
 				10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */,
 			);
