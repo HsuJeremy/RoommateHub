@@ -137,15 +137,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ROOMMATES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7m-oS-fPr">
-                                <rect key="frame" x="20" y="88" width="374" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roommates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7m-oS-fPr">
+                                <rect key="frame" x="34" y="108" width="307" height="39.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ubx-hj-hOa" firstAttribute="trailing" secondItem="E7m-oS-fPr" secondAttribute="trailing" constant="34" id="ADS-rX-oqp"/>
+                            <constraint firstItem="E7m-oS-fPr" firstAttribute="top" secondItem="Ubx-hj-hOa" secondAttribute="top" constant="20" id="EjR-Yo-oog"/>
+                            <constraint firstItem="E7m-oS-fPr" firstAttribute="leading" secondItem="Ubx-hj-hOa" secondAttribute="leading" constant="34" id="UnG-3I-2hx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ubx-hj-hOa"/>
                     </view>
                     <navigationItem key="navigationItem" title="Roommates" id="sxy-wM-ZDx"/>
@@ -155,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wy-sv-XHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="-669"/>
+            <point key="canvasLocation" x="1957.5999999999999" y="-669.45812807881771"/>
         </scene>
         <!--House Keeping View Controller-->
         <scene sceneID="OFv-hQ-nQN">
@@ -165,15 +169,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HOUSE KEEPING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uv-tN-zSy">
-                                <rect key="frame" x="20" y="88" width="374" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Housekeeping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uv-tN-zSy">
+                                <rect key="frame" x="12" y="110.00000000000001" width="351" height="39.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6uv-tN-zSy" firstAttribute="leading" secondItem="T6f-I6-Wak" secondAttribute="leading" constant="12" id="94a-RY-VVM"/>
+                            <constraint firstItem="6uv-tN-zSy" firstAttribute="top" secondItem="T6f-I6-Wak" secondAttribute="top" constant="22" id="GQi-lD-oOv"/>
+                            <constraint firstItem="T6f-I6-Wak" firstAttribute="trailing" secondItem="6uv-tN-zSy" secondAttribute="trailing" constant="12" id="bKY-lO-g0M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="T6f-I6-Wak"/>
                     </view>
                     <navigationItem key="navigationItem" id="2WM-MP-Sei"/>
@@ -183,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bng-g5-OWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2899" y="119"/>
+            <point key="canvasLocation" x="2898.4000000000001" y="118.96551724137932"/>
         </scene>
         <!--Message Board View Controller-->
         <scene sceneID="z8n-ak-9xt">
@@ -193,15 +201,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MESSAGE BOARD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyM-v0-HuU">
-                                <rect key="frame" x="20" y="88" width="374" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Board" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyM-v0-HuU">
+                                <rect key="frame" x="14" y="121.00000000000001" width="347" height="39.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="a2V-we-1TY" firstAttribute="trailing" secondItem="yyM-v0-HuU" secondAttribute="trailing" constant="14" id="8S1-Jz-Dui"/>
+                            <constraint firstItem="yyM-v0-HuU" firstAttribute="leading" secondItem="a2V-we-1TY" secondAttribute="leading" constant="14" id="eud-Ms-0Lr"/>
+                            <constraint firstItem="yyM-v0-HuU" firstAttribute="top" secondItem="a2V-we-1TY" secondAttribute="top" constant="33" id="wHo-wF-CKV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="a2V-we-1TY"/>
                     </view>
                     <navigationItem key="navigationItem" id="HhN-Du-Pvk"/>
@@ -211,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRd-y0-sQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2899" y="882"/>
+            <point key="canvasLocation" x="2898.4000000000001" y="881.5270935960591"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nHY-1j-QV9">
