@@ -15,10 +15,11 @@ struct Roommate {
     var firstName, middleName, lastName: String
     var username, hometown, concentration: String
     var year, age: Int
+    // var firstName: String
 }
 
 class RoommateManager {
-    var database: OpaquePointer!
+    var database: OpaquePointer?
     
     static let shared = RoommateManager()
     
@@ -35,14 +36,14 @@ class RoommateManager {
             in: .userDomainMask,
             appropriateFor: nil,
             create: false
-        ).appendingPathComponent("notes.sqlite")
+        ).appendingPathComponent("roommates.sqlite")
         
         if sqlite3_open(databaseURL.path, &database) != SQLITE_OK {
             print("Error opening database")
             return
         }
         
-        if sqlite3_exec(database,"CREATE TABLE IF NOT EXISTS roommates (firstName TEXT, middleName TEXT, lastName TEXT, username TEXT, hometown TEXT, concentration TEXT, year INTEGER, age INTEGER)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS roommates (firstName TEXT, middleName TEXT, lastName TEXT, username TEXT, hometown TEXT, concentration TEXT, year INTEGER, age INTEGER)", nil, nil, nil) != SQLITE_OK {
             print("Error creating table: \(String(cString: sqlite3_errmsg(database)!))")
         }
     }
@@ -58,6 +59,7 @@ class RoommateManager {
                 print("Error adding roommate profile")
             }
             print("Set up")
+            // print(String(cString: sqlite3_column_text(statement, 0)))
         } else {
             print("Error creating roommate insert statement")
         }
@@ -65,37 +67,13 @@ class RoommateManager {
         sqlite3_finalize(statement)
     }
     
-//    // Create new user profile
-//    func createRoommate() -> Int {
-//        connect()
-//
-//        var statement: OpaquePointer? = nil
-//        if sqlite3_prepare_v2(
-//            database,
-//            "INSERT INTO notes (content) VALUES ('Write a note!')",
-//            -1,
-//            &statement,
-//            nil
-//        ) == SQLITE_OK {
-//            if sqlite3_step(statement) != SQLITE_DONE {
-//                print("Error inserting note")
-//            }
-//        }
-//        else {
-//            print("Error creating note insert statement")
-//        }
-//
-//        sqlite3_finalize(statement)
-//        return Int(sqlite3_last_insert_rowid(database))
-//    }
-    
     // Get all the roommate profiles
     func getRoommates() -> [Roommate] {
         connect()
         
         var result: [Roommate] = []
         var statement: OpaquePointer? = nil
-        if sqlite3_prepare_v2(database, "SELECT rowid, lastName, firstName FROM roommates", -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(database, "SELECT rowid, firstName, middleName, lastName, username, hometown, concentration, year, age FROM roommates", -1, &statement, nil) == SQLITE_OK {
             while sqlite3_step(statement) == SQLITE_ROW {
                 result.append(Roommate(
                     id: sqlite3_column_int(statement, 0),
@@ -108,6 +86,8 @@ class RoommateManager {
                     year: Int(sqlite3_column_int(statement, 7)),
                     age: Int(sqlite3_column_int(statement, 8))
                 ))
+                
+                print(result.last)
             }
         }
         
@@ -115,40 +95,19 @@ class RoommateManager {
         return result
     }
     
-//    // Save roommate profile
-//    func saveNote(note: Note) {
-//        connect()
-//
-//        var statement: OpaquePointer? = nil
-//        if sqlite3_prepare_v2(database, "UPDATE notes SET content = ? WHERE rowid = ?", -1, &statement, nil) == SQLITE_OK {
-//            sqlite3_bind_text(statement, 1, NSString(string: note.content).utf8String, -1, nil)
-//            sqlite3_bind_int(statement, 2, note.id)
-//            if sqlite3_step(statement) != SQLITE_DONE {
-//                print("Error saving note")
-//            }
-//        } else {
-//            print("Error creating note update statement")
-//        }
-//
-//        sqlite3_finalize(statement)
-//    }
-     
-//    // Remove roommate profile
-//    func delete(note: Note) {
-//    connect()
-//
-//    var statement: OpaquePointer? = nil
-//    if sqlite3_prepare_v2(database, "DELETE FROM notes WHERE rowid = ?", -1, &statement, nil) == SQLITE_OK {
-//            sqlite3_bind_int(statement, 1, note.id)
-//        if sqlite3_step(statement) != SQLITE_DONE {
-//            print("Error deleting note")
-//        }
-//    } else {
-//        print("Error creating note delete statement")
-//    }
-//
-//    sqlite3_finalize(statement)
-//    }
+    func clear() {
+        connect()
+        
+        var statement: OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(database, "DELETE FROM roommates", -1, &statement, nil) == SQLITE_OK {
+            if sqlite3_step(statement) != SQLITE_DONE {
+                print("Error deleting")
+            }
+        } else {
+            print("Error creating the delete statement")
+        }
+    }
 }
 
 

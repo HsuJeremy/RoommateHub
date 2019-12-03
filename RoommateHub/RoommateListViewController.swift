@@ -17,9 +17,14 @@ class RoommateListViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        RoommateManager.shared.clear()
+        RoommateManager.shared.fillDummyData()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        RoommateManager.shared.fillDummyData()
         reload()
     }
     
@@ -32,9 +37,17 @@ class RoommateListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Roommate", for: indexPath)
-        cell.textLabel?.text = roommates[indexPath.row].lastName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoommateCell", for: indexPath)
+        cell.textLabel?.text = roommates[indexPath.row].firstName + roommates[indexPath.row].middleName
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RoommateSegue",
+                let destination = segue.destination as? RoommateViewController,
+                let index = tableView.indexPathForSelectedRow?.row {
+            destination.roommate = roommates[index]
+        }
     }
 }
 

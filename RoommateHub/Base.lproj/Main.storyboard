@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="1958" y="882"/>
         </scene>
-        <!--View Controller-->
+        <!--Roommate View Controller-->
         <scene sceneID="Te6-Lr-c7y">
             <objects>
-                <viewController id="5dc-eU-sbO" sceneMemberID="viewController">
+                <viewController id="5dc-eU-sbO" customClass="RoommateViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lmy-i4-7Jm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,13 +154,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="adI-lR-W0o">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoommateCell" id="adI-lR-W0o">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="adI-lR-W0o" id="iwu-Cj-7P3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="5dc-eU-sbO" kind="show" identifier="RoommateSegue" id="EUc-mm-uGa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
