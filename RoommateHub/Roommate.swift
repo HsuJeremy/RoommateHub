@@ -73,7 +73,7 @@ class RoommateManager {
         
         var result: [Roommate] = []
         var statement: OpaquePointer? = nil
-        if sqlite3_prepare_v2(database, "SELECT rowid, firstName, middleName, lastName, username, hometown, concentration, year, age FROM roommates", -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(database, "SELECT rowid, firstName, middleName, lastName, username, hometown, concentration, year, age FROM roommates ORDER BY lastName, firstName ASC", -1, &statement, nil) == SQLITE_OK {
             while sqlite3_step(statement) == SQLITE_ROW {
                 result.append(Roommate(
                     id: sqlite3_column_int(statement, 0),

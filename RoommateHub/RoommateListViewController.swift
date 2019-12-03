@@ -38,7 +38,7 @@ class RoommateListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoommateCell", for: indexPath)
-        cell.textLabel?.text = roommates[indexPath.row].firstName + roommates[indexPath.row].middleName
+        cell.textLabel?.text = roommates[indexPath.row].firstName + " " + roommates[indexPath.row].lastName
         return cell
     }
     
