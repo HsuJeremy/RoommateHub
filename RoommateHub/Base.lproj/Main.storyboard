@@ -209,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="2898.4000000000001" y="118.96551724137932"/>
         </scene>
-        <!--Message Board View Controller-->
+        <!--Message View Controller-->
         <scene sceneID="z8n-ak-9xt">
             <objects>
-                <viewController id="3tu-uQ-2bH" customClass="MessageBoardViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3tu-uQ-2bH" customClass="MessageViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HCI-FW-sTQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

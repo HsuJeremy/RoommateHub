@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10B1F08A239715C700BF00D3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1F089239715C700BF00D3 /* Message.swift */; };
+		10B1F08C239715E000BF00D3 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1F08B239715E000BF00D3 /* MessageListViewController.swift */; };
 		10C5DDB82390348300031FDC /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDB72390348300031FDC /* ContractViewController.swift */; };
-		10C5DDBC239034CD00031FDC /* MessageBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBB239034CD00031FDC /* MessageBoardViewController.swift */; };
+		10C5DDBC239034CD00031FDC /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBB239034CD00031FDC /* MessageViewController.swift */; };
 		10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */; };
 		3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */; };
 		3F5A15052396BBC400A8DD0D /* RoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */; };
@@ -22,8 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10B1F089239715C700BF00D3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		10B1F08B239715E000BF00D3 /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		10C5DDB72390348300031FDC /* ContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
-		10C5DDBB239034CD00031FDC /* MessageBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardViewController.swift; sourceTree = "<group>"; };
+		10C5DDBB239034CD00031FDC /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseKeepingViewController.swift; sourceTree = "<group>"; };
 		3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateListViewController.swift; sourceTree = "<group>"; };
 		3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +85,9 @@
 				3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */,
 				3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */,
 				3FC7A9B8238F4BF90013F9DA /* Info.plist */,
-				10C5DDBB239034CD00031FDC /* MessageBoardViewController.swift */,
+				10C5DDBB239034CD00031FDC /* MessageViewController.swift */,
+				10B1F089239715C700BF00D3 /* Message.swift */,
+				10B1F08B239715E000BF00D3 /* MessageListViewController.swift */,
 				10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */,
 			);
 			path = RoommateHub;
@@ -158,13 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B1F08C239715E000BF00D3 /* MessageListViewController.swift in Sources */,
 				10C5DDB82390348300031FDC /* ContractViewController.swift in Sources */,
 				3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */,
 				3FC7A9AF238F4BF80013F9DA /* HomeViewController.swift in Sources */,
 				3F5A15052396BBC400A8DD0D /* RoommateViewController.swift in Sources */,
 				3FC7A9AB238F4BF80013F9DA /* AppDelegate.swift in Sources */,
-				10C5DDBC239034CD00031FDC /* MessageBoardViewController.swift in Sources */,
+				10C5DDBC239034CD00031FDC /* MessageViewController.swift in Sources */,
 				3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */,
+				10B1F08A239715C700BF00D3 /* Message.swift in Sources */,
 				10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */,
 				3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */,
 			);
