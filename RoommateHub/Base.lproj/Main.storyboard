@@ -29,7 +29,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Roommates"/>
                                         <connections>
-                                            <segue destination="bzo-jC-gCS" kind="show" id="Evs-GA-0bt"/>
+                                            <segue destination="iF8-93-3zd" kind="show" id="8Wq-3L-bea"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-Tp-2U9">
@@ -129,37 +129,50 @@
             </objects>
             <point key="canvasLocation" x="1958" y="882"/>
         </scene>
-        <!--Roommates-->
-        <scene sceneID="mM2-2z-nG8">
+        <!--View Controller-->
+        <scene sceneID="Te6-Lr-c7y">
             <objects>
-                <viewController id="bzo-jC-gCS" customClass="RoommateViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ipO-4E-o1D">
+                <viewController id="5dc-eU-sbO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lmy-i4-7Jm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roommates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7m-oS-fPr">
-                                <rect key="frame" x="34" y="108" width="307" height="39.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="Ubx-hj-hOa" firstAttribute="trailing" secondItem="E7m-oS-fPr" secondAttribute="trailing" constant="34" id="ADS-rX-oqp"/>
-                            <constraint firstItem="E7m-oS-fPr" firstAttribute="top" secondItem="Ubx-hj-hOa" secondAttribute="top" constant="20" id="EjR-Yo-oog"/>
-                            <constraint firstItem="E7m-oS-fPr" firstAttribute="leading" secondItem="Ubx-hj-hOa" secondAttribute="leading" constant="34" id="UnG-3I-2hx"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ubx-hj-hOa"/>
+                        <viewLayoutGuide key="safeArea" id="pFn-61-NBz"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Roommates" id="sxy-wM-ZDx"/>
-                    <connections>
-                        <outlet property="roommateTitle" destination="E7m-oS-fPr" id="lzJ-Dl-gql"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="0Be-HN-byT"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5wy-sv-XHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L4W-TD-8gd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.5999999999999" y="-669.45812807881771"/>
+            <point key="canvasLocation" x="1958" y="-1390"/>
+        </scene>
+        <!--Roommates-->
+        <scene sceneID="Cb3-LM-5qO">
+            <objects>
+                <tableViewController id="iF8-93-3zd" customClass="RoommateListViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Yf-RF-U3F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="adI-lR-W0o">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="adI-lR-W0o" id="iwu-Cj-7P3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iF8-93-3zd" id="Zq5-fb-KWb"/>
+                            <outlet property="delegate" destination="iF8-93-3zd" id="lzD-J3-cql"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Roommates" id="8BO-Yv-wLv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-5g-hpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="-642"/>
         </scene>
         <!--House Keeping View Controller-->
         <scene sceneID="OFv-hQ-nQN">

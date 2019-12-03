@@ -2,15 +2,8 @@
 //  RoommateViewController.swift
 //  RoommateHub
 //
-//  Created by Geena Kim on 11/28/19.
+//  Created by Jeremy Hsu on 12/3/19.
 //  Copyright © 2019 Jeremy Hsu. All rights reserved.
 //
 
 import Foundation
-
-import UIKit
-
-class RoommateViewController: UIViewController {
-    @IBOutlet var roommateTitle: UILabel! 
-    
-}

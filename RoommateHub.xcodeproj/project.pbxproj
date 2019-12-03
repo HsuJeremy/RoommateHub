@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		10C5DDB82390348300031FDC /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDB72390348300031FDC /* ContractViewController.swift */; };
-		10C5DDBA239034AD00031FDC /* RoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDB9239034AD00031FDC /* RoommateViewController.swift */; };
 		10C5DDBC239034CD00031FDC /* MessageBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBB239034CD00031FDC /* MessageBoardViewController.swift */; };
 		10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */; };
+		3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */; };
+		3F5A15052396BBC400A8DD0D /* RoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */; };
+		3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15062396BBD300A8DD0D /* Roommate.swift */; };
 		3FC7A9AB238F4BF80013F9DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */; };
 		3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */; };
 		3FC7A9AF238F4BF80013F9DA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AE238F4BF80013F9DA /* HomeViewController.swift */; };
@@ -21,9 +23,11 @@
 
 /* Begin PBXFileReference section */
 		10C5DDB72390348300031FDC /* ContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
-		10C5DDB9239034AD00031FDC /* RoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateViewController.swift; sourceTree = "<group>"; };
 		10C5DDBB239034CD00031FDC /* MessageBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardViewController.swift; sourceTree = "<group>"; };
 		10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseKeepingViewController.swift; sourceTree = "<group>"; };
+		3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateListViewController.swift; sourceTree = "<group>"; };
+		3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateViewController.swift; sourceTree = "<group>"; };
+		3F5A15062396BBD300A8DD0D /* Roommate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roommate.swift; sourceTree = "<group>"; };
 		3FC7A9A7238F4BF80013F9DA /* RoommateHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoommateHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,10 +72,12 @@
 				10C5DDB72390348300031FDC /* ContractViewController.swift */,
 				3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */,
 				3FC7A9BE238F4C120013F9DA /* README.md */,
+				3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */,
+				3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */,
+				3F5A15062396BBD300A8DD0D /* Roommate.swift */,
 				3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */,
 				3FC7A9AE238F4BF80013F9DA /* HomeViewController.swift */,
 				3FC7A9B0238F4BF80013F9DA /* Main.storyboard */,
-				10C5DDB9239034AD00031FDC /* RoommateViewController.swift */,
 				3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */,
 				3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */,
 				3FC7A9B8238F4BF90013F9DA /* Info.plist */,
@@ -153,12 +159,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				10C5DDB82390348300031FDC /* ContractViewController.swift in Sources */,
-				10C5DDBA239034AD00031FDC /* RoommateViewController.swift in Sources */,
+				3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */,
 				3FC7A9AF238F4BF80013F9DA /* HomeViewController.swift in Sources */,
+				3F5A15052396BBC400A8DD0D /* RoommateViewController.swift in Sources */,
 				3FC7A9AB238F4BF80013F9DA /* AppDelegate.swift in Sources */,
 				10C5DDBC239034CD00031FDC /* MessageBoardViewController.swift in Sources */,
 				3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */,
 				10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */,
+				3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
