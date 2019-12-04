@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pcj-sx-A0R">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -356,7 +356,6 @@
         <!--House Keeping View Controller-->
         <scene sceneID="OFv-hQ-nQN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bng-g5-OWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Mvr-RF-91N" customClass="HouseKeepingViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x0i-It-k1A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -387,6 +386,7 @@
                         <outlet property="houseKeepingTitle" destination="6uv-tN-zSy" id="f3A-wy-BxJ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bng-g5-OWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2898.4000000000001" y="118.96551724137932"/>
         </scene>
