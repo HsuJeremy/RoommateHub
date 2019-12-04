@@ -12,7 +12,7 @@ import SQLite3
 
 struct Roommate {
     var id: Int32
-    var firstName, middleName, lastName: String
+    var firstName, lastName: String
     var username, hometown, concentration: String
     var year, age: Int
     // var firstName: String
@@ -43,7 +43,7 @@ class RoommateManager {
             return
         }
         
-        if sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS roommates (firstName TEXT, middleName TEXT, lastName TEXT, username TEXT, hometown TEXT, concentration TEXT, year INTEGER, age INTEGER)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS roommates (firstName TEXT, lastName TEXT, username TEXT, hometown TEXT, concentration TEXT, year INTEGER, age INTEGER)", nil, nil, nil) != SQLITE_OK {
             print("Error creating table: \(String(cString: sqlite3_errmsg(database)!))")
         }
     }
@@ -54,12 +54,10 @@ class RoommateManager {
         
         var statement: OpaquePointer? = nil
         
-        if sqlite3_prepare_v2(database, "INSERT INTO roommates (firstName, middleName, lastName, username, hometown, concentration, year, age) VALUES ('Jeremy', 'E', 'Hsu', 'HsuJeremy', 'Los Altos', 'Computer Science', 2023, 18)", -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(database, "INSERT INTO roommates (firstName, lastName, username, hometown, concentration, year, age) VALUES ('Geena', 'Kim', 'GnaKim', 'Staten Island', 'Computer Science', 2023, 18)", -1, &statement, nil) == SQLITE_OK {
             if sqlite3_step(statement) != SQLITE_DONE {
                 print("Error adding roommate profile")
             }
-            print("Set up")
-            // print(String(cString: sqlite3_column_text(statement, 0)))
         } else {
             print("Error creating roommate insert statement")
         }
@@ -73,18 +71,17 @@ class RoommateManager {
         
         var result: [Roommate] = []
         var statement: OpaquePointer? = nil
-        if sqlite3_prepare_v2(database, "SELECT rowid, firstName, middleName, lastName, username, hometown, concentration, year, age FROM roommates ORDER BY lastName, firstName ASC", -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(database, "SELECT rowid, firstName, lastName, username, hometown, concentration, year, age FROM roommates ORDER BY lastName, firstName ASC", -1, &statement, nil) == SQLITE_OK {
             while sqlite3_step(statement) == SQLITE_ROW {
                 result.append(Roommate(
                     id: sqlite3_column_int(statement, 0),
                     firstName: String(cString: sqlite3_column_text(statement, 1)),
-                    middleName: String(cString: sqlite3_column_text(statement, 2)),
-                    lastName: String(cString: sqlite3_column_text(statement, 3)),
-                    username: String(cString: sqlite3_column_text(statement, 4)),
-                    hometown: String(cString: sqlite3_column_text(statement, 5)),
-                    concentration: String(cString: sqlite3_column_text(statement, 6)),
-                    year: Int(sqlite3_column_int(statement, 7)),
-                    age: Int(sqlite3_column_int(statement, 8))
+                    lastName: String(cString: sqlite3_column_text(statement, 2)),
+                    username: String(cString: sqlite3_column_text(statement, 3)),
+                    hometown: String(cString: sqlite3_column_text(statement, 4)),
+                    concentration: String(cString: sqlite3_column_text(statement, 5)),
+                    year: Int(sqlite3_column_int(statement, 6)),
+                    age: Int(sqlite3_column_int(statement, 7))
                 ))
                 
                 print(result.last)
