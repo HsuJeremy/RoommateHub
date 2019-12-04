@@ -15,6 +15,7 @@ struct Roommate {
     var firstName, lastName: String
     var username, hometown, concentration: String
     var year, age: Int
+    var number: String
     // var firstName: String
 }
 
@@ -36,14 +37,14 @@ class RoommateManager {
             in: .userDomainMask,
             appropriateFor: nil,
             create: false
-        ).appendingPathComponent("roommates.sqlite")
+        ).appendingPathComponent("roommates1.sqlite")
         
         if sqlite3_open(databaseURL.path, &database) != SQLITE_OK {
             print("Error opening database")
             return
         }
         
-        if sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS roommates (firstName TEXT, lastName TEXT, username TEXT, hometown TEXT, concentration TEXT, year INTEGER, age INTEGER)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS roommates1 (firstName TEXT, lastName TEXT, username TEXT, hometown TEXT, concentration TEXT, year INTEGER, age INTEGER, number TEXT)", nil, nil, nil) != SQLITE_OK {
             print("Error creating table: \(String(cString: sqlite3_errmsg(database)!))")
         }
     }
@@ -54,7 +55,7 @@ class RoommateManager {
         
         var statement: OpaquePointer? = nil
         
-        if sqlite3_prepare_v2(database, "INSERT INTO roommates (firstName, lastName, username, hometown, concentration, year, age) VALUES ('Geena', 'Kim', 'GnaKim', 'Staten Island', 'Computer Science', 2023, 18)", -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(database, "INSERT INTO roommates1 (firstName, lastName, username, hometown, concentration, year, age, number) VALUES ('Geena', 'Kim', 'GnaKim', 'Staten Island', 'Computer Science', 2023, 18, '6502184411')", -1, &statement, nil) == SQLITE_OK {
             if sqlite3_step(statement) != SQLITE_DONE {
                 print("Error adding roommate profile")
             }
@@ -71,7 +72,7 @@ class RoommateManager {
         
         var result: [Roommate] = []
         var statement: OpaquePointer? = nil
-        if sqlite3_prepare_v2(database, "SELECT rowid, firstName, lastName, username, hometown, concentration, year, age FROM roommates ORDER BY lastName, firstName ASC", -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(database, "SELECT rowid, firstName, lastName, username, hometown, concentration, year, age, number FROM roommates1 ORDER BY lastName, firstName ASC", -1, &statement, nil) == SQLITE_OK {
             while sqlite3_step(statement) == SQLITE_ROW {
                 result.append(Roommate(
                     id: sqlite3_column_int(statement, 0),
@@ -81,10 +82,9 @@ class RoommateManager {
                     hometown: String(cString: sqlite3_column_text(statement, 4)),
                     concentration: String(cString: sqlite3_column_text(statement, 5)),
                     year: Int(sqlite3_column_int(statement, 6)),
-                    age: Int(sqlite3_column_int(statement, 7))
+                    age: Int(sqlite3_column_int(statement, 7)),
+                    number: String(cString: sqlite3_column_text(statement, 8))
                 ))
-                
-                print(result.last)
             }
         }
         
@@ -97,7 +97,7 @@ class RoommateManager {
         
         var statement: OpaquePointer? = nil
         
-        if sqlite3_prepare_v2(database, "DELETE FROM roommates", -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(database, "DELETE FROM roommates1", -1, &statement, nil) == SQLITE_OK {
             if sqlite3_step(statement) != SQLITE_DONE {
                 print("Error deleting")
             }

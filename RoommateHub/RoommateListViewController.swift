@@ -19,7 +19,7 @@ class RoommateListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // RoommateManager.shared.clear()
+        RoommateManager.shared.clear()
         RoommateManager.shared.fillDummyData()
     }
     
