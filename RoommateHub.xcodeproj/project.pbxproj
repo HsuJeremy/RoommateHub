@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,16 +17,19 @@
 		3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */; };
 		3F5A15052396BBC400A8DD0D /* RoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */; };
 		3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15062396BBD300A8DD0D /* Roommate.swift */; };
+		3F72EA2723977C16006E40E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72EA2623977C16006E40E8 /* LoginViewController.swift */; };
+		3F7D991F23978EBE00EDF4EE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D991E23978EBE00EDF4EE /* SignupViewController.swift */; };
 		3FC7A9AB238F4BF80013F9DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */; };
 		3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */; };
 		3FC7A9AF238F4BF80013F9DA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AE238F4BF80013F9DA /* HomeViewController.swift */; };
 		3FC7A9B2238F4BF80013F9DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC7A9B0238F4BF80013F9DA /* Main.storyboard */; };
 		3FC7A9B4238F4BF90013F9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */; };
 		3FC7A9B7238F4BF90013F9DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */; };
-		833FD0D00252CDE136E33F05 /* libPods-RoommateHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8DFF05DB4F3657709A29DB /* libPods-RoommateHub.a */; };
+		6C3B3A449CE8B89E78C2A870 /* Pods_RoommateHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F17388304F48AEAA582AD0 /* Pods_RoommateHub.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01F17388304F48AEAA582AD0 /* Pods_RoommateHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoommateHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B1F089239715C700BF00D3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		10B1F08B239715E000BF00D3 /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		10B1F08D2397465E00BF00D3 /* HouseKeepingTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseKeepingTask.swift; sourceTree = "<group>"; };
@@ -37,6 +40,8 @@
 		3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateListViewController.swift; sourceTree = "<group>"; };
 		3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateViewController.swift; sourceTree = "<group>"; };
 		3F5A15062396BBD300A8DD0D /* Roommate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roommate.swift; sourceTree = "<group>"; };
+		3F72EA2623977C16006E40E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3F7D991E23978EBE00EDF4EE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		3FC7A9A7238F4BF80013F9DA /* RoommateHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoommateHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +52,6 @@
 		3FC7A9B8238F4BF90013F9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC7A9BE238F4C120013F9DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		753C1C4F6D3349A6ACF7C7F1 /* Pods-RoommateHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoommateHub.debug.xcconfig"; path = "Target Support Files/Pods-RoommateHub/Pods-RoommateHub.debug.xcconfig"; sourceTree = "<group>"; };
-		7C8DFF05DB4F3657709A29DB /* libPods-RoommateHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RoommateHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65DE7C41710CBE797A34DA5 /* Pods-RoommateHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoommateHub.release.xcconfig"; path = "Target Support Files/Pods-RoommateHub/Pods-RoommateHub.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833FD0D00252CDE136E33F05 /* libPods-RoommateHub.a in Frameworks */,
+				6C3B3A449CE8B89E78C2A870 /* Pods_RoommateHub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +73,6 @@
 				753C1C4F6D3349A6ACF7C7F1 /* Pods-RoommateHub.debug.xcconfig */,
 				D65DE7C41710CBE797A34DA5 /* Pods-RoommateHub.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,6 +108,7 @@
 				3FC7A9B0238F4BF80013F9DA /* Main.storyboard */,
 				3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */,
 				3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */,
+				3F7D991E23978EBE00EDF4EE /* SignupViewController.swift */,
 				10B1F08D2397465E00BF00D3 /* HouseKeepingTask.swift */,
 				3FC7A9B8238F4BF90013F9DA /* Info.plist */,
 				3F4315F2239759B5003920EA /* GoogleService-Info.plist */,
@@ -112,6 +116,7 @@
 				10B1F089239715C700BF00D3 /* Message.swift */,
 				10B1F08B239715E000BF00D3 /* MessageListViewController.swift */,
 				10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */,
+				3F72EA2623977C16006E40E8 /* LoginViewController.swift */,
 			);
 			path = RoommateHub;
 			sourceTree = "<group>";
@@ -119,7 +124,7 @@
 		D0099A55A34E44C7BEF938A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7C8DFF05DB4F3657709A29DB /* libPods-RoommateHub.a */,
+				01F17388304F48AEAA582AD0 /* Pods_RoommateHub.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				3FC7A9A4238F4BF80013F9DA /* Frameworks */,
 				3FC7A9A5238F4BF80013F9DA /* Resources */,
 				DC265AF9DF7360FCFA066A35 /* [CP] Copy Pods Resources */,
+				F9301D1F26A6164812655589 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +239,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoommateHub/Pods-RoommateHub-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F9301D1F26A6164812655589 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoommateHub/Pods-RoommateHub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoommateHub/Pods-RoommateHub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoommateHub/Pods-RoommateHub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -248,9 +271,11 @@
 				3F5A15052396BBC400A8DD0D /* RoommateViewController.swift in Sources */,
 				3FC7A9AB238F4BF80013F9DA /* AppDelegate.swift in Sources */,
 				10C5DDBC239034CD00031FDC /* MessageViewController.swift in Sources */,
+				3F7D991F23978EBE00EDF4EE /* SignupViewController.swift in Sources */,
 				3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */,
 				10B1F08A239715C700BF00D3 /* Message.swift in Sources */,
 				10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */,
+				3F72EA2723977C16006E40E8 /* LoginViewController.swift in Sources */,
 				3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
