@@ -57,16 +57,16 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if error == nil && authResult != nil {
                 // Create profileData dictionary
-                var profileData: [String : Any] = [
+                let profileData: [String : Any] = [
                     "firstName": fullNameArr[0],
                     "lastName": fullNameArr[1],
                     "hometown": hometown,
                     "concentration": concentration,
-                    "gradYear": Int(gradYear),
+                    "gradYear": Int(gradYear)!,
                     "house": house,
                     "roomNumber": roomNumber,
-                    "age": Int(age),
-                    "cellPhoneNumber": Int(cellPhoneNumber),
+                    "age": Int(age)!,
+                    "cellPhoneNumber": Int(cellPhoneNumber)!,
                 ]
             
                 
@@ -76,10 +76,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
                 self.userCreated = true
                 print("User created")
-                print(authResult!.user.uid)
             } else {
-                print(error) 
-                print("No")
+                print(error!)
             }
         }
     }
