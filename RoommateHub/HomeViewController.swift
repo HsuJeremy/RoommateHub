@@ -13,6 +13,7 @@ import UIKit
 import Firebase
 
 class HomeViewController: UIViewController {
+    var roomIdentifier: String? = nil
     
     @IBAction func logOutAction(_ sender: Any) {
         // From official Firebase documentation
@@ -37,7 +38,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         hpTitle.text = "RoommateHub"
-    
+        print(roomIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {

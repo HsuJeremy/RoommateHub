@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pcj-sx-A0R">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -342,32 +342,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zUF-lu-diY">
-                                <rect key="frame" x="50" y="338" width="275" height="138.66666666666663"/>
+                                <rect key="frame" x="40" y="138" width="295" height="247.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsD-mX-p3d">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jva-Y1-YpS">
-                                        <rect key="frame" x="0.0" y="20.333333333333314" width="275" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john@harvard.edu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jva-Y1-YpS">
+                                        <rect key="frame" x="0.0" y="20.333333333333343" width="295" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu0-0c-OgA">
-                                        <rect key="frame" x="0.0" y="54.333333333333321" width="275" height="20.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="54.33333333333335" width="295" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MF-Tq-dB2">
-                                        <rect key="frame" x="0.0" y="74.666666666666686" width="275" height="34"/>
+                                        <rect key="frame" x="0.0" y="74.666666666666657" width="295" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Affiliation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-w3-6ZM">
+                                        <rect key="frame" x="0.0" y="108.66666666666666" width="295" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Winthrop House" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pb6-5S-MDz">
+                                        <rect key="frame" x="0.0" y="129" width="295" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp3-R1-uXt">
+                                        <rect key="frame" x="0.0" y="163" width="295" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A20" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcy-DZ-47b">
+                                        <rect key="frame" x="0.0" y="183.33333333333331" width="295" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-WU-ecf">
-                                        <rect key="frame" x="0.0" y="108.66666666666669" width="275" height="30"/>
+                                        <rect key="frame" x="0.0" y="217.33333333333331" width="295" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginAction:" destination="Czy-yt-MUG" eventType="touchUpInside" id="sf0-5z-fQx"/>
@@ -379,16 +401,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zUF-lu-diY" firstAttribute="leading" secondItem="KLN-9S-2Mx" secondAttribute="leading" constant="50" id="Eq8-1c-LES"/>
-                            <constraint firstItem="zUF-lu-diY" firstAttribute="top" secondItem="KLN-9S-2Mx" secondAttribute="top" constant="250" id="XVu-WY-3HW"/>
-                            <constraint firstItem="KLN-9S-2Mx" firstAttribute="trailing" secondItem="zUF-lu-diY" secondAttribute="trailing" constant="50" id="aVk-os-lGI"/>
+                            <constraint firstItem="zUF-lu-diY" firstAttribute="leading" secondItem="KLN-9S-2Mx" secondAttribute="leading" constant="40" id="Jqd-0B-Qrd"/>
+                            <constraint firstItem="zUF-lu-diY" firstAttribute="top" secondItem="KLN-9S-2Mx" secondAttribute="top" constant="50" id="KuO-BU-tPK"/>
+                            <constraint firstItem="KLN-9S-2Mx" firstAttribute="trailing" secondItem="zUF-lu-diY" secondAttribute="trailing" constant="40" id="elm-tq-rPX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KLN-9S-2Mx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="3kE-pg-Kse"/>
                     <connections>
                         <outlet property="email" destination="Jva-Y1-YpS" id="MsT-dc-eya"/>
+                        <outlet property="house" destination="Pb6-5S-MDz" id="VRO-5o-jRk"/>
                         <outlet property="password" destination="9MF-Tq-dB2" id="3tt-U0-YCc"/>
+                        <outlet property="roomNumber" destination="qcy-DZ-47b" id="6c6-w4-7gf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcm-TY-9qQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -802,6 +826,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gNf-WW-Bmb"/>
+        <segue reference="wyK-AZ-tQb"/>
     </inferredMetricsTieBreakers>
 </document>

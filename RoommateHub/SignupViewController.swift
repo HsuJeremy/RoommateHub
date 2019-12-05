@@ -26,16 +26,20 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordConfirm: UITextField!
     
     var userCreated: Bool = false
+    var roomIdentifier: String? = nil
     
     @IBAction func signUpAction(_ sender: Any) {
         // Verify that all the fields are entered in
         guard let fullName = fullName.text else { return }
         let fullNameArr = fullName.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
         guard let hometown = hometown.text else { return }
+        let trimmedHometown = hometown.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
         guard let concentration = concentration.text else { return }
+        let trimmedConcentration = concentration.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
         guard let gradYear = gradYear.text else { return }
         if Int(gradYear) == nil { return }
         guard let house = house.text else { return }
+        let trimmedHouse = house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
         guard let roomNumber = roomNumber.text else { return }
         guard let age = age.text else { return }
         if Int(age) == nil { return }
@@ -44,6 +48,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         // Verify that the email is in proper format
         guard let email = email.text else { return }
+        let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
         
         // Verify that the password is more than 6 characters long
         guard let password = password.text else { return }
@@ -54,16 +59,16 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 
         
         // From official Firebase documentation
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        Auth.auth().createUser(withEmail: trimmedEmail, password: password) { authResult, error in
             if error == nil && authResult != nil {
                 // Create profileData dictionary
                 let profileData: [String : Any] = [
                     "firstName": fullNameArr[0],
                     "lastName": fullNameArr[1],
-                    "hometown": hometown,
-                    "concentration": concentration,
+                    "hometown": trimmedHometown,
+                    "concentration": trimmedConcentration,
                     "gradYear": Int(gradYear)!,
-                    "house": house,
+                    "house": trimmedHouse,
                     "roomNumber": roomNumber,
                     "age": Int(age)!,
                     "cellPhoneNumber": Int(cellPhoneNumber)!,
@@ -72,7 +77,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 
                 // Upload user profile to the cloud
                 let ref = Database.database().reference()
-                ref.child(self.createRoomIdentifier(house: house, roomNumber: roomNumber)).child(authResult!.user.uid).setValue(profileData)
+                self.roomIdentifier = self.createRoomIdentifier(house: house, roomNumber: roomNumber)
+                ref.child(self.roomIdentifier!).child(trimmedEmail.replacingOccurrences(of: "@", with: "_").replacingOccurrences(of: ".", with: "_")).setValue(profileData)
         
                 self.userCreated = true
                 print("User created")
