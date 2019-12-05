@@ -8,6 +8,7 @@
 //  Repurposed NotesListViewController.swift from Notes app
 
 import UIKit
+import FirebaseDatabase
 
 class RoommateListViewController: UITableViewController {
     var roommates: [Roommate] = []
@@ -21,6 +22,17 @@ class RoommateListViewController: UITableViewController {
         super.viewDidLoad()
         RoommateManager.shared.clear()
         RoommateManager.shared.fillDummyData()
+        
+//        let ref = Database.database().reference()
+//        
+//        ref.child("-LvIRWRC06uvJx-z132Q").observeSingleEvent(of: .value, with: { (snapshot) in
+//            // Get user value
+//            let value = snapshot.value as? NSDictionary
+//            print("It works!")
+//            print(value)
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

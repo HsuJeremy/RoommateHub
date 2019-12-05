@@ -10,5 +10,7 @@ target 'RoommateHub' do
   pod 'FirebaseUI'
   pod 'Firebase/Core'
   pod 'FirebaseUI/Auth'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
 end
