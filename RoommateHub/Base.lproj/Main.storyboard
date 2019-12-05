@@ -348,32 +348,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nmz-ur-EMB">
-                                <rect key="frame" x="132" y="138" width="41.666666666666664" height="20.333333333333332"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7dI-6e-JIt">
+                                <rect key="frame" x="40" y="138" width="295" height="131.66666666666663"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-RG-vl2">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Harvard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRy-uh-vac">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambridge, MA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp9-2d-rQJ">
+                                        <rect key="frame" x="0.0" y="20.333333333333343" width="295" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Economics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcJ-OV-B68">
+                                        <rect key="frame" x="0.0" y="40.666666666666657" width="295" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cS-jp-l3i">
+                                        <rect key="frame" x="0.0" y="61.000000000000007" width="295" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1k-S6-276">
+                                        <rect key="frame" x="0.0" y="81.333333333333343" width="295" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6w-K9-AWM">
+                                        <rect key="frame" x="0.0" y="101.66666666666666" width="295" height="30"/>
+                                        <state key="normal" title="Send iMessage"/>
+                                        <connections>
+                                            <action selector="message:" destination="hag-Lj-i2U" eventType="touchUpInside" id="NYt-wc-EfP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6B-au-g9h">
-                                <rect key="frame" x="74" y="437" width="221" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7dI-6e-JIt" firstAttribute="leading" secondItem="R2e-gA-DFx" secondAttribute="leading" constant="40" id="0MA-cn-xTG"/>
+                            <constraint firstItem="7dI-6e-JIt" firstAttribute="top" secondItem="R2e-gA-DFx" secondAttribute="top" constant="50" id="ncf-hZ-qYX"/>
+                            <constraint firstItem="R2e-gA-DFx" firstAttribute="trailing" secondItem="7dI-6e-JIt" secondAttribute="trailing" constant="40" id="nji-dN-3OS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="R2e-gA-DFx"/>
                     </view>
                     <navigationItem key="navigationItem" id="6w1-t7-4Qp"/>
                     <connections>
-                        <outlet property="another" destination="t6B-au-g9h" id="oW4-BM-0vt"/>
-                        <outlet property="something" destination="kFQ-RG-vl2" id="aj7-ed-O8N"/>
+                        <outlet property="age" destination="s1k-S6-276" id="BhG-wy-q7y"/>
+                        <outlet property="concentration" destination="hcJ-OV-B68" id="cjk-bh-YuA"/>
+                        <outlet property="fullName" destination="qRy-uh-vac" id="elw-1A-eca"/>
+                        <outlet property="gradYear" destination="2cS-jp-l3i" id="gT1-gZ-PIZ"/>
+                        <outlet property="hometown" destination="cp9-2d-rQJ" id="sup-Ox-CCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jG-B0-sMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

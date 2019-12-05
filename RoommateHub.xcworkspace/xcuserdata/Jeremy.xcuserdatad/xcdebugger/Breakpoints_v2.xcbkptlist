@@ -14,10 +14,8 @@
             filePath = "RoommateHub/RoommateListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,10 +28,8 @@
             filePath = "RoommateHub/RoommateListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "110"
+            endingLineNumber = "110">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,10 +42,8 @@
             filePath = "RoommateHub/RoommateListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "111"
+            endingLineNumber = "111">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,10 +56,8 @@
             filePath = "RoommateHub/RoommateListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "112"
+            endingLineNumber = "112">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,10 +70,8 @@
             filePath = "RoommateHub/RoommateListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "113"
+            endingLineNumber = "113">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,10 +84,8 @@
             filePath = "RoommateHub/RoommateListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "114"
+            endingLineNumber = "114">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,10 +98,8 @@
             filePath = "RoommateHub/RoommateListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "115"
+            endingLineNumber = "115">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -33,9 +33,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         guard let fullName = fullName.text else { return }
         let fullNameArr = fullName.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
         guard let hometown = hometown.text else { return }
-        let trimmedHometown = hometown.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
+        let trimmedHometown = hometown.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let concentration = concentration.text else { return }
-        let trimmedConcentration = concentration.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
+        let trimmedConcentration = concentration.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let gradYear = gradYear.text else { return }
         if Int(gradYear) == nil { return }
         guard let house = house.text else { return }
