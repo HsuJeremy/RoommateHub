@@ -44,5 +44,11 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "homeToRoommateList", let destination = segue.destination as? RoommateListViewController {
+            destination.roomIdentifier = roomIdentifier
+        }
+    }
 }
 

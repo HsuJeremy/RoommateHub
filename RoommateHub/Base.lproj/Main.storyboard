@@ -29,7 +29,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Roommates"/>
                                         <connections>
-                                            <segue destination="iF8-93-3zd" kind="show" id="8Wq-3L-bea"/>
+                                            <segue destination="iF8-93-3zd" kind="show" identifier="homeToRoommateList" id="8Wq-3L-bea"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-Tp-2U9">
@@ -254,85 +254,6 @@
             </objects>
             <point key="canvasLocation" x="3920.8000000000002" y="884.48275862068965"/>
         </scene>
-        <!--Roommate View Controller-->
-        <scene sceneID="Te6-Lr-c7y">
-            <objects>
-                <viewController id="5dc-eU-sbO" customClass="RoommateViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lmy-i4-7Jm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Vi-Pv-8D0">
-                                <rect key="frame" x="50" y="138" width="275" height="152"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geena Kim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSO-3v-9P8">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GnaKim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhA-Gp-6hL">
-                                        <rect key="frame" x="0.0" y="20.333333333333343" width="275" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staten Island" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC0-L7-9wE">
-                                        <rect key="frame" x="0.0" y="40.666666666666657" width="275" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer Science" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLP-by-kKR">
-                                        <rect key="frame" x="0.0" y="61.000000000000007" width="275" height="20.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSx-I4-MSn">
-                                        <rect key="frame" x="0.0" y="81.333333333333343" width="275" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 Years Old" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNz-I7-rlq">
-                                        <rect key="frame" x="0.0" y="101.66666666666666" width="275" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-Z2-8Kz">
-                                        <rect key="frame" x="0.0" y="122" width="275" height="30"/>
-                                        <state key="normal" title="Send iMessage"/>
-                                        <connections>
-                                            <action selector="sendMessageButton:" destination="5dc-eU-sbO" eventType="touchUpInside" id="Jsn-XB-eRX"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="pFn-61-NBz" firstAttribute="trailing" secondItem="5Vi-Pv-8D0" secondAttribute="trailing" constant="50" id="73f-cJ-TYk"/>
-                            <constraint firstItem="5Vi-Pv-8D0" firstAttribute="leading" secondItem="pFn-61-NBz" secondAttribute="leading" constant="50" id="Dvc-Mb-EHP"/>
-                            <constraint firstItem="5Vi-Pv-8D0" firstAttribute="top" secondItem="pFn-61-NBz" secondAttribute="top" constant="50" id="uen-c5-PJ5"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="pFn-61-NBz"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="0Be-HN-byT"/>
-                    <connections>
-                        <outlet property="ageLabel" destination="vNz-I7-rlq" id="0oX-jh-NvU"/>
-                        <outlet property="concentrationLabel" destination="fLP-by-kKR" id="S10-XV-NVb"/>
-                        <outlet property="fullNameLabel" destination="hSO-3v-9P8" id="Ahf-DE-XrC"/>
-                        <outlet property="gradYearLabel" destination="jSx-I4-MSn" id="thu-gX-vfB"/>
-                        <outlet property="hometownLabel" destination="dC0-L7-9wE" id="qfU-kT-GHE"/>
-                        <outlet property="usernameLabel" destination="NhA-Gp-6hL" id="H4V-3g-wGo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L4W-TD-8gd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1957.5999999999999" y="-1390.6403940886701"/>
-        </scene>
         <!--Login-->
         <scene sceneID="s68-ls-HEq">
             <objects>
@@ -350,7 +271,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john@harvard.edu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jva-Y1-YpS">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="w@w.com" borderStyle="roundedRect" placeholder="john@harvard.edu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jva-Y1-YpS">
                                         <rect key="frame" x="0.0" y="20.333333333333343" width="295" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -361,7 +282,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MF-Tq-dB2">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MF-Tq-dB2">
                                         <rect key="frame" x="0.0" y="74.666666666666657" width="295" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -372,7 +293,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Winthrop House" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pb6-5S-MDz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wayne" borderStyle="roundedRect" placeholder="Winthrop House" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pb6-5S-MDz">
                                         <rect key="frame" x="0.0" y="129" width="295" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -383,7 +304,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A20" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcy-DZ-47b">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" borderStyle="roundedRect" placeholder="A20" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcy-DZ-47b">
                                         <rect key="frame" x="0.0" y="183.33333333333331" width="295" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -419,6 +340,22 @@
             </objects>
             <point key="canvasLocation" x="770" y="-310"/>
         </scene>
+        <!--Roommate View Controller-->
+        <scene sceneID="nkh-DG-C2m">
+            <objects>
+                <viewController id="hag-Lj-i2U" customClass="RoommateViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ho4-cW-DRS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="R2e-gA-DFx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6w1-t7-4Qp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jG-B0-sMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1959" y="-1385"/>
+        </scene>
         <!--Roommates-->
         <scene sceneID="Cb3-LM-5qO">
             <objects>
@@ -436,7 +373,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5dc-eU-sbO" kind="show" identifier="RoommateSegue" id="EUc-mm-uGa"/>
+                                    <segue destination="hag-Lj-i2U" kind="show" id="VZ8-wp-BLm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -445,7 +382,13 @@
                             <outlet property="delegate" destination="iF8-93-3zd" id="lzD-J3-cql"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Roommates" id="8BO-Yv-wLv"/>
+                    <navigationItem key="navigationItem" title="Roommates" id="8BO-Yv-wLv">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="J2h-n6-got">
+                            <connections>
+                                <action selector="test:" destination="iF8-93-3zd" id="8Jj-Ag-cL9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-5g-hpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -15,7 +15,6 @@
 		10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */; };
 		3F4315F3239759B5003920EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F4315F2239759B5003920EA /* GoogleService-Info.plist */; };
 		3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */; };
-		3F5A15052396BBC400A8DD0D /* RoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */; };
 		3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15062396BBD300A8DD0D /* Roommate.swift */; };
 		3F72EA2723977C16006E40E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72EA2623977C16006E40E8 /* LoginViewController.swift */; };
 		3F7D991F23978EBE00EDF4EE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D991E23978EBE00EDF4EE /* SignupViewController.swift */; };
@@ -25,6 +24,7 @@
 		3FC7A9B2238F4BF80013F9DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC7A9B0238F4BF80013F9DA /* Main.storyboard */; };
 		3FC7A9B4238F4BF90013F9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */; };
 		3FC7A9B7238F4BF90013F9DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */; };
+		3FF518992399945500719CB7 /* RoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF518982399945500719CB7 /* RoommateViewController.swift */; };
 		6C3B3A449CE8B89E78C2A870 /* Pods_RoommateHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F17388304F48AEAA582AD0 /* Pods_RoommateHub.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,6 @@
 		10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseKeepingViewController.swift; sourceTree = "<group>"; };
 		3F4315F2239759B5003920EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateListViewController.swift; sourceTree = "<group>"; };
-		3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateViewController.swift; sourceTree = "<group>"; };
 		3F5A15062396BBD300A8DD0D /* Roommate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roommate.swift; sourceTree = "<group>"; };
 		3F72EA2623977C16006E40E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F7D991E23978EBE00EDF4EE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		3FC7A9B6238F4BF90013F9DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FC7A9B8238F4BF90013F9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC7A9BE238F4C120013F9DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3FF518982399945500719CB7 /* RoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateViewController.swift; sourceTree = "<group>"; };
 		753C1C4F6D3349A6ACF7C7F1 /* Pods-RoommateHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoommateHub.debug.xcconfig"; path = "Target Support Files/Pods-RoommateHub/Pods-RoommateHub.debug.xcconfig"; sourceTree = "<group>"; };
 		D65DE7C41710CBE797A34DA5 /* Pods-RoommateHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoommateHub.release.xcconfig"; path = "Target Support Files/Pods-RoommateHub/Pods-RoommateHub.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,10 +101,10 @@
 				3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */,
 				3FC7A9BE238F4C120013F9DA /* README.md */,
 				3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */,
-				3F5A15042396BBC400A8DD0D /* RoommateViewController.swift */,
 				3F5A15062396BBD300A8DD0D /* Roommate.swift */,
 				3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */,
 				3FC7A9AE238F4BF80013F9DA /* HomeViewController.swift */,
+				3FF518982399945500719CB7 /* RoommateViewController.swift */,
 				3FC7A9B0238F4BF80013F9DA /* Main.storyboard */,
 				3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */,
 				3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */,
@@ -263,12 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF518992399945500719CB7 /* RoommateViewController.swift in Sources */,
 				10B1F08E2397465E00BF00D3 /* HouseKeepingTask.swift in Sources */,
 				10B1F08C239715E000BF00D3 /* MessageListViewController.swift in Sources */,
 				10C5DDB82390348300031FDC /* ContractViewController.swift in Sources */,
 				3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */,
 				3FC7A9AF238F4BF80013F9DA /* HomeViewController.swift in Sources */,
-				3F5A15052396BBC400A8DD0D /* RoommateViewController.swift in Sources */,
 				3FC7A9AB238F4BF80013F9DA /* AppDelegate.swift in Sources */,
 				10C5DDBC239034CD00031FDC /* MessageViewController.swift in Sources */,
 				3F7D991F23978EBE00EDF4EE /* SignupViewController.swift in Sources */,

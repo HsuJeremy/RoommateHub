@@ -33,9 +33,29 @@ class LoginViewController: UIViewController {
             if error == nil && authResult != nil {
                 self!.roomIdentifier = house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0] + roomNumber.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
                 
-                // Allow segue
-                self?.userSignedIn = true
-                print("Signed in")
+                var correctRoom: Bool? = nil
+                
+                // Verify that roomIdentifier exists in database
+                let ref = Database.database().reference()
+                ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                    let value = snapshot.value as? NSDictionary
+                    let keys = value!.allKeys
+                    
+                    // Line to cast NSArray to Array by Patrick from StackOverflow
+                    let roomsArray: [String] = keys.compactMap({ $0 as? String })
+                    
+                    guard let room = self!.roomIdentifier else { return }
+                    
+                    // Allow segue only if the roomIdentifier is contained in the database
+                    if roomsArray.contains(room) {
+                        self?.userSignedIn = true
+                        print("Signed in")
+                    } else {
+                        print("Incorrect room")
+                    }
+                }) { (error) in
+                    print(error.localizedDescription)
+                }
             } else {
                 print(error)
             }
@@ -51,4 +71,6 @@ class LoginViewController: UIViewController {
             destination.roomIdentifier = roomIdentifier!
         }
     }
+    
+    var something: String? = nil
 }
