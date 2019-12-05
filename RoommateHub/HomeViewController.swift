@@ -10,8 +10,24 @@
 //to do: segues lol
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
+    
+    @IBAction func logOutAction(_ sender: Any) {
+        // From official Firebase documentation
+        do {
+            try Auth.auth().signOut()
+            print("Logged out")
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+        // From Ashika Kasiviswanathan on Medium.com
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initial = storyboard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = initial
+    }
     
     var homePageList: [String] = []
 //
