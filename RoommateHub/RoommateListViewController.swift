@@ -83,6 +83,8 @@ class RoommateListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoommateCell", for: indexPath)
+        print("When loading the table")
+        // print(roommates)
         cell.textLabel?.text = roommates[indexPath.row].firstName
         return cell
     }
@@ -90,7 +92,7 @@ class RoommateListViewController: UITableViewController {
     override func viewDidLoad() {
         let ref = Database.database().reference()
         
-        print(roomIdentifier!)
+        // print(roomIdentifier!)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -104,7 +106,7 @@ class RoommateListViewController: UITableViewController {
 //            print(error.localizedDescription)
 //        }
         
-        ref.child(roomIdentifier!).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child(roomIdentifier!).observe(.value, with: { (snapshot) in
                     // Get NSDictionary of user profiles
                     let roommateProfiles = snapshot.value as? NSDictionary
                     
@@ -117,14 +119,22 @@ class RoommateListViewController: UITableViewController {
                         let profileDict = (value as! [String : Any])
                         print(profileDict)
                         
+                        print("0")
+                        
                         // Unwrap each property of profile
                         guard let firstName = profileDict["firstName"] else { return }
+                        print("After first name")
                         guard let lastName = profileDict["lastName"] else { return }
+                        print("After last name")
                         guard let hometown = profileDict["hometown"] else { return }
-                        guard let concentration = profileDict["concetration"] else { return }
+                        print("After hometown")
+                        guard let concentration = profileDict["concentration"] else { return }
+                        print("After concentration")
                         guard let gradYear = profileDict["gradYear"] else { return }
                         guard let age = profileDict["age"] else { return }
                         guard let cellPhoneNumber = profileDict["cellPhoneNumber"] else { return }
+                        
+                        print("1")
                         
                         // Append new Roommate to result Array
                         self.roommates.append(Roommate(
@@ -137,10 +147,20 @@ class RoommateListViewController: UITableViewController {
                             cellPhoneNumber: cellPhoneNumber as! Int
                         ))
                         self.tableView.reloadData()
+                        print("About to print")
                         print(self.roommates)
+                        print("Done")
                     }
                 }) { (error) in
                     print(error.localizedDescription)
                 }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RoommateSegue",
+                let destination = segue.destination as? RoommateViewController,
+                let index = tableView.indexPathForSelectedRow?.row {
+            destination.roommate = roommates[index]
+        }
     }
 }

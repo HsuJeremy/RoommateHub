@@ -347,14 +347,38 @@
                     <view key="view" contentMode="scaleToFill" id="Ho4-cW-DRS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nmz-ur-EMB">
+                                <rect key="frame" x="132" y="138" width="41.666666666666664" height="20.333333333333332"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-RG-vl2">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6B-au-g9h">
+                                <rect key="frame" x="74" y="437" width="221" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="R2e-gA-DFx"/>
                     </view>
                     <navigationItem key="navigationItem" id="6w1-t7-4Qp"/>
+                    <connections>
+                        <outlet property="another" destination="t6B-au-g9h" id="oW4-BM-0vt"/>
+                        <outlet property="something" destination="kFQ-RG-vl2" id="aj7-ed-O8N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jG-B0-sMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1959" y="-1385"/>
+            <point key="canvasLocation" x="1957.5999999999999" y="-1385.4679802955666"/>
         </scene>
         <!--Roommates-->
         <scene sceneID="Cb3-LM-5qO">
@@ -373,7 +397,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hag-Lj-i2U" kind="show" id="VZ8-wp-BLm"/>
+                                    <segue destination="hag-Lj-i2U" kind="show" identifier="RoommateSegue" id="VZ8-wp-BLm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

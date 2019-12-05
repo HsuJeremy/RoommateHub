@@ -27,58 +27,55 @@ class RoommateManager {
     
 //    // Return an Array of all the roommate profiles nested within a specified roomIdentifier
     func getRoommates(roomIdentifier: String) -> [Roommate] {
+        let ref = Database.database().reference()
         var roommates: [Roommate] = []
         
-        let group = DispatchGroup()
-        group.enter()
+        ref.child(roomIdentifier).observe(.value, with: { (snapshot) in
+                        // Get NSDictionary of user profiles
+                        let roommateProfiles = snapshot.value as? NSDictionary
+                        
+                        // Unwrap roommateProfiles
+                        guard let profiles = roommateProfiles else { return }
+                        
+                        // Iterate through NSDictionary
+                        for (key, value) in profiles {
+                            // Cast profile as a Swift Dictionary
+                            let profileDict = (value as! [String : Any])
+                            print(profileDict)
+                            
+                            print("0")
+                            
+                            // Unwrap each property of profile
+                            guard let firstName = profileDict["firstName"] else { return }
+                            print("After first name")
+                            guard let lastName = profileDict["lastName"] else { return }
+                            print("After last name")
+                            guard let hometown = profileDict["hometown"] else { return }
+                            print("After hometown")
+                            guard let concentration = profileDict["concentration"] else { return }
+                            print("After concentration")
+                            guard let gradYear = profileDict["gradYear"] else { return }
+                            guard let age = profileDict["age"] else { return }
+                            guard let cellPhoneNumber = profileDict["cellPhoneNumber"] else { return }
+                            
+                            print("1")
+                            
+                            // Append new Roommate to result Array
+                            roommates.append(Roommate(
+                                firstName: firstName as! String,
+                                lastName: lastName as! String,
+                                hometown: hometown as! String,
+                                concentration: concentration as! String,
+                                gradYear: gradYear as! Int,
+                                age: age as! Int,
+                                cellPhoneNumber: cellPhoneNumber as! Int
+                            ))
+                        }
+                    }) { (error) in
+                        print(error.localizedDescription)
+                    }
         
-        ref.child(roomIdentifier).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get NSDictionary of user profiles
-            let roommateProfiles = snapshot.value as? NSDictionary
-            
-            // Unwrap roommateProfiles
-            guard let profiles = roommateProfiles else { return }
-            
-            // Iterate through NSDictionary
-            for (key, value) in profiles {
-                // Cast profile as a Swift Dictionary
-                let profileDict = (value as! [String : Any])
-                print(profileDict)
-                
-                // Unwrap each property of profile
-                guard let firstName = profileDict["firstName"] else { return }
-                guard let lastName = profileDict["lastName"] else { return }
-                guard let hometown = profileDict["hometown"] else { return }
-                guard let concentration = profileDict["concetration"] else { return }
-                guard let gradYear = profileDict["gradYear"] else { return }
-                guard let age = profileDict["age"] else { return }
-                guard let cellPhoneNumber = profileDict["cellPhoneNumber"] else { return }
-                
-                // Append new Roommate to result Array
-                roommates.append(Roommate(
-                    firstName: firstName as! String,
-                    lastName: lastName as! String,
-                    hometown: hometown as! String,
-                    concentration: concentration as! String,
-                    gradYear: gradYear as! Int,
-                    age: age as! Int,
-                    cellPhoneNumber: cellPhoneNumber as! Int
-                ))
-                
-                group.leave()
-//
-//                print("JEREMY WE DID IT")
-//                print(result)
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        group.notify(queue: .main) {
-            return roommates
-        }
-        
-        return [] 
+        return roommates
     } 
 }
 
