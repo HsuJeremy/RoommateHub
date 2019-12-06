@@ -11,7 +11,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var house: UITextField!
@@ -60,6 +60,7 @@ class LoginViewController: UIViewController {
                 print(error)
             }
         }
+        view.endEditing(true)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -72,5 +73,54 @@ class LoginViewController: UIViewController {
         }
     }
     
-    var something: String? = nil
+    // From Code Pro on YouTube
+    private func configureTextFields() {
+        email.delegate = self
+        password.delegate = self
+        house.delegate = self
+        roomNumber.delegate = self
+    }
+    
+    // Code structure from Vinoth Vino on StackOverflow
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == email {
+            textField.resignFirstResponder()
+            password.becomeFirstResponder()
+        } else if textField == password {
+            textField.resignFirstResponder()
+            house.becomeFirstResponder()
+        } else if textField == house {
+            textField.resignFirstResponder()
+            roomNumber.becomeFirstResponder()
+        } else if textField == roomNumber {
+            textField.resignFirstResponder()
+        }
+        return true 
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Congifure UITextField delegates and tap gestures
+        configureTextFields()
+        configureTapGesture()
+        
+        // Appropriate keyboards for each UITextField
+        self.email.keyboardType = UIKeyboardType.emailAddress
+        self.password.keyboardType = UIKeyboardType.asciiCapable
+        self.house.keyboardType = UIKeyboardType.asciiCapable
+        self.roomNumber.keyboardType = UIKeyboardType.asciiCapable
+    }
+    
+    // From Code Pro on YouTube
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    // From Code Pro on YouTube
+    @objc func handleTap() {
+        print("Handle tap was called")
+        view.endEditing(true)
+    }
 }
