@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var house: UITextField!
     @IBOutlet weak var roomNumber: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var userSignedIn: Bool = false
     var roomIdentifier: String? = nil
@@ -31,9 +32,7 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: trimmedEmail, password: password) { [weak self] authResult, error in
             guard let strongSelf = self else { return }
             if error == nil && authResult != nil {
-                self!.roomIdentifier = house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0] + roomNumber.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
-                
-                var correctRoom: Bool? = nil
+                self!.roomIdentifier = house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased() + roomNumber.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased()
                 
                 // Verify that roomIdentifier exists in database
                 let ref = Database.database().reference()
@@ -52,6 +51,7 @@ class LoginViewController: UIViewController {
                         print("Signed in")
                     } else {
                         print("Incorrect room")
+                        self?.errorLabel.text = "Incorrect room"
                     }
                 }) { (error) in
                     print(error.localizedDescription)

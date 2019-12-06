@@ -93,7 +93,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     func createRoomIdentifier(house: String, roomNumber: String) -> String {
-        return house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0] + roomNumber.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
+        return house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased() + roomNumber.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased()
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
