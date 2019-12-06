@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-struct Task {
+class Task {
     var name = ""
     var important = false
 }

@@ -432,10 +432,10 @@
             </objects>
             <point key="canvasLocation" x="2954" y="107"/>
         </scene>
-        <!--View Controller-->
+        <!--Task Add View Controller-->
         <scene sceneID="jch-Ko-6nJ">
             <objects>
-                <viewController id="wx9-1g-3g2" sceneMemberID="viewController">
+                <viewController id="wx9-1g-3g2" customClass="TaskAddViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NGv-7R-3Hg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,6 +462,9 @@
                                 <rect key="frame" x="171" y="424" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ADD"/>
+                                <connections>
+                                    <action selector="addClicked:" destination="wx9-1g-3g2" eventType="touchUpInside" id="Dzo-W6-LsM"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bC-3K-8bs">
                                 <rect key="frame" x="137" y="199" width="97" height="34"/>
@@ -474,6 +477,13 @@
                         <viewLayoutGuide key="safeArea" id="zDg-28-ZZQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Gje-Mn-a8q"/>
+                    <connections>
+                        <outlet property="addButton" destination="Ve5-ms-nYz" id="zrD-kY-udY"/>
+                        <outlet property="importantLabel" destination="9Yq-Po-Gzl" id="vsb-Z5-exz"/>
+                        <outlet property="importantSwitch" destination="6Gt-Ab-LOy" id="4KV-sN-kXt"/>
+                        <outlet property="titleLabel" destination="7Uq-PT-PJR" id="igA-F5-S7G"/>
+                        <outlet property="titleTextField" destination="1bC-3K-8bs" id="WFM-Im-J8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FE-My-WF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -28,12 +28,12 @@ class TaskListTableViewController: UITableViewController {
     
     func createTask() -> [Task] {
         
-        var milk = Task()
+        let milk = Task()
         milk.name = "get milk"
         milk.important = true
-        var clean = Task()
+        let clean = Task()
         clean.name = "clean room"
-        var cat = Task()
+        let cat = Task()
         cat.name = "feed cat"
 
         return [milk, clean, cat]
@@ -105,14 +105,15 @@ class TaskListTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let addingVC = segue.destination as! TaskAddViewController
+        addingVC.prevVC = self
     }
-    */
+    
 
 }
