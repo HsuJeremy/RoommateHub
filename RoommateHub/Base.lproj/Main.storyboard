@@ -397,7 +397,7 @@
             </objects>
             <point key="canvasLocation" x="1958" y="-642"/>
         </scene>
-        <!--Task List Table View Controller-->
+        <!--Task List-->
         <scene sceneID="cFF-nv-Pxb">
             <objects>
                 <tableViewController id="iiV-3O-kxe" customClass="TaskListTableViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -420,8 +420,8 @@
                             <outlet property="delegate" destination="iiV-3O-kxe" id="OoN-yT-BPo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rCP-dk-mkq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="SE7-Xd-Dm2">
+                    <navigationItem key="navigationItem" title="Task List" id="rCP-dk-mkq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SE7-Xd-Dm2">
                             <connections>
                                 <segue destination="wx9-1g-3g2" kind="show" id="0g0-dc-vIu"/>
                             </connections>

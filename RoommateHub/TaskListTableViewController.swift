@@ -2,16 +2,20 @@
 //  TaskListTableViewController.swift
 //  RoommateHub
 //
-//  Created by Geena Kim on 12/5/19.
+//  Created by Geena Kim on 12/4/19.
 //  Copyright © 2019 Jeremy Hsu. All rights reserved.
 //
 
 import UIKit
 
 class TaskListTableViewController: UITableViewController {
+    
+    var tasks : [Task] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tasks = createTask()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -21,26 +25,50 @@ class TaskListTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    func createTask() -> [Task] {
+        
+        var milk = Task()
+        milk.name = "get milk"
+        milk.important = true
+        var clean = Task()
+        clean.name = "clean room"
+        var cat = Task()
+        cat.name = "feed cat"
 
+        return [milk, clean, cat]
+    }
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
+ */
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tasks.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
 
         // Configure the cell...
+        let task = tasks[indexPath.row]
+        //cell.textLabel?.text = task.name
+        
+        if task.important {
+            cell.textLabel?.text = "* " + task.name + " *"
+        }
+        else{
+            cell.textLabel?.text = " " + task.name
+        }
+        
+        //print("fill in works")
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -58,7 +86,7 @@ class TaskListTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
