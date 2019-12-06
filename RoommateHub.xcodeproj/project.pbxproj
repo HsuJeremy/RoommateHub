@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103E54B92399A00A00AED5CA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103E54B82399A00A00AED5CA /* Task.swift */; };
+		103E54BB2399A11100AED5CA /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103E54BA2399A11100AED5CA /* TaskListTableViewController.swift */; };
+		103E54BF239A916F00AED5CA /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103E54BE239A916F00AED5CA /* TaskViewController.swift */; };
 		10B1F08A239715C700BF00D3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1F089239715C700BF00D3 /* Message.swift */; };
 		10B1F08C239715E000BF00D3 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1F08B239715E000BF00D3 /* MessageListViewController.swift */; };
-		10B1F08E2397465E00BF00D3 /* HouseKeepingTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1F08D2397465E00BF00D3 /* HouseKeepingTask.swift */; };
 		10C5DDB82390348300031FDC /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDB72390348300031FDC /* ContractViewController.swift */; };
 		10C5DDBC239034CD00031FDC /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBB239034CD00031FDC /* MessageViewController.swift */; };
-		10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */; };
 		3F4315F3239759B5003920EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F4315F2239759B5003920EA /* GoogleService-Info.plist */; };
 		3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */; };
 		3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15062396BBD300A8DD0D /* Roommate.swift */; };
@@ -30,12 +31,13 @@
 
 /* Begin PBXFileReference section */
 		01F17388304F48AEAA582AD0 /* Pods_RoommateHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoommateHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		103E54B82399A00A00AED5CA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		103E54BA2399A11100AED5CA /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
+		103E54BE239A916F00AED5CA /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		10B1F089239715C700BF00D3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		10B1F08B239715E000BF00D3 /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
-		10B1F08D2397465E00BF00D3 /* HouseKeepingTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseKeepingTask.swift; sourceTree = "<group>"; };
 		10C5DDB72390348300031FDC /* ContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
 		10C5DDBB239034CD00031FDC /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseKeepingViewController.swift; sourceTree = "<group>"; };
 		3F4315F2239759B5003920EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateListViewController.swift; sourceTree = "<group>"; };
 		3F5A15062396BBD300A8DD0D /* Roommate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roommate.swift; sourceTree = "<group>"; };
@@ -109,14 +111,15 @@
 				3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */,
 				3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */,
 				3F7D991E23978EBE00EDF4EE /* SignupViewController.swift */,
-				10B1F08D2397465E00BF00D3 /* HouseKeepingTask.swift */,
-				3FC7A9B8238F4BF90013F9DA /* Info.plist */,
+				3F72EA2623977C16006E40E8 /* LoginViewController.swift */,
 				3F4315F2239759B5003920EA /* GoogleService-Info.plist */,
+				3FC7A9B8238F4BF90013F9DA /* Info.plist */,
+				103E54BA2399A11100AED5CA /* TaskListTableViewController.swift */,
+				103E54BE239A916F00AED5CA /* TaskViewController.swift */,
+				103E54B82399A00A00AED5CA /* Task.swift */,
 				10C5DDBB239034CD00031FDC /* MessageViewController.swift */,
 				10B1F089239715C700BF00D3 /* Message.swift */,
 				10B1F08B239715E000BF00D3 /* MessageListViewController.swift */,
-				10C5DDBD239034E600031FDC /* HouseKeepingViewController.swift */,
-				3F72EA2623977C16006E40E8 /* LoginViewController.swift */,
 			);
 			path = RoommateHub;
 			sourceTree = "<group>";
@@ -264,8 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF518992399945500719CB7 /* RoommateViewController.swift in Sources */,
-				10B1F08E2397465E00BF00D3 /* HouseKeepingTask.swift in Sources */,
 				10B1F08C239715E000BF00D3 /* MessageListViewController.swift in Sources */,
+				103E54BF239A916F00AED5CA /* TaskViewController.swift in Sources */,
 				10C5DDB82390348300031FDC /* ContractViewController.swift in Sources */,
 				3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */,
 				3FC7A9AF238F4BF80013F9DA /* HomeViewController.swift in Sources */,
@@ -274,8 +277,9 @@
 				3F7D991F23978EBE00EDF4EE /* SignupViewController.swift in Sources */,
 				3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */,
 				10B1F08A239715C700BF00D3 /* Message.swift in Sources */,
-				10C5DDBE239034E600031FDC /* HouseKeepingViewController.swift in Sources */,
 				3F72EA2723977C16006E40E8 /* LoginViewController.swift in Sources */,
+				103E54B92399A00A00AED5CA /* Task.swift in Sources */,
+				103E54BB2399A11100AED5CA /* TaskListTableViewController.swift in Sources */,
 				3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
