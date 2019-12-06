@@ -438,13 +438,7 @@
                             <outlet property="delegate" destination="iF8-93-3zd" id="lzD-J3-cql"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Roommates" id="8BO-Yv-wLv">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="J2h-n6-got">
-                            <connections>
-                                <action selector="test:" destination="iF8-93-3zd" id="8Jj-Ag-cL9"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Roommates" id="8BO-Yv-wLv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-5g-hpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -748,7 +742,6 @@
                                         <state key="normal" title="Sign up"/>
                                         <connections>
                                             <action selector="signUpAction:" destination="L95-4G-EUH" eventType="touchUpInside" id="VvO-h5-Qqb"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="signupToHome" id="gNf-WW-Bmb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -775,6 +768,7 @@
                         <outlet property="password" destination="95f-97-oez" id="eFr-ud-Ewf"/>
                         <outlet property="passwordConfirm" destination="MAJ-M0-jg6" id="3hQ-bh-WmY"/>
                         <outlet property="roomNumber" destination="bNT-HA-3XN" id="8jX-qo-QGf"/>
+                        <outlet property="signUp" destination="XEC-M1-hCe" id="c46-yH-T9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmc-Ym-vvo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -824,7 +818,4 @@
             <point key="canvasLocation" x="-369" y="117"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="wyK-AZ-tQb"/>
-    </inferredMetricsTieBreakers>
 </document>

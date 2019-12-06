@@ -13,7 +13,6 @@ import MessageUI
 class RoommateViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var hometown: UILabel!
-    
     @IBOutlet weak var concentration: UILabel!
     @IBOutlet weak var gradYear: UILabel!
     @IBOutlet weak var age: UILabel!
@@ -31,7 +30,7 @@ class RoommateViewController: UIViewController, MFMessageComposeViewControllerDe
         composeVC.messageComposeDelegate = self
          
         // Configure the fields of the interface.
-        composeVC.recipients = ["6502184411"]
+        composeVC.recipients = [String(roommate!.cellPhoneNumber)]
         composeVC.body = "Hello from RoommateHub!"
          
         // Present the view controller modally.

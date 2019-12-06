@@ -12,10 +12,6 @@ class RoommateListViewController: UITableViewController {
     var roommates: [Roommate] = []
     var roomIdentifier: String? = nil
     
-    @IBAction func test(_ sender: Any) {
-        print(self.roommates)
-    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -26,8 +22,6 @@ class RoommateListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoommateCell", for: indexPath)
-        print("When loading the table")
-        // print(roommates)
         cell.textLabel?.text = roommates[indexPath.row].firstName
         return cell
     }

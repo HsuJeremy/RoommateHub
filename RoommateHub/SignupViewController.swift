@@ -24,6 +24,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var passwordConfirm: UITextField!
+    @IBOutlet weak var signUp: UIButton!
     
     var userCreated: Bool = false
     var roomIdentifier: String? = nil
@@ -86,31 +87,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 print(error!)
             }
         }
+        
+        // Hide button when hit
+        signUp.isHidden = true
     }
     
     func createRoomIdentifier(house: String, roomNumber: String) -> String {
         return house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0] + roomNumber.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        // CodeWithChris on Youtube
-//        let ref = Database.database().reference()
-//        ref.childByAutoId().setValue([
-//            "name": "Jeremy",
-//            "concentration": "Computer Science"
-//        ])
-//
-//        // Firebase Realtime Database documentation
-//        ref.child("-LvIRWRC06uvJx-z132Q").observeSingleEvent(of: .value, with: { (snapshot) in
-//            // Get user value
-//            let value = snapshot.value as? NSDictionary
-//            print("It works!")
-//            print(value)
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
