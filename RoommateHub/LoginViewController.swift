@@ -105,11 +105,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         configureTextFields()
         configureTapGesture()
         
-        // Appropriate keyboards for each UITextField
-        self.email.keyboardType = UIKeyboardType.emailAddress
-        self.password.keyboardType = UIKeyboardType.asciiCapable
-        self.house.keyboardType = UIKeyboardType.asciiCapable
-        self.roomNumber.keyboardType = UIKeyboardType.asciiCapable
+        // Relevant keyboards for each UITextField
+        setRelevantKeyboards()
     }
     
     // From Code Pro on YouTube
@@ -122,5 +119,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @objc func handleTap() {
         print("Handle tap was called")
         view.endEditing(true)
+    }
+    
+    // Sets relevant keyboards for each UITextField
+    private func setRelevantKeyboards() {
+        self.email.keyboardType = UIKeyboardType.emailAddress
+        self.password.keyboardType = UIKeyboardType.asciiCapable
+        self.house.keyboardType = UIKeyboardType.asciiCapable
+        self.roomNumber.keyboardType = UIKeyboardType.asciiCapable
     }
 }

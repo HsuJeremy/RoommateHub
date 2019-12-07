@@ -75,7 +75,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     "cellPhoneNumber": Int(cellPhoneNumber)!,
                 ]
             
-                
                 // Upload user profile to the cloud
                 let ref = Database.database().reference()
                 self.roomIdentifier = self.createRoomIdentifier(house: house, roomNumber: roomNumber)
@@ -98,5 +97,96 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return self.userCreated
+    }
+    
+    // From Code Pro on YouTube
+    private func configureTextFields() {
+        fullName.delegate = self
+        hometown.delegate = self
+        concentration.delegate = self
+        gradYear.delegate = self
+        house.delegate = self
+        roomNumber.delegate = self
+        age.delegate = self
+        cellPhoneNumber.delegate = self
+        email.delegate = self
+        password.delegate = self
+        passwordConfirm.delegate = self
+    }
+    
+    // Code structure from Vinoth Vino on StackOverflow
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == fullName {
+            textField.resignFirstResponder()
+            hometown.becomeFirstResponder()
+        } else if textField == hometown {
+            textField.resignFirstResponder()
+            concentration.becomeFirstResponder()
+        } else if textField == concentration {
+            textField.resignFirstResponder()
+            gradYear.becomeFirstResponder()
+        } else if textField == gradYear {
+            textField.resignFirstResponder()
+            house.becomeFirstResponder()
+        } else if textField == house {
+            textField.resignFirstResponder()
+            roomNumber.becomeFirstResponder()
+        } else if textField == roomNumber {
+            textField.resignFirstResponder()
+            age.becomeFirstResponder()
+        } else if textField == age {
+            textField.resignFirstResponder()
+            cellPhoneNumber.becomeFirstResponder()
+        } else if textField == cellPhoneNumber {
+            textField.resignFirstResponder()
+            email.becomeFirstResponder()
+        } else if textField == email {
+            textField.resignFirstResponder()
+            password.becomeFirstResponder()
+        } else if textField == password {
+            textField.resignFirstResponder()
+            passwordConfirm.becomeFirstResponder()
+        } else if textField == passwordConfirm {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Congifure UITextField delegates and tap gestures
+        configureTextFields()
+        configureTapGesture()
+        
+        // Relevant keyboards for each UITextField
+        setRelevantKeyboards()
+    }
+    
+    // From Code Pro on YouTube
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    // From Code Pro on YouTube
+    @objc func handleTap() {
+        print("Handle tap was called")
+        view.endEditing(true)
+    }
+    
+    // Sets relevant keyboards for each UITextField
+    private func setRelevantKeyboards() {
+        self.fullName.keyboardType = UIKeyboardType.asciiCapable
+        self.hometown.keyboardType = UIKeyboardType.asciiCapable
+        self.concentration.keyboardType = UIKeyboardType.asciiCapable
+        self.gradYear.keyboardType = UIKeyboardType.numberPad
+        self.house.keyboardType = UIKeyboardType.asciiCapable
+        self.roomNumber.keyboardType = UIKeyboardType.namePhonePad
+        self.age.keyboardType = UIKeyboardType.numberPad
+        self.cellPhoneNumber.keyboardType = UIKeyboardType.phonePad
+        self.email.keyboardType = UIKeyboardType.emailAddress
+        self.password.keyboardType = UIKeyboardType.asciiCapable
+        self.passwordConfirm.keyboardType = UIKeyboardType.asciiCapable
     }
 }

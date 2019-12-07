@@ -7,11 +7,12 @@
 //
 
 import Foundation
-
+import FirebaseDatabase
+import FirebaseStorage
 import UIKit
 
 class ContractViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @IBOutlet weak var contractTitle: UILabel!
+    //@IBOutlet weak var contractTitle: UILabel!
     @IBOutlet weak var contractImage: UIImageView!
     
     
