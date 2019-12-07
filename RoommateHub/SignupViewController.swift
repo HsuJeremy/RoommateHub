@@ -78,17 +78,15 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 // Upload user profile to the cloud
                 let ref = Database.database().reference()
                 self.roomIdentifier = self.createRoomIdentifier(house: house, roomNumber: roomNumber)
-                ref.child(self.roomIdentifier!).child(trimmedEmail.replacingOccurrences(of: "@", with: "_").replacingOccurrences(of: ".", with: "_")).setValue(profileData)
+                ref.child(self.roomIdentifier!).child("users").child(trimmedEmail.replacingOccurrences(of: "@", with: "_").replacingOccurrences(of: ".", with: "_")).setValue(profileData)
         
                 self.userCreated = true
+                self.signUp.isHidden = true
                 print("User created")
             } else {
                 print(error!)
             }
         }
-        
-        // Hide button when hit
-        signUp.isHidden = true
     }
     
     func createRoomIdentifier(house: String, roomNumber: String) -> String {
