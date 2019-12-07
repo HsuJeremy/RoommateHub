@@ -7,7 +7,6 @@
 //
 
 //this view controller is for the HOMEPAGE and just directs you to all the other storyboards
-//to do: segues lol
 
 import UIKit
 import Firebase

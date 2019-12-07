@@ -152,7 +152,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="u7y-vG-x9C" kind="show" identifier="MessageSegue" id="yrG-cS-f2G"/>
+                                    <segue destination="u7y-vG-x9C" kind="show" id="Nax-fd-WMb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

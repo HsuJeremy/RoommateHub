@@ -12,4 +12,3 @@ struct Roommate {
     var firstName, lastName, hometown, concentration: String
     var gradYear, age, cellPhoneNumber: Int
 }
-
