@@ -28,11 +28,7 @@ class MessageViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         message!.content = contentTextView.text
-        MessageManager.shared.saveMessage(message: message!)
-    }
-    @IBAction func deleteMessage() {
-        MessageManager.shared.deleteMessage(message: message!)
-        navigationController?.popViewController(animated: true)
+        //MessageManager.shared.saveMessage(message: message!)
     }
 
 }

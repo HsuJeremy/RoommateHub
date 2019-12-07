@@ -7,34 +7,15 @@
 //
 
 import Foundation
-import SQLite3
+import FirebaseDatabase
 
 struct Message {
-    var id: Int32
+    //var id: Int32
     var content: String
-    
-    //var changedAlready = false
-    let currentTime = Date().time()
+    var currentTime: String
 }
 
-//coderwall.com date timestamp formatting
-extension Date {
-    func time() -> String! {
-        let date = Date()
-        let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let formattedDate = format.string(from: date)
-        print(formattedDate)
-        /*
-        let calendar = Calendar.current
-        calendar.component(.year, from: date)
-        calendar.component(.month, from: date)
-        calendar.component(.day, from: date)
-*/
-        
-        return(formattedDate)
-    }
-}
+
 
 class MessageManager {
     var database: OpaquePointer? //pointer to database
@@ -44,6 +25,9 @@ class MessageManager {
     private init() { //nobody else can instantiate this class (the private)-compiler will say nO
     }
     
+    
+}
+ /*
     func connect() {
         if database != nil { //if you connected to query, don't do anything lol ur already connected
             return
@@ -143,7 +127,8 @@ class MessageManager {
         
         sqlite3_finalize(statement)
     }
-    
+    */
+    /*
     func deleteMessage(message: Message) {
         connect()
         
@@ -167,5 +152,6 @@ class MessageManager {
         sqlite3_finalize(statement)
     }
 
-}
+
+} */
 

@@ -35,9 +35,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-Tp-2U9">
                                         <rect key="frame" x="0.0" y="51" width="185" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="Housekeeping"/>
+                                        <state key="normal" title="Task List"/>
                                         <connections>
-                                            <segue destination="iiV-3O-kxe" kind="show" id="kSv-hK-8u7"/>
+                                            <segue destination="iiV-3O-kxe" kind="show" identifier="homeToTaskList" id="kSv-hK-8u7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvN-Hf-DSh">
@@ -45,7 +45,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Message Board"/>
                                         <connections>
-                                            <segue destination="KfC-jn-fhZ" kind="show" identifier="" id="eyy-dq-Uhk"/>
+                                            <segue destination="KfC-jn-fhZ" kind="show" identifier="homeToMessageList" id="eyy-dq-Uhk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lC-Fw-ilp">
@@ -418,10 +418,10 @@
             </objects>
             <point key="canvasLocation" x="1958" y="-642"/>
         </scene>
-        <!--View Controller-->
+        <!--Task Completed View Controller-->
         <scene sceneID="dVh-Sb-rmt">
             <objects>
-                <viewController id="Pyb-Vl-xN1" sceneMemberID="viewController">
+                <viewController id="Pyb-Vl-xN1" customClass="TaskCompletedViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0yW-QN-B86">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -443,6 +443,10 @@
                         <viewLayoutGuide key="safeArea" id="FAQ-vN-Bcy"/>
                     </view>
                     <navigationItem key="navigationItem" id="4mI-cT-1OG"/>
+                    <connections>
+                        <outlet property="completedButton" destination="4HW-7e-fSS" id="oeB-Gt-7Ap"/>
+                        <outlet property="titleLabel" destination="ESK-wX-dg0" id="fEi-3l-rVb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ByJ-KH-q4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

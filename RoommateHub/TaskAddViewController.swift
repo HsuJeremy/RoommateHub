@@ -8,6 +8,7 @@
 //Youtube Sergey Kargopolov
 
 import UIKit
+import FirebaseDatabase
 
 class TaskAddViewController: UIViewController {
     
@@ -27,7 +28,9 @@ class TaskAddViewController: UIViewController {
     @IBAction func addClicked(_ sender: Any) {
         let task = Task()
         task.name = titleTextField.text!
-        task.important = importantSwitch.isOn
+        if importantSwitch.isOn{
+            task.important = "true"
+        }
         
         prevVC.tasks.append(task)
         prevVC.tableView.reloadData() //update tableView
