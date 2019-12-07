@@ -152,7 +152,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="u7y-vG-x9C" kind="show" id="Nax-fd-WMb"/>
+                                    <segue destination="u7y-vG-x9C" kind="show" identifier="MessageSegue" id="Nax-fd-WMb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -188,6 +188,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TS-z8-gHN">
+                                <rect key="frame" x="16" y="757" width="285" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -207,6 +214,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="m88-wJ-XOF" id="F5J-k1-ba2"/>
+                        <outlet property="timeLabel" destination="2TS-z8-gHN" id="XA9-dH-FZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJM-UW-tfy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,9 +8,12 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
+
 
 class MessagesListViewController: UITableViewController {
     var messages: [Message] = []
+    var roomIdentifier: String? = nil
     
     @IBAction func createMessage() {
         let _ = MessageManager.shared.create()
@@ -42,6 +45,41 @@ class MessagesListViewController: UITableViewController {
         return cell
     }
     
+    override func viewDidLoad() {
+        let ref = Database.database().reference()
+        
+        ref.child(roomIdentifier!).observe(.value, with: { (snapshot) in
+            // Get NSDictionary of messages on the roommate message board
+            let roommateMessageBoard = snapshot.value as? NSDictionary
+            
+            // Unwrap roommateMessageBoard
+            guard let messageBoard = roommateMessageBoard else { return }
+            
+            // Iterate through NSDictionary
+            for (key, value) in messageBoard {
+                // Cast messageBoard as a Swift Dictionary
+                let messageBoardDict = (value as! [String : Any])
+                print(messageBoardDict)
+                
+                // Unwrap each property of profile
+                guard let id = messageBoardDict["id"] else { return }
+                guard let content = messageBoardDict["content"] else { return }
+                guard let currentTime = messageBoardDict["currentTime"] else { return }
+
+                // Append new Roommate to result Array
+                self.messages.append(Message(
+                    id: id as! Int32,
+                    content: content as! String
+                    //currentTime: currentTime as! String
+                ))
+                self.tableView.reloadData()
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MessageSegue",
                 let destination = segue.destination as? MessageViewController,
@@ -50,3 +88,4 @@ class MessagesListViewController: UITableViewController {
         }
     }
 }
+

@@ -12,6 +12,28 @@ import SQLite3
 struct Message {
     var id: Int32
     var content: String
+    
+    //var changedAlready = false
+    let currentTime = Date().time()
+}
+
+//coderwall.com date timestamp formatting
+extension Date {
+    func time() -> String! {
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let formattedDate = format.string(from: date)
+        print(formattedDate)
+        /*
+        let calendar = Calendar.current
+        calendar.component(.year, from: date)
+        calendar.component(.month, from: date)
+        calendar.component(.day, from: date)
+*/
+        
+        return(formattedDate)
+    }
 }
 
 class MessageManager {

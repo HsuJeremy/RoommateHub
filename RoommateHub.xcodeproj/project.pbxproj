@@ -108,7 +108,6 @@
 				3FC7A9AE238F4BF80013F9DA /* HomeViewController.swift */,
 				3F5A15062396BBD300A8DD0D /* Roommate.swift */,
 				3FF518982399945500719CB7 /* RoommateViewController.swift */,
-				3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */,
 				3FC7A9B0238F4BF80013F9DA /* Main.storyboard */,
 				3FC7A9B3238F4BF90013F9DA /* Assets.xcassets */,
 				3FC7A9B5238F4BF90013F9DA /* LaunchScreen.storyboard */,
@@ -122,6 +121,7 @@
 				103E54B82399A00A00AED5CA /* Task.swift */,
 				10C5DDBB239034CD00031FDC /* MessageViewController.swift */,
 				10B1F089239715C700BF00D3 /* Message.swift */,
+				3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */,
 				10B1F08B239715E000BF00D3 /* MessageListViewController.swift */,
 			);
 			path = RoommateHub;

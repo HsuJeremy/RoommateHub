@@ -7,12 +7,13 @@
 //
 
 import Foundation
-
 import UIKit
 
 class MessageViewController: UIViewController {
     //@IBOutlet var messageBoardTitle: UILabel!
     @IBOutlet var contentTextView: UITextView!
+    @IBOutlet var timeLabel: UILabel!
+
     
     var message: Message? = nil
     
@@ -20,6 +21,7 @@ class MessageViewController: UIViewController {
         super.viewWillAppear(animated)
         
         contentTextView.text = message!.content
+        timeLabel.text = message!.currentTime //"\(message!.currentTime)" //turn the int type into a string
     }
     
     override func viewWillDisappear(_ animated: Bool) {
