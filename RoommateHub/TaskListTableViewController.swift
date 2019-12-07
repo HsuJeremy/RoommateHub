@@ -115,5 +115,11 @@ class TaskListTableViewController: UITableViewController {
         addingVC.prevVC = self
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let task = tasks[indexPath.row]
+        performSegue(withIdentifier: "isCompleted", sender: Any?.self)
+    }
+    
+    
 
 }

@@ -45,7 +45,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Message Board"/>
                                         <connections>
-                                            <segue destination="KfC-jn-fhZ" kind="show" id="eyy-dq-Uhk"/>
+                                            <segue destination="KfC-jn-fhZ" kind="show" identifier="" id="eyy-dq-Uhk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lC-Fw-ilp">
@@ -144,7 +144,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Dm9-qH-ryx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MessageCell" id="Dm9-qH-ryx">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dm9-qH-ryx" id="uLi-QU-AvQ" customClass="MessageCell">
@@ -152,7 +152,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="u7y-vG-x9C" kind="show" id="yrG-cS-f2G"/>
+                                    <segue destination="u7y-vG-x9C" kind="show" identifier="MessageSegue" id="yrG-cS-f2G"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -161,7 +161,13 @@
                             <outlet property="delegate" destination="KfC-jn-fhZ" id="rAd-iq-5cd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Rp8-ZE-ina"/>
+                    <navigationItem key="navigationItem" id="Rp8-ZE-ina">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0VE-lg-uwV">
+                            <connections>
+                                <action selector="createMessage" destination="KfC-jn-fhZ" id="TqL-JE-FIj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgb-VO-hab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,8 +199,15 @@
                         <viewLayoutGuide key="safeArea" id="s1o-0d-eul"/>
                     </view>
                     <navigationItem key="navigationItem" id="PGW-gl-anc">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="ebx-JN-2Wy"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="ebx-JN-2Wy">
+                            <connections>
+                                <action selector="deleteMessage" destination="u7y-vG-x9C" id="quS-CY-1fh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentTextView" destination="m88-wJ-XOF" id="F5J-k1-ba2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJM-UW-tfy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -397,6 +410,36 @@
             </objects>
             <point key="canvasLocation" x="1958" y="-642"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="dVh-Sb-rmt">
+            <objects>
+                <viewController id="Pyb-Vl-xN1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0yW-QN-B86">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HW-7e-fSS">
+                                <rect key="frame" x="154" y="333" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Complete"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESK-wX-dg0">
+                                <rect key="frame" x="150" y="245" width="74" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="FAQ-vN-Bcy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4mI-cT-1OG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ByJ-KH-q4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2974" y="-626"/>
+        </scene>
         <!--Task List-->
         <scene sceneID="cFF-nv-Pxb">
             <objects>
@@ -427,6 +470,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Pyb-Vl-xN1" kind="show" identifier="isCompleted" id="EiA-YW-0fW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0T-TJ-YS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

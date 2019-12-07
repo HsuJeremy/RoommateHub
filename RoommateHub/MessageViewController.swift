@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 class MessageViewController: UIViewController {
-    @IBOutlet var messageBoardTitle: UILabel!
+    //@IBOutlet var messageBoardTitle: UILabel!
     @IBOutlet var contentTextView: UITextView!
     
     var message: Message? = nil
