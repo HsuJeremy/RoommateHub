@@ -47,10 +47,10 @@ class RoommateViewController: UIViewController, MFMessageComposeViewControllerDe
     var roommate: Roommate? = nil
     
     override func viewWillAppear(_ animated: Bool) {
-        fullName.text = roommate!.firstName + " " + roommate!.lastName
-        hometown.text = roommate!.hometown
-        concentration.text = roommate!.concentration
-        gradYear.text = String(roommate!.gradYear)
-        age.text = String(roommate!.age)
+        fullName.text = "\(roommate!.firstName) \(roommate!.lastName)"
+        hometown.text = "📍 \(roommate!.hometown)"
+        concentration.text = "📚 \(roommate!.concentration)"
+        gradYear.text = "🎓 \(String(roommate!.gradYear))"
+        age.text = "🎂 \(String(roommate!.age))"
     }
 }
