@@ -12,33 +12,41 @@ import FirebaseDatabase
 
 class MessageViewController: UIViewController {
     //@IBOutlet var messageBoardTitle: UILabel!
-    @IBOutlet var contentTextView: UITextView!
+    @IBOutlet weak var contextTextView: UITextView!
     @IBOutlet var timeLabel: UILabel!
     
     var roomIdentifier: String? = nil
 
-    var message: Message? = nil
+    var messageContent: String? = nil
+    
+//    var message: Message? = nil
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        contentTextView.text = message!.content
+//        // timeLabel.text = message!.currentTime //turn the int type into a string
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//
+//        message!.content = contentTextView.text
+//
+//        let ref = Database.database().reference()
+//
+//        print(contentTextView.text)
+//        ref.child(self.roomIdentifier!).child("messageBoard").child(message!.currentTime).updateChildValues([
+//            "content": contentTextView.text as! NSString,
+//            "currentTime": message!.currentTime
+//        ])
+//
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        contentTextView.text = message!.content
-        timeLabel.text = message!.currentTime //turn the int type into a string
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        message!.content = contentTextView.text
-
-        let ref = Database.database().reference()
-        
-        print(contentTextView.text)
-        ref.child(self.roomIdentifier!).child("messageBoard").child(message!.currentTime).updateChildValues([
-            "content": contentTextView.text as! NSString,
-            "currentTime": message!.currentTime
-        ])
-
+        contextTextView.text = messageContent!
     }
 
 }

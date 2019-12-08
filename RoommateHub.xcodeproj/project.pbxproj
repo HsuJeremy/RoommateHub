@@ -14,6 +14,7 @@
 		10B1F08A239715C700BF00D3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1F089239715C700BF00D3 /* Message.swift */; };
 		10B1F08C239715E000BF00D3 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1F08B239715E000BF00D3 /* MessageListViewController.swift */; };
 		10C5DDBC239034CD00031FDC /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C5DDBB239034CD00031FDC /* MessageViewController.swift */; };
+		3F0B091B239CCCD70056B2A7 /* CreateMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B091A239CCCD70056B2A7 /* CreateMessageViewController.swift */; };
 		3F4315F3239759B5003920EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F4315F2239759B5003920EA /* GoogleService-Info.plist */; };
 		3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */; };
 		3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15062396BBD300A8DD0D /* Roommate.swift */; };
@@ -41,6 +42,7 @@
 		10B1F089239715C700BF00D3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		10B1F08B239715E000BF00D3 /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		10C5DDBB239034CD00031FDC /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		3F0B091A239CCCD70056B2A7 /* CreateMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMessageViewController.swift; sourceTree = "<group>"; };
 		3F4315F2239759B5003920EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateListViewController.swift; sourceTree = "<group>"; };
 		3F5A15062396BBD300A8DD0D /* Roommate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roommate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				10B1F08B239715E000BF00D3 /* MessageListViewController.swift */,
 				3F5A15022396BB9A00A8DD0D /* RoommateListViewController.swift */,
 				103E54BA2399A11100AED5CA /* TaskListTableViewController.swift */,
+				3F0B091A239CCCD70056B2A7 /* CreateMessageViewController.swift */,
 				3FF518982399945500719CB7 /* RoommateViewController.swift */,
 				3F5A15062396BBD300A8DD0D /* Roommate.swift */,
 			);
@@ -298,6 +301,7 @@
 				3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */,
 				10B1F08A239715C700BF00D3 /* Message.swift in Sources */,
 				3F72EA2723977C16006E40E8 /* LoginViewController.swift in Sources */,
+				3F0B091B239CCCD70056B2A7 /* CreateMessageViewController.swift in Sources */,
 				103E54B92399A00A00AED5CA /* Task.swift in Sources */,
 				103E54BB2399A11100AED5CA /* TaskListTableViewController.swift in Sources */,
 				3F5A15032396BB9A00A8DD0D /* RoommateListViewController.swift in Sources */,

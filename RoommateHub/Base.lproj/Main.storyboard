@@ -127,14 +127,50 @@
                     <navigationItem key="navigationItem" id="Rp8-ZE-ina">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0VE-lg-uwV">
                             <connections>
-                                <action selector="createMessage" destination="KfC-jn-fhZ" id="TqL-JE-FIj"/>
+                                <segue destination="Nwz-g9-EPr" kind="show" identifier="CreateMessageSegue" id="dPJ-Ob-DG2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgb-VO-hab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="873"/>
+            <point key="canvasLocation" x="2953" y="884"/>
+        </scene>
+        <!--Create Message View Controller-->
+        <scene sceneID="3Yl-fh-Mw5">
+            <objects>
+                <viewController id="Nwz-g9-EPr" customClass="CreateMessageViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MZG-bn-rt0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wtl-0h-3QU">
+                                <rect key="frame" x="67" y="165" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="jqg-DK-cA1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aop-ce-5tY">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Tfm-Ge-yEO">
+                            <connections>
+                                <action selector="createMessage:" destination="Nwz-g9-EPr" id="ZuT-9n-ieH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="wtl-0h-3QU" id="Kwo-qu-5Eg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2V1-NR-Y9u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2974" y="1659"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="ivU-8r-kmm">
@@ -170,7 +206,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="PGW-gl-anc"/>
                     <connections>
-                        <outlet property="contentTextView" destination="m88-wJ-XOF" id="F5J-k1-ba2"/>
+                        <outlet property="contextTextView" destination="m88-wJ-XOF" id="TjD-29-ZlQ"/>
                         <outlet property="timeLabel" destination="2TS-z8-gHN" id="XA9-dH-FZT"/>
                     </connections>
                 </viewController>
