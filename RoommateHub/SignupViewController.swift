@@ -33,6 +33,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         // Verify that all the fields are entered in
         guard let fullName = fullName.text else { return }
         let fullNameArr = fullName.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
+        if fullNameArr.count != 2 { return }
         guard let hometown = hometown.text else { return }
         let trimmedHometown = hometown.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let concentration = concentration.text else { return }

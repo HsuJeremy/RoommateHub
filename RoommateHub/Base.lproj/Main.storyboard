@@ -26,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFm-yj-VUi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winthrop A20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFm-yj-VUi">
                                 <rect key="frame" x="20" y="183" width="335" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
@@ -69,12 +69,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signed in as John Harvard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwF-YH-5Tl">
+                                <rect key="frame" x="87" y="262" width="200" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iwF-YH-5Tl" secondAttribute="trailing" constant="88" id="FXk-96-1bB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JFm-yj-VUi" secondAttribute="trailing" constant="20" id="S8O-Ox-Ceu"/>
+                            <constraint firstItem="iwF-YH-5Tl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="XSm-ym-OEg"/>
                             <constraint firstItem="JFm-yj-VUi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ak5-kL-G2t"/>
                             <constraint firstItem="JFm-yj-VUi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="bhZ-yg-Rf6"/>
+                            <constraint firstItem="iwF-YH-5Tl" firstAttribute="top" secondItem="JFm-yj-VUi" secondAttribute="bottom" constant="19" id="fk0-xF-KJ2"/>
                             <constraint firstItem="mo8-uF-mK2" firstAttribute="top" secondItem="JFm-yj-VUi" secondAttribute="bottom" constant="100" id="ilr-dK-f5M"/>
                             <constraint firstItem="mo8-uF-mK2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="jsd-kH-fNp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mo8-uF-mK2" secondAttribute="trailing" constant="95" id="zj9-iz-4I7"/>
@@ -89,6 +98,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="currentUser" destination="iwF-YH-5Tl" id="Mgm-tI-ddi"/>
                         <outlet property="hpTitle" destination="JFm-yj-VUi" id="psq-Or-5Jp"/>
                     </connections>
                 </viewController>
@@ -630,7 +640,7 @@
             </objects>
             <point key="canvasLocation" x="-1393" y="118"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--Create New Account-->
         <scene sceneID="SB2-bE-AQG">
             <objects>
                 <viewController id="L95-4G-EUH" customClass="SignupViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -828,7 +838,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F67-4t-C9C"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wQY-dU-V8r"/>
+                    <navigationItem key="navigationItem" title="Create New Account" id="wQY-dU-V8r"/>
                     <connections>
                         <outlet property="age" destination="8jY-pK-BI9" id="0sr-jr-Pjt"/>
                         <outlet property="cellPhoneNumber" destination="5Oj-LA-BsT" id="E1L-2t-khI"/>

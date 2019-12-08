@@ -19,7 +19,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // @IBOutlet weak var errorLabel: UILabel!
     
     var userSignedIn: Bool = false
-    var roomIdentifier: String? = nil
+    var sentHouse: String? = nil
+    var sentRoomNumber: String? = nil
+    var sentEmail: String? = nil
     
     @IBAction func signup(_ sender: Any) {
         performSegue(withIdentifier: "loginToSignup", sender: Any?.self)
@@ -28,15 +30,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginAction(_ sender: Any) {
         guard let email = email.text else { return }
         let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
+        self.sentEmail = trimmedEmail
         guard let password = password.text else { return }
         guard let house = house.text else { return }
+        self.sentHouse = house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased()
         guard let roomNumber = roomNumber.text else { return }
+        self.sentRoomNumber = roomNumber.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased()
         
         // From official Firebase documentation
         Auth.auth().signIn(withEmail: trimmedEmail, password: password) { [weak self] authResult, error in
             guard let strongSelf = self else { return }
             if error == nil && authResult != nil {
-                self!.roomIdentifier = house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased() + roomNumber.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased()
+                let roomIdentifier = (self?.sentHouse!)! + (self?.sentRoomNumber!)!
                 
                 // Verify that roomIdentifier exists in database
                 let ref = Database.database().reference()
@@ -47,10 +52,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     // Line to cast NSArray to Array by Patrick from StackOverflow
                     let roomsArray: [String] = keys.compactMap({ $0 as? String })
                     
-                    guard let room = self!.roomIdentifier else { return }
-                    
                     // Allow segue only if the roomIdentifier is contained in the database
-                    if roomsArray.contains(room) {
+                    if roomsArray.contains(roomIdentifier) {
                         self?.userSignedIn = true
                         print("Signed in")
                     } else {
@@ -73,7 +76,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginToHome", let destination = segue.destination as? HomeViewController {
-            destination.roomIdentifier = roomIdentifier!
+            // destination.roomIdentifier = roomIdentifier!
+            destination.house = self.sentHouse!
+            destination.roomNumber = self.sentRoomNumber!
+            destination.email = self.sentEmail!
         }
     }
     

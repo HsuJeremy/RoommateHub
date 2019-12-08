@@ -11,9 +11,15 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Customizing fonts from Hacking with Swift
+        let attrs = [
+            NSAttributedString.Key.font: UIFont(name: "SF Pro Display", size: 18)!
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        UIBarButtonItem.appearance().setTitleTextAttributes(attrs, for: .normal)
         
         FirebaseApp.configure()
         
