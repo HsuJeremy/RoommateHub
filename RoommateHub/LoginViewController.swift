@@ -54,8 +54,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     // Allow segue only if the roomIdentifier is contained in the database
                     if roomsArray.contains(roomIdentifier) {
-                        self?.userSignedIn = true
                         print("Signed in")
+                        self!.performSegue(withIdentifier: "loginToHome", sender: Any?.self)
                     } else {
                         print("Incorrect room")
                         // self?.errorLabel.text = "Incorrect room"
@@ -71,12 +71,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return self.userSignedIn
+        return false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginToHome", let destination = segue.destination as? HomeViewController {
-            // destination.roomIdentifier = roomIdentifier!
             destination.house = self.sentHouse!
             destination.roomNumber = self.sentRoomNumber!
             destination.email = self.sentEmail!

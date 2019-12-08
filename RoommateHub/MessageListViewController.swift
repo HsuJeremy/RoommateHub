@@ -62,8 +62,9 @@ class MessagesListViewController: UITableViewController {
         if segue.identifier == "MessageSegue",
                 let destination = segue.destination as? MessageViewController,
                 let index = tableView.indexPathForSelectedRow?.row {
-            destination.messageContent = messages[index]
+            destination.message = messages[index]
             destination.roomIdentifier = roomIdentifier
+            destination.timeStamp = Date().time()
         } else if segue.identifier == "CreateMessageSegue", let destination = segue.destination as? CreateMessageViewController {
             print("Performed segue")
             destination.roomIdentifier = roomIdentifier
