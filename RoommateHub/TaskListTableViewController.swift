@@ -55,6 +55,7 @@ import FirebaseDatabase
 
 class TaskListTableViewController: UITableViewController {
     
+    
     var tasks : [Task] = []
     var database = Database.database();
     var roomIdentifier: String? = nil
@@ -72,19 +73,17 @@ class TaskListTableViewController: UITableViewController {
         });
         */
         //tasks = createTask()
-    }
+        /*let ref = Database.database().reference()
+        ref.child(roomIdentifier!).child("taskList").observe(.childAdded) { (snapshot) in
+            let task = snapshot.value as? String
+            guard let actualTask = task else { return }
+            self.tasks.append(actualTask)
+            self.tableView.reloadData()
+        }*/
 
-    // MARK: - Table view data source
-    
-/*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
     }
- */
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tasks.count
     }
     
@@ -93,7 +92,6 @@ class TaskListTableViewController: UITableViewController {
 
         // Configure the cell...
         let task = tasks[indexPath.row]
-        //cell.textLabel?.text = task.name
         
         if task.important == "true" {
             cell.textLabel?.text = "* " + task.name + " *"
@@ -101,26 +99,33 @@ class TaskListTableViewController: UITableViewController {
         else{
             cell.textLabel?.text = " " + task.name
         }
-        
-        //print("fill in works")
         return cell
     }
     
-    
-/*    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let task = tasks[indexPath.row]
-        performSegue(withIdentifier: "isCompleted", sender: task)
-    }
- */
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let addingVC = segue.destination as! TaskAddViewController
-        addingVC.prevVC = self
+        if let addingVC = segue.destination as? TaskAddViewController {
+            addingVC.prevVC = self
+        }
+        if segue.identifier == "isCompleted",
+            let destination = segue.destination as? TaskCompletedViewController,
+            let index = tableView.indexPathForSelectedRow?.row {
+                destination.task = tasks[index]
+                destination.roomIdentifier = roomIdentifier
+
+            }
+        else if segue.identifier == "AddTaskSegue", let destination = segue.destination as? TaskAddViewController {
+            print("Performed segue")
+            destination.roomIdentifier = roomIdentifier
+        }
+
+        
     }
     
+
 
 }
 
