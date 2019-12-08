@@ -20,6 +20,8 @@
 		3F5A15072396BBD300A8DD0D /* Roommate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A15062396BBD300A8DD0D /* Roommate.swift */; };
 		3F72EA2723977C16006E40E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72EA2623977C16006E40E8 /* LoginViewController.swift */; };
 		3F7D991F23978EBE00EDF4EE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D991E23978EBE00EDF4EE /* SignupViewController.swift */; };
+		3F8CA738239C726A00D83365 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F8CA737239C726A00D83365 /* SF-Pro-Display-Regular.otf */; };
+		3FAA7F7A239C6EC000416CFE /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAA7F79239C6EC000416CFE /* SF-Pro-Display-Bold.otf */; };
 		3FC7A9AB238F4BF80013F9DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */; };
 		3FC7A9AD238F4BF80013F9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */; };
 		3FC7A9AF238F4BF80013F9DA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7A9AE238F4BF80013F9DA /* HomeViewController.swift */; };
@@ -45,6 +47,8 @@
 		3F5A15062396BBD300A8DD0D /* Roommate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roommate.swift; sourceTree = "<group>"; };
 		3F72EA2623977C16006E40E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F7D991E23978EBE00EDF4EE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		3F8CA737239C726A00D83365 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		3FAA7F79239C6EC000416CFE /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		3FC7A9A7238F4BF80013F9DA /* RoommateHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoommateHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC7A9AA238F4BF80013F9DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC7A9AC238F4BF80013F9DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,15 @@
 				D65DE7C41710CBE797A34DA5 /* Pods-RoommateHub.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3F88E23B239C679500D30912 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3F8CA737239C726A00D83365 /* SF-Pro-Display-Regular.otf */,
+				3FAA7F79239C6EC000416CFE /* SF-Pro-Display-Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		3FC7A99E238F4BF80013F9DA = {
@@ -120,6 +133,7 @@
 				103E54BA2399A11100AED5CA /* TaskListTableViewController.swift */,
 				103E54C0239B03B000AED5CA /* TaskAddViewController.swift */,
 				103E54B82399A00A00AED5CA /* Task.swift */,
+				3F88E23B239C679500D30912 /* Fonts */,
 				10C5DDBB239034CD00031FDC /* MessageViewController.swift */,
 				10B1F089239715C700BF00D3 /* Message.swift */,
 				10B1F08B239715E000BF00D3 /* MessageListViewController.swift */,
@@ -196,8 +210,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8CA738239C726A00D83365 /* SF-Pro-Display-Regular.otf in Resources */,
 				3FC7A9B7238F4BF90013F9DA /* LaunchScreen.storyboard in Resources */,
 				3F4315F3239759B5003920EA /* GoogleService-Info.plist in Resources */,
+				3FAA7F7A239C6EC000416CFE /* SF-Pro-Display-Bold.otf in Resources */,
 				3FC7A9B4238F4BF90013F9DA /* Assets.xcassets in Resources */,
 				3FC7A9B2238F4BF80013F9DA /* Main.storyboard in Resources */,
 			);

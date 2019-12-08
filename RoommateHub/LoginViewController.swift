@@ -16,10 +16,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var house: UITextField!
     @IBOutlet weak var roomNumber: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
+    // @IBOutlet weak var errorLabel: UILabel!
     
     var userSignedIn: Bool = false
     var roomIdentifier: String? = nil
+    
+    @IBAction func signup(_ sender: Any) {
+        performSegue(withIdentifier: "loginToSignup", sender: Any?.self)
+    }
     
     @IBAction func loginAction(_ sender: Any) {
         guard let email = email.text else { return }
@@ -51,7 +55,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         print("Signed in")
                     } else {
                         print("Incorrect room")
-                        self?.errorLabel.text = "Incorrect room"
+                        // self?.errorLabel.text = "Incorrect room"
                     }
                 }) { (error) in
                     print(error.localizedDescription)
