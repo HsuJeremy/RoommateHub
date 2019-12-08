@@ -13,22 +13,35 @@ import FirebaseDatabase
 
 class CreateMessageViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var createMessage: UIButton!
     
     var roomIdentifier: String? = nil
     var timeStamp: String? = nil 
     
     @IBAction func createMessage(_ sender: Any) {
         let ref = Database.database().reference()
+    ref.child(self.roomIdentifier!).child("messageBoard").child(self.timeStamp!).setValue(textView.text)
         
-        print(self.roomIdentifier)
-        print(self.timeStamp)
-        ref.child(self.roomIdentifier!).child("messageBoard").child(self.timeStamp!).setValue(textView.text)
-        
-        presentingViewController?.dismiss(animated: true, completion: nil)
+        createMessage.isHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Configure UITextField delegates and tap gestures
+        configureTapGesture()
     }
     
+    
+    // From Code Pro on YouTube
+    private func configureTapGesture() {
+       let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateMessageViewController.handleTap))
+       view.addGestureRecognizer(tapGesture)
+    }
+
+    // From Code Pro on YouTube
+    @objc func handleTap() {
+       print("Handle tap was called")
+       view.endEditing(true)
+    }
 }
