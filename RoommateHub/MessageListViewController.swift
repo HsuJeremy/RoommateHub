@@ -10,20 +10,14 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-//coderwall.com date timestamp formatting
+//kanshuYokoo from coderwall.com date timestamp formatting
 extension Date {
     func time() -> String! {
         let date = Date()
         let format = DateFormatter()
+        
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let formattedDate = format.string(from: date)
-        print(formattedDate)
-        /*
-        let calendar = Calendar.current
-        calendar.component(.year, from: date)
-        calendar.component(.month, from: date)
-        calendar.component(.day, from: date)
-*/
         
         return(formattedDate)
     }
@@ -32,7 +26,7 @@ extension Date {
 class MessagesListViewController: UITableViewController {
     var messages: [Message] = []
     var timeStamp = ""
-    var passedContent = ""
+    var passedContent = "Leave an anonymous message"
     let ref = Database.database().reference()
     var roomIdentifier: String? = nil
     
@@ -47,11 +41,9 @@ class MessagesListViewController: UITableViewController {
         //reload()
         */
         
-        //ref.setValue(Message(content = "henlooo", currentTime: "nunya"))
-        
         timeStamp = Date().time()
         print(timeStamp)
-        var messageData: Message = Message(content: passedContent, currentTime: timeStamp)
+        let messageData: Message = Message(content: "Default", currentTime: timeStamp)
         // Create messageData dictionary
                 
         // Upload user message to the cloud
@@ -62,7 +54,7 @@ class MessagesListViewController: UITableViewController {
         ])
         //print("createMessage happened")
         
-        self.messages.append(messageData)
+        /*self.messages.append(messageData)
         print(messages)
         var count = 0
         for thing in messages{
@@ -70,11 +62,9 @@ class MessagesListViewController: UITableViewController {
             print(thing.currentTime)
             print(String(count))
             count = count + 1
-
         }
-
+         */
     }
-    
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,7 +87,8 @@ class MessagesListViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        ref.child(roomIdentifier!).observe(.value, with: { (snapshot) in
+        messages = []
+        ref.child(roomIdentifier!).child("messageBoard").observe(.value, with: { (snapshot) in
             // Get NSDictionary of user messages
             let roommateMessages = snapshot.value as? NSDictionary
             
@@ -134,11 +125,13 @@ class MessagesListViewController: UITableViewController {
                 let destination = segue.destination as? MessageViewController,
                 let index = tableView.indexPathForSelectedRow?.row {
             destination.message = messages[index]
+            destination.roomIdentifier = roomIdentifier
         }
         //var vc = segue.destination as! MessageViewController
-        //let passedContent = vc.contentTextView.text
-    
+        //passedContent = vc.contentTextView.text
+        
     }
+    
 }
 
 /*

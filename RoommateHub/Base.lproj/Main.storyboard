@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mo8-uF-mK2">
-                                <rect key="frame" x="95" y="343" width="185" height="198"/>
+                                <rect key="frame" x="95" y="343" width="185" height="147"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAj-if-uBw">
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="45"/>
@@ -57,14 +57,6 @@
                                         <state key="normal" title="Message Board"/>
                                         <connections>
                                             <segue destination="KfC-jn-fhZ" kind="show" identifier="homeToMessageList" id="eyy-dq-Uhk"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lC-Fw-ilp">
-                                        <rect key="frame" x="0.0" y="153" width="185" height="45"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="Contract"/>
-                                        <connections>
-                                            <segue destination="UnR-sl-j51" kind="show" id="7DW-Nl-Esh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -96,56 +88,6 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="118.52678571428571"/>
         </scene>
-        <!--Roommate Contract-->
-        <scene sceneID="By4-4e-iFC">
-            <objects>
-                <viewController id="UnR-sl-j51" customClass="ContractViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cie-QJ-d4O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-hf-uED">
-                                <rect key="frame" x="20" y="204" width="335" height="397"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="397" id="24z-Ar-Jbd"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzG-sM-ynh">
-                                <rect key="frame" x="107" y="114" width="161" height="30"/>
-                                <state key="normal" title="Upload Contract"/>
-                                <connections>
-                                    <action selector="selectPhoto:" destination="UnR-sl-j51" eventType="touchUpInside" id="QcY-gu-cDx"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Below image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xd-ji-enr">
-                                <rect key="frame" x="139" y="640" width="97" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="EFz-n7-p6U" firstAttribute="trailing" secondItem="dzG-sM-ynh" secondAttribute="trailing" constant="107" id="1Y0-uG-A7L"/>
-                            <constraint firstItem="QBC-hf-uED" firstAttribute="top" secondItem="dzG-sM-ynh" secondAttribute="bottom" constant="60" id="3jt-OO-w6n"/>
-                            <constraint firstItem="QBC-hf-uED" firstAttribute="centerX" secondItem="4xd-ji-enr" secondAttribute="centerX" id="GxU-Vy-Czq"/>
-                            <constraint firstItem="4xd-ji-enr" firstAttribute="top" secondItem="QBC-hf-uED" secondAttribute="bottom" constant="39" id="Opx-j4-SR3"/>
-                            <constraint firstItem="dzG-sM-ynh" firstAttribute="leading" secondItem="EFz-n7-p6U" secondAttribute="leading" constant="107" id="Yx6-nO-otz"/>
-                            <constraint firstItem="QBC-hf-uED" firstAttribute="leading" secondItem="EFz-n7-p6U" secondAttribute="leading" constant="20" id="cwT-Xb-lDw"/>
-                            <constraint firstItem="QBC-hf-uED" firstAttribute="centerX" secondItem="dzG-sM-ynh" secondAttribute="centerX" id="cxI-IP-zrb"/>
-                            <constraint firstItem="dzG-sM-ynh" firstAttribute="top" secondItem="EFz-n7-p6U" secondAttribute="top" constant="26" id="dcb-mX-mg4"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="EFz-n7-p6U"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Roommate Contract" id="0iA-Cv-o2m"/>
-                    <connections>
-                        <outlet property="contractImage" destination="QBC-hf-uED" id="nov-cc-rQE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AeD-yg-f4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1958" y="882"/>
-        </scene>
         <!--Messages List View Controller-->
         <scene sceneID="e6i-E5-Ycb">
             <objects>
@@ -162,6 +104,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="348" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="u7y-vG-x9C" kind="show" identifier="MessageSegue" id="qhJ-j8-39Q"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -173,7 +118,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0VE-lg-uwV">
                             <connections>
                                 <action selector="createMessage" destination="KfC-jn-fhZ" id="TqL-JE-FIj"/>
-                                <segue destination="u7y-vG-x9C" kind="show" identifier="MessageSegue" id="0JW-Cj-Lzi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -214,13 +158,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s1o-0d-eul"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PGW-gl-anc">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="ebx-JN-2Wy">
-                            <connections>
-                                <action selector="deleteMessage" destination="u7y-vG-x9C" id="quS-CY-1fh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="PGW-gl-anc"/>
                     <connections>
                         <outlet property="contentTextView" destination="m88-wJ-XOF" id="F5J-k1-ba2"/>
                         <outlet property="timeLabel" destination="2TS-z8-gHN" id="XA9-dH-FZT"/>
