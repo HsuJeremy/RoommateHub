@@ -13,6 +13,7 @@ class TaskCompletedViewController: UIViewController {
     @IBOutlet weak var completedButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var roomIdentifier: String? = nil
     var task: Task? = nil
   
     var prevVC = TaskListTableViewController()//reference to previous view controller

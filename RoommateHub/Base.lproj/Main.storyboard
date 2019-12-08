@@ -223,7 +223,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zUF-lu-diY">
-                                <rect key="frame" x="20" y="256.66666666666669" width="335" height="280.00000000000006"/>
+                                <rect key="frame" x="20" y="255.66666666666663" width="335" height="280"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsD-mX-p3d">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
@@ -235,7 +235,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john@harvard.edu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jva-Y1-YpS">
-                                        <rect key="frame" x="0.0" y="35" width="335" height="35"/>
+                                        <rect key="frame" x="0.0" y="35.000000000000028" width="335" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="cEM-8Z-3dM"/>
                                         </constraints>
@@ -243,7 +243,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu0-0c-OgA">
-                                        <rect key="frame" x="0.0" y="70" width="335" height="35"/>
+                                        <rect key="frame" x="0.0" y="70.000000000000028" width="335" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="ySP-a1-rJp"/>
                                         </constraints>
@@ -252,7 +252,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MF-Tq-dB2">
-                                        <rect key="frame" x="0.0" y="105" width="335" height="35"/>
+                                        <rect key="frame" x="0.0" y="105.00000000000003" width="335" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Lkt-ut-zUT"/>
                                         </constraints>
@@ -260,7 +260,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Affiliation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-w3-6ZM">
-                                        <rect key="frame" x="0.0" y="140" width="335" height="35"/>
+                                        <rect key="frame" x="0.0" y="140.00000000000003" width="335" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="WhH-Gh-Fj3"/>
                                         </constraints>
@@ -269,7 +269,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Winthrop House" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pb6-5S-MDz">
-                                        <rect key="frame" x="0.0" y="175" width="335" height="35"/>
+                                        <rect key="frame" x="0.0" y="175.00000000000003" width="335" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="2hh-Y4-orN"/>
                                         </constraints>
@@ -277,7 +277,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp3-R1-uXt">
-                                        <rect key="frame" x="0.0" y="210" width="335" height="35"/>
+                                        <rect key="frame" x="0.0" y="210.00000000000003" width="335" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="6VC-k3-Hfy"/>
                                         </constraints>
@@ -296,13 +296,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to RoommateHub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLI-I3-rGB">
-                                <rect key="frame" x="10" y="173" width="355" height="33.666666666666657"/>
+                                <rect key="frame" x="10" y="173" width="355" height="32.666666666666657"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-WU-ecf">
-                                <rect key="frame" x="20" y="566.66666666666663" width="335" height="50"/>
+                                <rect key="frame" x="20" y="565.66666666666663" width="335" height="50"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fY2-fN-yHA"/>
@@ -322,7 +322,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOL-Aq-jC2">
-                                <rect key="frame" x="20" y="621.66666666666663" width="335" height="50"/>
+                                <rect key="frame" x="20" y="620.66666666666663" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="spF-cM-PaZ"/>
                                 </constraints>
@@ -569,7 +569,7 @@
                     <navigationItem key="navigationItem" title="Task List" id="rCP-dk-mkq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SE7-Xd-Dm2">
                             <connections>
-                                <segue destination="wx9-1g-3g2" kind="show" id="0g0-dc-vIu"/>
+                                <segue destination="wx9-1g-3g2" kind="show" identifier="AddTaskSegue" id="0g0-dc-vIu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

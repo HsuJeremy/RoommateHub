@@ -20,17 +20,26 @@ class TaskAddViewController: UIViewController {
     @IBOutlet weak var importantSwitch: UISwitch!
     @IBOutlet weak var addButton: UIButton!
     
+    var roomIdentifier: String? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func addClicked(_ sender: Any) {
+        let ref = Database.database().reference()
+        
         let task = Task()
         task.name = titleTextField.text!
         if importantSwitch.isOn{
             task.important = "true"
         }
+        print(self.roomIdentifier)
+        print(task.important)
+        print(task.name)
+        
+        ref.child(self.roomIdentifier!).child("taskList").child(task.name).setValue(task.important)
         
         prevVC.tasks.append(task)
         prevVC.tableView.reloadData() //update tableView
@@ -38,4 +47,5 @@ class TaskAddViewController: UIViewController {
         navigationController?.popViewController(animated: true)
 
     }
+
 }

@@ -16,9 +16,8 @@ class MessageViewController: UIViewController {
     @IBOutlet var timeLabel: UILabel!
     
     var roomIdentifier: String? = nil
-
     var messageContent: String? = nil
-    
+        
 //    var message: Message? = nil
 //
 //    override func viewWillAppear(_ animated: Bool) {

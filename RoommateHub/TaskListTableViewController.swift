@@ -55,6 +55,7 @@ import FirebaseDatabase
 
 class TaskListTableViewController: UITableViewController {
     
+    
     var tasks : [Task] = []
     var database = Database.database();
     var roomIdentifier: String? = nil
@@ -72,37 +73,14 @@ class TaskListTableViewController: UITableViewController {
         });
         */
         //tasks = createTask()
-/*        ref.child(roomIdentifier!).child("taskList").observe(.childAdded, with: { (snapshot) in
-            // Get NSDictionary of user tasks
-            let roommatetasks = snapshot.value as? NSDictionary
-            
-            // Unwrap roommatetasks
-            guard let roomietasks = roommatetasks else { return }
-            
-            // Iterate through NSDictionary
-            for (key, value) in roomietasks {
-                // Cast task as a Swift Dictionary
-                let taskDict = (value as! [String : Any])
-                print(taskDict)
-                
-                // Unwrap each property of task
-                guard let content = taskDict["content"] else { return }
-                guard let currentTime = taskDict["currentTime"] else { return }
-                                
-                // Append new Roommate to result Array
-                self.tasks.append(Task(
-                    var name = ""
-                    var important = "false"
-                    var completed = "false"
-                ))
-                print("From viewDidLoad")
-                print(roomietasks)
-            }
+        /*let ref = Database.database().reference()
+        ref.child(roomIdentifier!).child("taskList").observe(.childAdded) { (snapshot) in
+            let task = snapshot.value as? String
+            guard let actualTask = task else { return }
+            self.tasks.append(actualTask)
             self.tableView.reloadData()
-
-        }) { (error) in
-            print(error.localizedDescription)
         }*/
+
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,7 +92,6 @@ class TaskListTableViewController: UITableViewController {
 
         // Configure the cell...
         let task = tasks[indexPath.row]
-        //cell.textLabel?.text = task.name
         
         if task.important == "true" {
             cell.textLabel?.text = "* " + task.name + " *"
@@ -137,8 +114,15 @@ class TaskListTableViewController: UITableViewController {
             let destination = segue.destination as? TaskCompletedViewController,
             let index = tableView.indexPathForSelectedRow?.row {
                 destination.task = tasks[index]
+                destination.roomIdentifier = roomIdentifier
+
             }
-        print("segue done")
+        else if segue.identifier == "AddTaskSegue", let destination = segue.destination as? TaskAddViewController {
+            print("Performed segue")
+            destination.roomIdentifier = roomIdentifier
+        }
+
+        
     }
     
 
