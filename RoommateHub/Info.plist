@@ -8,6 +8,7 @@
 	<array>
 		<string>SF-Pro-Display-Bold.otf</string>
 		<string>SF-Pro-Display-Regular.otf</string>
+		<string>SF-Pro-Display-Semibold.otf</string>
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>RoommateHub needs your Photo Library.</string>

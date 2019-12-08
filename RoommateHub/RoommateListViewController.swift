@@ -29,7 +29,7 @@ class RoommateListViewController: UITableViewController {
     override func viewDidLoad() {
         let ref = Database.database().reference()
         
-        ref.child(roomIdentifier!).observe(.value, with: { (snapshot) in
+        ref.child(roomIdentifier!).child("users").observe(.value, with: { (snapshot) in
             // Get NSDictionary of user profiles
             let roommateProfiles = snapshot.value as? NSDictionary
             
