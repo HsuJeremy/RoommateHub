@@ -7,12 +7,15 @@
 //
 
 import Foundation
-import SQLite3
+import FirebaseDatabase
 
 struct Message {
-    var id: Int32
+    //var id: Int32
     var content: String
+    var currentTime: String
 }
+
+
 
 class MessageManager {
     var database: OpaquePointer? //pointer to database
@@ -22,6 +25,9 @@ class MessageManager {
     private init() { //nobody else can instantiate this class (the private)-compiler will say nO
     }
     
+    
+}
+ /*
     func connect() {
         if database != nil { //if you connected to query, don't do anything lol ur already connected
             return
@@ -121,7 +127,8 @@ class MessageManager {
         
         sqlite3_finalize(statement)
     }
-    
+    */
+    /*
     func deleteMessage(message: Message) {
         connect()
         
@@ -145,5 +152,6 @@ class MessageManager {
         sqlite3_finalize(statement)
     }
 
-}
+
+} */
 

@@ -46,9 +46,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-Tp-2U9">
                                         <rect key="frame" x="0.0" y="51" width="185" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="Housekeeping"/>
+                                        <state key="normal" title="Task List"/>
                                         <connections>
-                                            <segue destination="iiV-3O-kxe" kind="show" id="kSv-hK-8u7"/>
+                                            <segue destination="iiV-3O-kxe" kind="show" identifier="homeToTaskList" id="kSv-hK-8u7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvN-Hf-DSh">
@@ -56,7 +56,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Message Board"/>
                                         <connections>
-                                            <segue destination="KfC-jn-fhZ" kind="show" identifier="" id="eyy-dq-Uhk"/>
+                                            <segue destination="KfC-jn-fhZ" kind="show" identifier="homeToMessageList" id="eyy-dq-Uhk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lC-Fw-ilp">
@@ -162,9 +162,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="348" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="u7y-vG-x9C" kind="show" id="Nax-fd-WMb"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -176,6 +173,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0VE-lg-uwV">
                             <connections>
                                 <action selector="createMessage" destination="KfC-jn-fhZ" id="TqL-JE-FIj"/>
+                                <segue destination="u7y-vG-x9C" kind="show" identifier="MessageSegue" id="0JW-Cj-Lzi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -199,6 +197,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TS-z8-gHN">
+                                <rect key="frame" x="16" y="757" width="285" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -218,6 +223,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="m88-wJ-XOF" id="F5J-k1-ba2"/>
+                        <outlet property="timeLabel" destination="2TS-z8-gHN" id="XA9-dH-FZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJM-UW-tfy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -477,10 +483,10 @@
             </objects>
             <point key="canvasLocation" x="1958" y="-642"/>
         </scene>
-        <!--View Controller-->
+        <!--Task Completed View Controller-->
         <scene sceneID="dVh-Sb-rmt">
             <objects>
-                <viewController id="Pyb-Vl-xN1" sceneMemberID="viewController">
+                <viewController id="Pyb-Vl-xN1" customClass="TaskCompletedViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0yW-QN-B86">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -502,6 +508,10 @@
                         <viewLayoutGuide key="safeArea" id="FAQ-vN-Bcy"/>
                     </view>
                     <navigationItem key="navigationItem" id="4mI-cT-1OG"/>
+                    <connections>
+                        <outlet property="completedButton" destination="4HW-7e-fSS" id="oeB-Gt-7Ap"/>
+                        <outlet property="titleLabel" destination="ESK-wX-dg0" id="fEi-3l-rVb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ByJ-KH-q4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

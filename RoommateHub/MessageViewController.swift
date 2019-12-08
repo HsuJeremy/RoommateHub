@@ -7,12 +7,13 @@
 //
 
 import Foundation
-
 import UIKit
 
 class MessageViewController: UIViewController {
     //@IBOutlet var messageBoardTitle: UILabel!
     @IBOutlet var contentTextView: UITextView!
+    @IBOutlet var timeLabel: UILabel!
+
     
     var message: Message? = nil
     
@@ -20,17 +21,14 @@ class MessageViewController: UIViewController {
         super.viewWillAppear(animated)
         
         contentTextView.text = message!.content
+        timeLabel.text = message!.currentTime //turn the int type into a string
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         message!.content = contentTextView.text
-        MessageManager.shared.saveMessage(message: message!)
-    }
-    @IBAction func deleteMessage() {
-        MessageManager.shared.deleteMessage(message: message!)
-        navigationController?.popViewController(animated: true)
+        //MessageManager.shared.saveMessage(message: message!)
     }
 
 }

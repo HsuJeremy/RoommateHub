@@ -48,6 +48,18 @@ class HomeViewController: UIViewController {
         if segue.identifier == "homeToRoommateList", let destination = segue.destination as? RoommateListViewController {
             destination.roomIdentifier = roomIdentifier
         }
+        else if segue.identifier == "homeToMessageList", let destination = segue.destination as? MessagesListViewController {
+            destination.roomIdentifier = roomIdentifier
+        }
+        else if segue.identifier == "homeToTaskList", let destination = segue.destination as? TaskListTableViewController {
+            destination.roomIdentifier = roomIdentifier
+        }
+
+        
+
     }
+    
+
+
 }
 
