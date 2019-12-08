@@ -206,7 +206,7 @@ class TaskListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
         
-        //DISTINCT ARRAAYYYAYAYAYAYA
+        //DISTINCT ARRAAYYYAYAYAYAYA to fix doubling issue
         var uniqueName: Set = ["blobfish5000000xr"] //this is a dummy name value to initialize (nothing will have this name)
         var uniqueTasks : [Task] = []
         for thing in tasks{
@@ -249,6 +249,16 @@ class TaskListTableViewController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //DISTINCT ARRAAYYYAYAYAYAYA to fix doubling issue
+        var uniqueName: Set = ["blobfish5000000xr"] //this is a dummy name value to initialize (nothing will have this name)
+        var uniqueTasks : [Task] = []
+        for thing in tasks{
+            if !uniqueName.contains(thing.name) {
+                //it's a new one!
+                uniqueTasks.append(thing) //add to uniqueTasks
+                uniqueName.insert(thing.name) //add it in
+            }
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if let addingVC = segue.destination as? TaskAddViewController {
@@ -257,7 +267,8 @@ class TaskListTableViewController: UITableViewController {
         if segue.identifier == "isCompleted",
             let destination = segue.destination as? TaskCompletedViewController,
             let index = tableView.indexPathForSelectedRow?.row {
-                destination.taskString = tasksInCompleted[index]
+            print(String(index))
+                destination.task = uniqueTasks[index]
                 destination.roomIdentifier = roomIdentifier
                 //destination.counter = Date().timer()
             }
