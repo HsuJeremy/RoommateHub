@@ -21,7 +21,8 @@ class TaskAddViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     var roomIdentifier: String? = nil
-    
+    var counter: String? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Configure UITextField delegates and tap gestures
@@ -30,20 +31,30 @@ class TaskAddViewController: UIViewController {
     
     @IBAction func addClicked(_ sender: Any) {
         let ref = Database.database().reference()
-        
+        print("addClick Start")
         var task = Task()
         task.name = titleTextField.text!
         if importantSwitch.isOn{
             task.important = "true"
-        }        
-        
-        ref.child(self.roomIdentifier!).child("taskList").child("notCompleted").child(task.name).setValue(task.important)
-            
+        }
+        let taskData: [String : Any] = [
+            "name": task.name,
+            "important": task.important,
+            "completed": task.completed,
+        ]
+        print("addClick middle")
+
+        ref.child(self.roomIdentifier!).child("taskList").child(String(counter!)).setValue(taskData)
+        print("below is id")
+        print(String(counter!))
+        print(taskData)
+        print("above is taskData")
         
         prevVC.tasks.append(task)
         prevVC.tableView.reloadData() //update tableView
         
         navigationController?.popViewController(animated: true)
+        print("addClick ended")
 
     }
     

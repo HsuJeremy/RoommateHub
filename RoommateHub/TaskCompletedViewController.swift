@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class TaskCompletedViewController: UIViewController {
     
@@ -15,7 +16,8 @@ class TaskCompletedViewController: UIViewController {
     
     var roomIdentifier: String? = nil
     var task: Task? = nil
-  
+    var taskString: String? = nil
+
     var prevVC = TaskListTableViewController()//reference to previous view controller
 
     override func viewDidLoad() {
