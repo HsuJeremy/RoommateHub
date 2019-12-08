@@ -12,7 +12,9 @@ class TaskCompletedViewController: UIViewController {
     
     @IBOutlet weak var completedButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
-
+    
+    var task: Task? = nil
+  
     var prevVC = TaskListTableViewController()//reference to previous view controller
 
     override func viewDidLoad() {

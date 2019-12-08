@@ -72,19 +72,40 @@ class TaskListTableViewController: UITableViewController {
         });
         */
         //tasks = createTask()
-    }
+/*        ref.child(roomIdentifier!).child("taskList").observe(.childAdded, with: { (snapshot) in
+            // Get NSDictionary of user tasks
+            let roommatetasks = snapshot.value as? NSDictionary
+            
+            // Unwrap roommatetasks
+            guard let roomietasks = roommatetasks else { return }
+            
+            // Iterate through NSDictionary
+            for (key, value) in roomietasks {
+                // Cast task as a Swift Dictionary
+                let taskDict = (value as! [String : Any])
+                print(taskDict)
+                
+                // Unwrap each property of task
+                guard let content = taskDict["content"] else { return }
+                guard let currentTime = taskDict["currentTime"] else { return }
+                                
+                // Append new Roommate to result Array
+                self.tasks.append(Task(
+                    var name = ""
+                    var important = "false"
+                    var completed = "false"
+                ))
+                print("From viewDidLoad")
+                print(roomietasks)
+            }
+            self.tableView.reloadData()
 
-    // MARK: - Table view data source
-    
-/*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        }) { (error) in
+            print(error.localizedDescription)
+        }*/
     }
- */
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tasks.count
     }
     
@@ -101,26 +122,26 @@ class TaskListTableViewController: UITableViewController {
         else{
             cell.textLabel?.text = " " + task.name
         }
-        
-        //print("fill in works")
         return cell
     }
     
-    
-/*    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let task = tasks[indexPath.row]
-        performSegue(withIdentifier: "isCompleted", sender: task)
-    }
- */
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let addingVC = segue.destination as! TaskAddViewController
-        addingVC.prevVC = self
+        if let addingVC = segue.destination as? TaskAddViewController {
+            addingVC.prevVC = self
+        }
+        if segue.identifier == "isCompleted",
+            let destination = segue.destination as? TaskCompletedViewController,
+            let index = tableView.indexPathForSelectedRow?.row {
+                destination.task = tasks[index]
+            }
+        print("segue done")
     }
     
+
 
 }
 

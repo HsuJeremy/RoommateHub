@@ -27,6 +27,7 @@ class MessageViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+
         super.viewWillDisappear(animated)
         
         message!.content = contentTextView.text
@@ -34,7 +35,7 @@ class MessageViewController: UIViewController {
         let ref = Database.database().reference()
         
         print(contentTextView.text)
-        ref.child(self.roomIdentifier!).child("messageBoard").child(message!.currentTime).updateChildValues([
+        ref.child(self.roomIdentifier!).child("messageBoard").child(message!.currentTime).setValue([
             "content": contentTextView.text as! NSString,
             "currentTime": message!.currentTime
         ])

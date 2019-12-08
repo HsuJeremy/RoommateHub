@@ -31,6 +31,8 @@ class MessagesListViewController: UITableViewController {
     var roomIdentifier: String? = nil
     
     @IBAction func createMessage() {
+        self.messages.removeAll()
+
         print("createmessage was called")
         /*self.messages.append(Message(
             id: id as! Int32,
@@ -42,7 +44,7 @@ class MessagesListViewController: UITableViewController {
         */
         
         timeStamp = Date().time()
-        print(timeStamp)
+        //print(timeStamp)
         let messageData: Message = Message(content: "Default", currentTime: timeStamp)
         // Create messageData dictionary
                 
@@ -52,24 +54,14 @@ class MessagesListViewController: UITableViewController {
             "content": messageData.content,
             "currentTime": messageData.currentTime
         ])
-        //print("createMessage happened")
-        
-        /*self.messages.append(messageData)
-        print(messages)
-        var count = 0
-        for thing in messages{
-            print(thing.content)
-            print(thing.currentTime)
-            print(String(count))
-            count = count + 1
-        }
-         */
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
+        //self.messages.removeAll()
+
         super.viewWillAppear(animated)
-        //reload()
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,16 +79,17 @@ class MessagesListViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        messages = []
-        ref.child(roomIdentifier!).child("messageBoard").observe(.value, with: { (snapshot) in
+        self.messages.removeAll()
+
+        ref.child(roomIdentifier!).child("messageBoard").observe(.childAdded, with: { (snapshot) in
             // Get NSDictionary of user messages
             let roommateMessages = snapshot.value as? NSDictionary
             
             // Unwrap roommateMessages
-            guard let messages = roommateMessages else { return }
+            guard let roomieMessages = roommateMessages else { return }
             
             // Iterate through NSDictionary
-            for (key, value) in messages {
+            for (key, value) in roomieMessages {
                 // Cast message as a Swift Dictionary
                 let messageDict = (value as! [String : Any])
                 print(messageDict)
@@ -111,9 +104,10 @@ class MessagesListViewController: UITableViewController {
                     currentTime: currentTime as! String
                 ))
                 print("From viewDidLoad")
-                print(messages)
-                self.tableView.reloadData()
+                print(roomieMessages)
             }
+            self.tableView.reloadData()
+
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -127,74 +121,6 @@ class MessagesListViewController: UITableViewController {
             destination.message = messages[index]
             destination.roomIdentifier = roomIdentifier
         }
-        //var vc = segue.destination as! MessageViewController
-        //passedContent = vc.contentTextView.text
-        
     }
     
 }
-
-/*
-import Foundation
-import UIKit
-import FirebaseDatabase
-
-
-class MessagesListViewController: UITableViewController {
-    var messages: [Message] = []
-    var roomIdentifier: String? = nil
-    
-    @IBAction func createMessage() {
-        let _ = MessageManager.shared.create()
-        reload()
-    }
-    
-    //reloads tableview
-    func reload() {
-        messages = MessageManager.shared.getMessages() //give all the messages that are currently in the database
-        tableView.reloadData() //reload data
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        reload()
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
-        cell.textLabel?.text = messages[indexPath.row].content
-        return cell
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MessageSegue",
-                let destination = segue.destination as? MessageViewController,
-                let index = tableView.indexPathForSelectedRow?.row {
-            destination.message = messages[index]
-        }
-    }
-    
-    func writeNewPost(content currentTime: String) {
-        let ref = Database.database().reference()
-
-      // Get a key for a new Post.
-        var newPostKey = Database.database().ref().child(roomIdentifier!).child("messages").push().key
-
-      // Write the new post's data simultaneously in the posts list and the user's post list.
-      var updates = {};
-      updates["messages" + messages.id] = postData
-
-        return ref.update(updates)
-    }
-
-}
- 
- */

@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="118.52678571428571"/>
         </scene>
-        <!--Messages List View Controller-->
+        <!--Message Board-->
         <scene sceneID="e6i-E5-Ycb">
             <objects>
                 <tableViewController id="KfC-jn-fhZ" customClass="MessagesListViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,7 +124,7 @@
                             <outlet property="delegate" destination="KfC-jn-fhZ" id="rAd-iq-5cd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Rp8-ZE-ina">
+                    <navigationItem key="navigationItem" title="Message Board" id="Rp8-ZE-ina">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0VE-lg-uwV">
                             <connections>
                                 <action selector="createMessage" destination="KfC-jn-fhZ" id="TqL-JE-FIj"/>
@@ -440,9 +440,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HW-7e-fSS">
-                                <rect key="frame" x="154" y="333" width="67" height="30"/>
+                                <rect key="frame" x="154" y="363" width="67" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completedClicked:" destination="Pyb-Vl-xN1" eventType="touchUpInside" id="rpH-it-FUl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESK-wX-dg0">
                                 <rect key="frame" x="150" y="245" width="74" height="37"/>
@@ -463,7 +466,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ByJ-KH-q4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2974" y="-626"/>
+            <point key="canvasLocation" x="2973.5999999999999" y="-626.60098522167493"/>
+        </scene>
+        <!--Completed Tasks-->
+        <scene sceneID="dxW-dm-fRK">
+            <objects>
+                <tableViewController id="rPv-i7-qsv" customClass="CompletedTaskListTableViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mxe-Eg-M0I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="apc-Ne-tD7">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="apc-Ne-tD7" id="4LF-4D-m9j">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rPv-i7-qsv" id="0vR-3E-74b"/>
+                            <outlet property="delegate" destination="rPv-i7-qsv" id="Dyh-DZ-mbN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Completed Tasks" id="9VL-qd-IQq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="51k-RA-KYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3822" y="-622"/>
         </scene>
         <!--Task List-->
         <scene sceneID="cFF-nv-Pxb">
@@ -481,6 +513,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Pyb-Vl-xN1" kind="show" identifier="isCompleted" id="Hsc-Pd-6q8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -488,6 +523,13 @@
                             <outlet property="delegate" destination="iiV-3O-kxe" id="OoN-yT-BPo"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Completed Items" id="YdS-Gk-ZOD">
+                            <connections>
+                                <segue destination="rPv-i7-qsv" kind="show" id="e5U-AW-bNP"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Task List" id="rCP-dk-mkq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SE7-Xd-Dm2">
                             <connections>
@@ -495,13 +537,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="Pyb-Vl-xN1" kind="show" identifier="isCompleted" id="EiA-YW-0fW"/>
-                    </connections>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0T-TJ-YS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="107"/>
+            <point key="canvasLocation" x="2952.8000000000002" y="106.40394088669952"/>
         </scene>
         <!--Task Add View Controller-->
         <scene sceneID="jch-Ko-6nJ">
