@@ -51,9 +51,9 @@ class MessagesListViewController: UITableViewController {
         timeStamp = Date().time()
         print(timeStamp)
         var messageData: Message = Message(content: "yodawg", currentTime: timeStamp)
-        // Create profileData dictionary
+        // Create messageData dictionary
                 
-        // Upload user profile to the cloud
+        // Upload user message to the cloud
         let ref = Database.database().reference()
         ref.child(self.roomIdentifier!).child("messageBoard").child(timeStamp.replacingOccurrences(of: " ", with: "_")).setValue([
             "content": messageData.content,
@@ -62,7 +62,16 @@ class MessagesListViewController: UITableViewController {
         //print("createMessage happened")
         
         self.messages.append(messageData)
-        
+        print(messages)
+        var count = 0
+        for thing in messages{
+            print(thing.content)
+            print(thing.currentTime)
+            print(String(count))
+            count = count + 1
+
+        }
+
     }
     
 
@@ -87,26 +96,24 @@ class MessagesListViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        
-        ref.child(roomIdentifier!).child("messageBoard").observe(.value, with: { (snapshot) in
-            // Get NSDictionary of messages on the roommate message board
-            let roommateMessageBoard = snapshot.value as? NSDictionary
+        ref.child(roomIdentifier!).observe(.value, with: { (snapshot) in
+            // Get NSDictionary of user messages
+            let roommateMessages = snapshot.value as? NSDictionary
             
-            // Unwrap roommateMessageBoard
-            guard let messageBoard = roommateMessageBoard else { return }
+            // Unwrap roommateMessages
+            guard let messages = roommateMessages else { return }
             
             // Iterate through NSDictionary
-            for (key, value) in messageBoard {
-                // Cast messageBoard as a Swift Dictionary
-                let messageBoardDict = (value as! [String : Any])
-                print(messageBoardDict)
+            for (key, value) in messages {
+                // Cast message as a Swift Dictionary
+                let messageDict = (value as! [String : Any])
+                print(messageDict)
                 
-                // Unwrap each property of profile
-                guard let id = messageBoardDict["id"] else { return }
-                guard let content = messageBoardDict["content"] else { return }
-                guard let currentTime = messageBoardDict["currentTime"] else { return }
-
-                // Append new Message to result Array
+                // Unwrap each property of message
+                guard let content = messageDict["content"] else { return }
+                guard let currentTime = messageDict["currentTime"] else { return }
+                                
+                // Append new Roommate to result Array
                 self.messages.append(Message(
                     content: content as! String,
                     currentTime: currentTime as! String
