@@ -24,22 +24,21 @@ class TaskAddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Configure UITextField delegates and tap gestures
+        configureTapGesture()
     }
     
     @IBAction func addClicked(_ sender: Any) {
         let ref = Database.database().reference()
         
-        let task = Task()
+        var task = Task()
         task.name = titleTextField.text!
         if importantSwitch.isOn{
             task.important = "true"
-        }
-        print(self.roomIdentifier)
-        print(task.important)
-        print(task.name)
+        }        
         
-        ref.child(self.roomIdentifier!).child("taskList").child(task.name).setValue(task.important)
+        ref.child(self.roomIdentifier!).child("taskList").child("notCompleted").child(task.name).setValue(task.important)
+            
         
         prevVC.tasks.append(task)
         prevVC.tableView.reloadData() //update tableView
@@ -47,5 +46,19 @@ class TaskAddViewController: UIViewController {
         navigationController?.popViewController(animated: true)
 
     }
+    
+    
+    // From Code Pro on YouTube
+    private func configureTapGesture() {
+       let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TaskAddViewController.handleTap))
+       view.addGestureRecognizer(tapGesture)
+    }
+
+    // From Code Pro on YouTube
+    @objc func handleTap() {
+       print("Handle tap was called")
+       view.endEditing(true)
+    }
+
 
 }

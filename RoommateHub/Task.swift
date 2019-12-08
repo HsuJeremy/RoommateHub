@@ -10,7 +10,14 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-class Task {
+//class Task {
+//    var name = ""
+//    var important = "false"
+//    var completed = "false"
+//}
+
+//this one works
+struct Task {
     var name = ""
     var important = "false"
     var completed = "false"
