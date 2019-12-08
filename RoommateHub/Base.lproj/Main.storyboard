@@ -6,6 +6,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -151,9 +159,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="348" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="u7y-vG-x9C" kind="show" identifier="MessageSegue" id="Nax-fd-WMb"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -165,6 +170,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0VE-lg-uwV">
                             <connections>
                                 <action selector="createMessage" destination="KfC-jn-fhZ" id="TqL-JE-FIj"/>
+                                <segue destination="u7y-vG-x9C" kind="show" identifier="MessageSegue" id="0JW-Cj-Lzi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -221,7 +227,7 @@
             </objects>
             <point key="canvasLocation" x="3920.8000000000002" y="884.48275862068965"/>
         </scene>
-        <!--Login-->
+        <!--Login View Controller-->
         <scene sceneID="s68-ls-HEq">
             <objects>
                 <viewController id="Czy-yt-MUG" customClass="LoginViewController" customModule="RoommateHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,81 +236,137 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zUF-lu-diY">
-                                <rect key="frame" x="40" y="137.99999999999997" width="295" height="297.33333333333326"/>
+                                <rect key="frame" x="20" y="256.66666666666669" width="335" height="280.00000000000006"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsD-mX-p3d">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="KZu-RJ-ddz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john@harvard.edu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jva-Y1-YpS">
-                                        <rect key="frame" x="0.0" y="20.333333333333343" width="295" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="0.0" y="35" width="335" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="cEM-8Z-3dM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu0-0c-OgA">
-                                        <rect key="frame" x="0.0" y="54.33333333333335" width="295" height="20.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="70" width="335" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="ySP-a1-rJp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MF-Tq-dB2">
-                                        <rect key="frame" x="0.0" y="74.666666666666657" width="295" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="0.0" y="105" width="335" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Lkt-ut-zUT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Affiliation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-w3-6ZM">
-                                        <rect key="frame" x="0.0" y="108.66666666666666" width="295" height="20.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="140" width="335" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="WhH-Gh-Fj3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Winthrop House" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pb6-5S-MDz">
-                                        <rect key="frame" x="0.0" y="129" width="295" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="0.0" y="175" width="335" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="2hh-Y4-orN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp3-R1-uXt">
-                                        <rect key="frame" x="0.0" y="163" width="295" height="20.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="210" width="335" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="6VC-k3-Hfy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A20" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcy-DZ-47b">
-                                        <rect key="frame" x="0.0" y="183.33333333333331" width="295" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="0.0" y="245" width="335" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="T3a-Hv-g8S"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-WU-ecf">
-                                        <rect key="frame" x="0.0" y="217.33333333333331" width="295" height="30"/>
-                                        <state key="normal" title="Login"/>
-                                        <connections>
-                                            <action selector="loginAction:" destination="Czy-yt-MUG" eventType="touchUpInside" id="sf0-5z-fQx"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="loginToHome" id="wyK-AZ-tQb"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bt-gB-h3F">
-                                        <rect key="frame" x="0.0" y="247.33333333333331" width="295" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to RoommateHub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLI-I3-rGB">
+                                <rect key="frame" x="10" y="173" width="355" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-WU-ecf">
+                                <rect key="frame" x="20" y="566.66666666666663" width="335" height="50"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fY2-fN-yHA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginAction:" destination="Czy-yt-MUG" eventType="touchUpInside" id="sf0-5z-fQx"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="loginToHome" id="wyK-AZ-tQb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOL-Aq-jC2">
+                                <rect key="frame" x="20" y="621.66666666666663" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="spF-cM-PaZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
+                                <state key="normal" title="Don't have an account? Sign up"/>
+                                <connections>
+                                    <action selector="signup:" destination="Czy-yt-MUG" eventType="touchUpInside" id="t9R-79-3bn"/>
+                                    <segue destination="L95-4G-EUH" kind="show" identifier="loginToSignup" id="Zrp-xG-6al"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zUF-lu-diY" firstAttribute="leading" secondItem="KLN-9S-2Mx" secondAttribute="leading" constant="40" id="Jqd-0B-Qrd"/>
-                            <constraint firstItem="zUF-lu-diY" firstAttribute="top" secondItem="KLN-9S-2Mx" secondAttribute="top" constant="50" id="KuO-BU-tPK"/>
-                            <constraint firstItem="KLN-9S-2Mx" firstAttribute="trailing" secondItem="zUF-lu-diY" secondAttribute="trailing" constant="40" id="elm-tq-rPX"/>
+                            <constraint firstItem="jLI-I3-rGB" firstAttribute="leading" secondItem="KLN-9S-2Mx" secondAttribute="leading" constant="10" id="AZu-7J-uCH"/>
+                            <constraint firstItem="iOL-Aq-jC2" firstAttribute="top" secondItem="hPn-WU-ecf" secondAttribute="bottom" constant="5" id="DWG-rK-z9o"/>
+                            <constraint firstItem="jLI-I3-rGB" firstAttribute="top" secondItem="KLN-9S-2Mx" secondAttribute="top" constant="85" id="Qcv-Zf-Opx"/>
+                            <constraint firstItem="KLN-9S-2Mx" firstAttribute="trailing" secondItem="hPn-WU-ecf" secondAttribute="trailing" constant="20" id="YPq-Xd-UvT"/>
+                            <constraint firstItem="KLN-9S-2Mx" firstAttribute="trailing" secondItem="jLI-I3-rGB" secondAttribute="trailing" constant="10" id="mNb-QB-tQ6"/>
+                            <constraint firstItem="iOL-Aq-jC2" firstAttribute="leading" secondItem="KLN-9S-2Mx" secondAttribute="leading" constant="20" id="n8W-vq-Khi"/>
+                            <constraint firstItem="hPn-WU-ecf" firstAttribute="leading" secondItem="KLN-9S-2Mx" secondAttribute="leading" constant="20" id="pVn-zh-W1K"/>
+                            <constraint firstItem="KLN-9S-2Mx" firstAttribute="trailing" secondItem="zUF-lu-diY" secondAttribute="trailing" constant="20" id="tAp-9W-fRv"/>
+                            <constraint firstItem="zUF-lu-diY" firstAttribute="top" secondItem="jLI-I3-rGB" secondAttribute="bottom" constant="50" id="twj-nb-1k6"/>
+                            <constraint firstItem="hPn-WU-ecf" firstAttribute="top" secondItem="zUF-lu-diY" secondAttribute="bottom" constant="30" id="uv1-ez-3Qg"/>
+                            <constraint firstItem="zUF-lu-diY" firstAttribute="leading" secondItem="KLN-9S-2Mx" secondAttribute="leading" constant="20" id="xKR-8Y-Rex"/>
+                            <constraint firstItem="KLN-9S-2Mx" firstAttribute="trailing" secondItem="iOL-Aq-jC2" secondAttribute="trailing" constant="20" id="yxI-ru-lcU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KLN-9S-2Mx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="3kE-pg-Kse"/>
+                    <navigationItem key="navigationItem" id="3kE-pg-Kse"/>
                     <connections>
                         <outlet property="email" destination="Jva-Y1-YpS" id="MsT-dc-eya"/>
-                        <outlet property="errorLabel" destination="2bt-gB-h3F" id="Pgn-z2-dPg"/>
                         <outlet property="house" destination="Pb6-5S-MDz" id="VRO-5o-jRk"/>
                         <outlet property="password" destination="9MF-Tq-dB2" id="3tt-U0-YCc"/>
                         <outlet property="roomNumber" destination="qcy-DZ-47b" id="6c6-w4-7gf"/>
@@ -558,7 +620,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="PZX-Uq-pkQ" kind="relationship" relationship="rootViewController" id="fO4-8M-8KY"/>
+                        <segue destination="Czy-yt-MUG" kind="relationship" relationship="rootViewController" id="z75-YS-ZFr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rgi-HR-wjk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -735,50 +797,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmc-Ym-vvo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="769" y="719"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="RAe-Lj-gJn">
-            <objects>
-                <viewController id="PZX-Uq-pkQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GPN-c7-MX9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-pF-MQE">
-                                <rect key="frame" x="50" y="338" width="275" height="72"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksp-V8-zTS">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Login"/>
-                                        <connections>
-                                            <segue destination="Czy-yt-MUG" kind="show" id="bpd-9k-fBW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWP-P4-vUW">
-                                        <rect key="frame" x="0.0" y="36" width="275" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Sign Up"/>
-                                        <connections>
-                                            <segue destination="L95-4G-EUH" kind="show" id="dga-P3-yk7"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="RKj-OD-pfF" firstAttribute="trailing" secondItem="IKt-pF-MQE" secondAttribute="trailing" constant="50" id="Eev-8C-JPx"/>
-                            <constraint firstItem="IKt-pF-MQE" firstAttribute="top" secondItem="RKj-OD-pfF" secondAttribute="top" constant="250" id="PEe-eF-Btj"/>
-                            <constraint firstItem="IKt-pF-MQE" firstAttribute="leading" secondItem="RKj-OD-pfF" secondAttribute="leading" constant="50" id="eBO-Rw-3fz"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="RKj-OD-pfF"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="S8q-Wa-gP9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A5u-4l-K0m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-369" y="117"/>
         </scene>
     </scenes>
 </document>

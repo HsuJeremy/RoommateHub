@@ -21,7 +21,7 @@ class MessageViewController: UIViewController {
         super.viewWillAppear(animated)
         
         contentTextView.text = message!.content
-        timeLabel.text = message!.currentTime //"\(message!.currentTime)" //turn the int type into a string
+        timeLabel.text = message!.currentTime //turn the int type into a string
     }
     
     override func viewWillDisappear(_ animated: Bool) {

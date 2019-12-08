@@ -32,6 +32,7 @@ extension Date {
 class MessagesListViewController: UITableViewController {
     var messages: [Message] = []
     var timeStamp = ""
+    var passedContent = ""
     let ref = Database.database().reference()
     var roomIdentifier: String? = nil
     
@@ -50,7 +51,7 @@ class MessagesListViewController: UITableViewController {
         
         timeStamp = Date().time()
         print(timeStamp)
-        var messageData: Message = Message(content: "yodawg", currentTime: timeStamp)
+        var messageData: Message = Message(content: passedContent, currentTime: timeStamp)
         // Create messageData dictionary
                 
         // Upload user message to the cloud
@@ -118,6 +119,8 @@ class MessagesListViewController: UITableViewController {
                     content: content as! String,
                     currentTime: currentTime as! String
                 ))
+                print("From viewDidLoad")
+                print(messages)
                 self.tableView.reloadData()
             }
         }) { (error) in
@@ -132,6 +135,9 @@ class MessagesListViewController: UITableViewController {
                 let index = tableView.indexPathForSelectedRow?.row {
             destination.message = messages[index]
         }
+        //var vc = segue.destination as! MessageViewController
+        //let passedContent = vc.contentTextView.text
+    
     }
 }
 
