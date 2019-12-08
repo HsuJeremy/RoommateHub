@@ -8,13 +8,15 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 class MessageViewController: UIViewController {
     //@IBOutlet var messageBoardTitle: UILabel!
     @IBOutlet var contentTextView: UITextView!
     @IBOutlet var timeLabel: UILabel!
-
     
+    var roomIdentifier: String? = nil
+
     var message: Message? = nil
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +30,15 @@ class MessageViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         message!.content = contentTextView.text
-        //MessageManager.shared.saveMessage(message: message!)
+
+        let ref = Database.database().reference()
+        
+        print(contentTextView.text)
+        ref.child(self.roomIdentifier!).child("messageBoard").child(message!.currentTime).updateChildValues([
+            "content": contentTextView.text as! NSString,
+            "currentTime": message!.currentTime
+        ])
+
     }
 
 }
