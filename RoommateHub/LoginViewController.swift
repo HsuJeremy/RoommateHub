@@ -127,7 +127,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // From Code Pro on YouTube
     @objc func handleTap() {
-        print("Handle tap was called")
         view.endEditing(true)
     }
     

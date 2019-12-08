@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-//kanshuYokoo from coderwall.com date timestamp formatting
+// kanshuYokoo from coderwall.com date timestamp formatting
 extension Date {
     func time() -> String! {
         let date = Date()
@@ -25,58 +25,12 @@ extension Date {
 
 class MessagesListViewController: UITableViewController {
     var messages: [String] = []
-    var timeStamp = ""
-    var passedContent = "Leave an anonymous message"
     var roomIdentifier: String? = nil
-    
-    // From Code with Chris on YouTube
-    // @IBAction func createMessage() {
-//        print("createmessage was called")
-//        /*self.messages.append(Message(
-//            id: id as! Int32,
-//            content: content as! String
-//            //currentTime: currentTime as! String
-//        ))
-//        var newPostKey = ref.child(roomIdentifier!).child("messages").setValue(["id": messages[idCounter].id])
-//        //reload()
-//        */
-//
-//        timeStamp = Date().time()
-//        print(timeStamp)
-//        let messageData: Message = Message(content: "Default", currentTime: timeStamp)
-//        // Create messageData dictionary
-//
-//        // Upload user message to the cloud
-//        let ref = Database.database().reference()
-////        ref.child(self.roomIdentifier!).child("messageBoard").child(timeStamp.replacingOccurrences(of: " ", with: "_")).setValue([
-////            "content": messageData.content,
-////            "currentTime": messageData.currentTime
-////        ])
-//        ref.child(self.roomIdentifier!).child("messageBoard").child(timeStamp.replacingOccurrences(of: " ", with: "_")).setValue("Hello world")
-//        //print("createMessage happened")
-//
-//        /*self.messages.append(messageData)
-//        print(messages)
-//        var count = 0
-//        for thing in messages{
-//            print(thing.content)
-//            print(thing.currentTime)
-//            print(String(count))
-//            count = count + 1
-//        }
-//         */
-        
-        
-    // }
 
-    
     override func viewWillAppear(_ animated: Bool) {
-        //self.messages.removeAll()
-
         super.viewWillAppear(animated)
-        self.tableView.reloadData()
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -87,44 +41,12 @@ class MessagesListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
+        cell.textLabel!.font = UIFont(name: "SF Pro Display", size: 18)
         cell.textLabel?.text = messages[indexPath.row]
         return cell
     }
     
     override func viewDidLoad() {
-//        print("viewDidLoad start")
-//        print(messages)
-//        let ref = Database.database().reference()
-//        ref.child(roomIdentifier!).child("messageBoard").observe(.value, with: { (snapshot) in
-//            // Get NSDictionary of user messages
-//            let roommateMessages = snapshot.value as? NSDictionary
-//
-//            // Unwrap roommateMessages
-//            guard let firebaseMessages = roommateMessages else { return }
-//
-//            // Iterate through NSDictionary
-//            for (key, value) in firebaseMessages {
-//                // Cast message as a Swift Dictionary
-//                let messageDict = (value as! [String : Any])
-//                print(messageDict)
-//
-//                // Unwrap each property of message
-//                guard let content = messageDict["content"] else { return }
-//                guard let currentTime = messageDict["currentTime"] else { return }
-//
-//                // Append new Roommate to result Array
-//                self.messages.append(Message(
-//                    content: content as! String,
-//                    currentTime: currentTime as! String
-//                ))
-//                self.tableView.reloadData()
-//            }
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
-//        print("viewDidLoad end")
-//        print(messages)'
-        
         // From Code with Chris on YouTube
         let ref = Database.database().reference()
         ref.child(roomIdentifier!).child("messageBoard").observe(.childAdded) { (snapshot) in
@@ -150,5 +72,4 @@ class MessagesListViewController: UITableViewController {
             destination.timeStamp = timeStamp
         }
     }
-    
 }
