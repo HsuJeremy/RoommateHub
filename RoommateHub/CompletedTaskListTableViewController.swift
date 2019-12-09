@@ -82,6 +82,7 @@ class CompletedTaskListTableViewController: UITableViewController {
         
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompletedTaskCell", for: indexPath)
+        cell.textLabel!.font = UIFont(name: "SF Pro Display", size: 18)
         
         //DISTINCT ARRAAYYYAYAYAYAYA to fix doubling issue
         var uniqueName: Set = ["blobfish5000000xr"] //this is a dummy name value to initialize (nothing will have this name)

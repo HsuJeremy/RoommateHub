@@ -104,7 +104,7 @@ class TaskListTableViewController: UITableViewController {
         }
         let task = uniqueTasks[indexPath.row]
         
-        //cell.textLabel!.font = UIFont(name: "SF Pro Display", size: 18)
+        cell.textLabel!.font = UIFont(name: "SF Pro Display", size: 18)
         if task.important == "true" {
             cell.textLabel?.text = task.name + " ❗️"
         }

@@ -386,38 +386,6 @@
             endingLineNumber = "49"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "81CD8F25-5005-47AD-8A8C-BC8F36FB8018 - e55492ae428026f0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RoommateHub.TaskListTableViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "RoommateHub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Jeremy/Desktop/RoommateHub/RoommateHub/TaskListTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  uuid = "81CD8F25-5005-47AD-8A8C-BC8F36FB8018 - f491b396b798fd88"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in RoommateHub.TaskListTableViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "RoommateHub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Jeremy/Desktop/RoommateHub/RoommateHub/TaskListTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "221">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -434,38 +402,6 @@
             endingLineNumber = "48"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "36C3A05E-AFD9-42F4-BDD4-1AC96B3CC358 - e55492ae428026f0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RoommateHub.TaskListTableViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "RoommateHub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Jeremy/Desktop/RoommateHub/RoommateHub/TaskListTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  uuid = "36C3A05E-AFD9-42F4-BDD4-1AC96B3CC358 - f491b396b798fd88"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in RoommateHub.TaskListTableViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "RoommateHub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Jeremy/Desktop/RoommateHub/RoommateHub/TaskListTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "221">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -478,10 +414,8 @@
             filePath = "RoommateHub/TaskListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "147"
+            endingLineNumber = "147">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -494,10 +428,8 @@
             filePath = "RoommateHub/TaskListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "147"
+            endingLineNumber = "147">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -510,10 +442,8 @@
             filePath = "RoommateHub/TaskListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "147"
+            endingLineNumber = "147">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -526,10 +456,8 @@
             filePath = "RoommateHub/TaskListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "147"
+            endingLineNumber = "147">
             <Locations>
                <Location
                   uuid = "7F7EF85C-82D6-435A-8A5C-81F05D2704E1 - 686a5460e31aa729"
@@ -574,10 +502,8 @@
             filePath = "RoommateHub/TaskListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "147"
+            endingLineNumber = "147">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
