@@ -18,7 +18,7 @@ class TaskCompletedViewController: UIViewController {
     var roomIdentifier: String? = nil
     var task: Task? = nil
 
-    var prevVC = TaskListTableViewController()//reference to previous view controller
+    //var prevVC = TaskListTableViewController()//reference to previous view controller
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +35,11 @@ class TaskCompletedViewController: UIViewController {
         print("completeclicked done")
         ref.child(self.roomIdentifier!).child("taskList").child(task!.idCounter).setValue(["completed": "true", "important": task!.important, "name": task!.name,])
 
+        completedButton.isHidden = true
+        //prevVC.tasks.append(task!)
+        //prevVC.tableView.reloadData() //update tableView
         
-        prevVC.tasks.append(task!)
-        prevVC.tableView.reloadData() //update tableView
-        
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)
 
     }
 }

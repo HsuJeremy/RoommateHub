@@ -170,10 +170,10 @@ class TaskListTableViewController: UITableViewController {
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if let addingVC = segue.destination as? TaskAddViewController {
+        /*if let addingVC = segue.destination as? TaskAddViewController {
             addingVC.prevVC = self
-        }
-        if segue.identifier == "isCompleted",
+        }*/
+        if segue.identifier == "isCompletedSegue",
             let destination = segue.destination as? TaskCompletedViewController,
             let index = tableView.indexPathForSelectedRow?.row {
             print("isCompleted shenenigans start here")
@@ -190,8 +190,11 @@ class TaskListTableViewController: UITableViewController {
             let counter = Date().timer()
             print(counter!)
             destination.counter = counter!
-
         }
+        else if segue.identifier == "CompletedTaskListSegue", let destination = segue.destination as? TaskAddViewController {
+            destination.roomIdentifier = roomIdentifier
+        }
+
 
         
     }

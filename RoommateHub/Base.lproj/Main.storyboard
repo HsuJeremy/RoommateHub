@@ -687,7 +687,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Pyb-Vl-xN1" kind="show" identifier="isCompleted" id="Hsc-Pd-6q8"/>
+                                    <segue destination="Pyb-Vl-xN1" kind="show" identifier="isCompletedSegue" id="Hsc-Pd-6q8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -706,7 +706,7 @@
                             </barButtonItem>
                             <barButtonItem title="Completed Items" id="YdS-Gk-ZOD">
                                 <connections>
-                                    <segue destination="rPv-i7-qsv" kind="show" id="e5U-AW-bNP"/>
+                                    <segue destination="rPv-i7-qsv" kind="show" identifier="CompletedTaskListSegue" id="e5U-AW-bNP"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
