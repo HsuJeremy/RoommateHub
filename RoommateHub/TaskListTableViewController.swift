@@ -40,11 +40,11 @@ class TaskListTableViewController: UITableViewController {
     override func viewDidLoad() {
 
             //let ref = Database.database().reference()
-            if roomIdentifier! == nil {
-                print("ahhh crappppppppp wHY")
-            }
-            print(roomIdentifier!)
-            print("above is roomidenifyer")
+//            if roomIdentifier! == nil {
+//                print("ahhh crappppppppp wHY")
+//            }
+//            print(roomIdentifier!)
+//            print("above is roomidenifyer")
         
             ref.child(roomIdentifier!).child("taskList").observe(.value, with: { (snapshot) in
                 // Get NSDictionary of user tasks
