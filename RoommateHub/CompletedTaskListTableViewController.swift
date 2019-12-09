@@ -20,6 +20,7 @@ class CompletedTaskListTableViewController: UITableViewController {
     let ref = Database.database().reference()
     
     override func viewDidLoad() {
+        tasks.removeAll()
 
             //let ref = Database.database().reference()
             ref.child(roomIdentifier!).child("taskList").observe(.value, with: { (snapshot) in
