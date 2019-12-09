@@ -10,15 +10,8 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-//class Task {
-//    var name = ""
-//    var important = "false"
-//    var completed = "false"
-//}
-
-//this one works
 struct Task {
-    var idCounter = "1010" //might need to change this default value
+    var idCounter = "1010"
     var name = ""
     var important = "false"
     var completed = "false"
