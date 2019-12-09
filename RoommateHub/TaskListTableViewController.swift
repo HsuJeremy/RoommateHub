@@ -191,7 +191,7 @@ class TaskListTableViewController: UITableViewController {
             print(counter!)
             destination.counter = counter!
         }
-        else if segue.identifier == "CompletedTaskListSegue", let destination = segue.destination as? TaskAddViewController {
+        else if segue.identifier == "CompletedTaskListSegue", let destination = segue.destination as? CompletedTaskListTableViewController {
             destination.roomIdentifier = roomIdentifier
         }
 
