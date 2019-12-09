@@ -20,6 +20,7 @@ class CompletedTaskListTableViewController: UITableViewController {
     let ref = Database.database().reference()
     
     override func viewDidLoad() {
+        tasks.removeAll()
 
             //let ref = Database.database().reference()
             ref.child(roomIdentifier!).child("taskList").observe(.value, with: { (snapshot) in
@@ -67,7 +68,6 @@ class CompletedTaskListTableViewController: UITableViewController {
                     print(tasks)
 
                     self.tableView.reloadData()
-
                 }
             })
             { (error) in
@@ -98,7 +98,7 @@ class CompletedTaskListTableViewController: UITableViewController {
         }
         
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CompletedTaskCell", for: indexPath)
         
         //DISTINCT ARRAAYYYAYAYAYAYA to fix doubling issue
         var uniqueName: Set = ["blobfish5000000xr"] //this is a dummy name value to initialize (nothing will have this name)

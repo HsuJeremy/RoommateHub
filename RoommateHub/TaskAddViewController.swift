@@ -50,8 +50,8 @@ class TaskAddViewController: UIViewController {
         print(taskData)
         print("above is taskData")
         
-        prevVC.tasks.append(task)
-        prevVC.tableView.reloadData() //update tableView
+        //prevVC.tasks.append(task)
+        //prevVC.tableView.reloadData() //update tableView
         
         navigationController?.popViewController(animated: true)
         print("addClick ended")

@@ -18,7 +18,7 @@ import FirebaseDatabase
 
 //this one works
 struct Task {
-    var idCounter = "1010"
+    var idCounter = "1010" //might need to change this default value
     var name = ""
     var important = "false"
     var completed = "false"
