@@ -37,81 +37,15 @@ class TaskListTableViewController: UITableViewController {
     var database = Database.database();
     let ref = Database.database().reference()
     
-    
-//    override func viewDidLoad() {
-//        tasksInCompleted.removeAll()
-//        self.tableView.reloadData()
-//
-//        // From Code with Chris on YouTube
-//        //this adds all the created (ALL the data period, actually) to the master list of all the tasks (next step is sorting them by completed and incomplete children)
-//        let ref = Database.database().reference()
-//        print("viewDL start")
-//        print(counter)
-//        ref.child(roomIdentifier!).child("taskList").observe(.childAdded) { (snapshot) in
-//            print("below is message")
-//            let message = snapshot.value as? String
-//            print(message)
-//            guard let actualMessage = message else { return }
-//            print("below is actualMessage")
-//            print(actualMessage)
-//            print("below is tasksInCompleted")
-//            print(self.tasksInCompleted)
-//            self.tasksInCompleted.append(actualMessage)
-//            print("below is tasksInCompleted")
-//            print(self.tasksInCompleted)
-//            print("viewDL end")
-//            self.tableView.reloadData()
-//        }
-//
-//        ref.observeSingleEvent(of: .value, with: { snapshot in
-//
-////            if !snapshot.exists() { return }
-////
-////            print(snapshot)
-////
-////            if let userName = snapshot.value!["completed"] as? String {
-////                print(userName)
-////            }
-////            if let email = snapshot.value["email"] as? String {
-////                print(email)
-////            }
-//
-//            // can also use
-////            print(snapshot.childSnapshot(forPath: "completed").value as! String)
-//        })
-//
-//    }
-    
-//
-//        override func viewDidLoad() {
-//            // From Code with Chris on YouTube
-//            let ref = Database.database().reference()
-//            ref.child(roomIdentifier!).child("taskList").observe(.childAdded) { (snapshot) in
-//                print("View did load \(snapshot.value)")
-//            //let message = snapshot.value as? String
-//    //            guard let actualMessage = message else { return }
-//    //            self.tasks.append(actualMessage)
-//    //            self.tableView.reloadData()
-//            }
-//        }
-    
-//    func distinceReturn(tascks:[Task] ) -> [Task].Type {
-//        var seen = Set<String>()
-//        var unique = [Task].self
-//        for message in tascks {
-//            if !seen.contains(message.idCounter) {
-//                unique.append(message)
-//                seen.insert(message.idCounter)
-//            }
-//        }
-//        return unique
-//
-//    }
-
-    
     override func viewDidLoad() {
 
             //let ref = Database.database().reference()
+            if roomIdentifier! == nil {
+                print("ahhh crappppppppp wHY")
+            }
+            print(roomIdentifier!)
+            print("above is roomidenifyer")
+        
             ref.child(roomIdentifier!).child("taskList").observe(.value, with: { (snapshot) in
                 // Get NSDictionary of user tasks
                 let taskProfiles = snapshot.value as? NSDictionary
@@ -184,25 +118,6 @@ class TaskListTableViewController: UITableViewController {
             return uniqueTasks.count
         }
         
-
-/*    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
-
-        // Configure the cell...
-        let task = tasks[indexPath.row]
-        print("tableView")
-        print(task)
-        
-        if task.important == "true" {
-            cell.textLabel?.text = "* " + tasksString[indexPath.row] + " *"
-        }
-        else{
-            cell.textLabel?.text = " " + tasksString[indexPath.row]
-        }
-        print("tableViewEnd")
-        return cell
-    }
-*/
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
         
@@ -240,12 +155,6 @@ class TaskListTableViewController: UITableViewController {
 
         return cell
     }
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
-//        cell.textLabel!.font = UIFont(name: "SF Pro Display", size: 18)
-//        cell.textLabel?.text = messages[indexPath.row]
-//        return cell
-//    }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -267,10 +176,13 @@ class TaskListTableViewController: UITableViewController {
         if segue.identifier == "isCompleted",
             let destination = segue.destination as? TaskCompletedViewController,
             let index = tableView.indexPathForSelectedRow?.row {
+            print("isCompleted shenenigans start here")
             print(String(index))
+            print(uniqueTasks[index])
                 destination.task = uniqueTasks[index]
                 destination.roomIdentifier = roomIdentifier
-                //destination.counter = Date().timer()
+            print("isCompleted shenenigans end here")
+
             }
         else if segue.identifier == "AddTaskSegue", let destination = segue.destination as? TaskAddViewController {
             //print("Performed segue")

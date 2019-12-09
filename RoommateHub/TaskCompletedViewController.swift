@@ -13,6 +13,7 @@ class TaskCompletedViewController: UIViewController {
     
     @IBOutlet weak var completedButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    let ref = Database.database().reference()
     
     var roomIdentifier: String? = nil
     var task: Task? = nil
@@ -23,13 +24,19 @@ class TaskCompletedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        titleLabel.text = task!.name
     }
     
     
     @IBAction func completedClicked(_ sender: Any) {
-        let task = Task()
+        //let task = Task()
+        print("below is from the completeclicked (task)")
+        print(task)
+        print("completeclicked done")
+        ref.child(self.roomIdentifier!).child("taskList").child(task!.idCounter).setValue(["completed": "true", "important": task!.important, "name": task!.name,])
+
         
-        prevVC.tasks.append(task)
+        prevVC.tasks.append(task!)
         prevVC.tableView.reloadData() //update tableView
         
         navigationController?.popViewController(animated: true)

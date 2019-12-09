@@ -620,8 +620,8 @@
                                     <action selector="completedClicked:" destination="Pyb-Vl-xN1" eventType="touchUpInside" id="rpH-it-FUl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESK-wX-dg0">
-                                <rect key="frame" x="150" y="245" width="74" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESK-wX-dg0">
+                                <rect key="frame" x="16" y="245" width="343" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <nil key="textColor"/>
@@ -696,19 +696,20 @@
                             <outlet property="delegate" destination="iiV-3O-kxe" id="OoN-yT-BPo"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Completed Items" id="YdS-Gk-ZOD">
-                            <connections>
-                                <segue destination="rPv-i7-qsv" kind="show" id="e5U-AW-bNP"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Task List" id="rCP-dk-mkq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SE7-Xd-Dm2">
-                            <connections>
-                                <segue destination="wx9-1g-3g2" kind="show" identifier="AddTaskSegue" id="0g0-dc-vIu"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="SE7-Xd-Dm2">
+                                <connections>
+                                    <segue destination="wx9-1g-3g2" kind="show" identifier="AddTaskSegue" id="0g0-dc-vIu"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Completed Items" id="YdS-Gk-ZOD">
+                                <connections>
+                                    <segue destination="rPv-i7-qsv" kind="show" id="e5U-AW-bNP"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
