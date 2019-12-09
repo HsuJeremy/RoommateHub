@@ -8,13 +8,6 @@
 import UIKit
 import FirebaseDatabase
 
-//Nicolas Manzini from stack
-extension String {
-    var boolValue: Bool {
-        return NSString(string: self).boolValue
-    }
-}
-
 // kanshuYokoo from coderwall.com date timestamp formatting
 extension Date {
     func timer() -> String! {
@@ -38,10 +31,11 @@ class TaskListTableViewController: UITableViewController {
     let ref = Database.database().reference()
     
     override func viewDidLoad() {
-        
+        tasks.removeAll()
         ref.child(roomIdentifier!).child("taskList").observe(.value, with: { (snapshot) in
             // Get NSDictionary of user tasks
             let taskProfiles = snapshot.value as? NSDictionary
+            print(snapshot.value)
 
             // Unwrap roommateProfiles
             guard let tasks = taskProfiles else { return }
@@ -69,7 +63,7 @@ class TaskListTableViewController: UITableViewController {
                         idCounter: id as! String,
                         name: name as! String,
                         important: important as! String,
-                        completed: important as! String
+                        completed: completed as! String
                     ))
                     //tasks holds everything
                 }
@@ -98,7 +92,7 @@ class TaskListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
         
-        //DISTINCT ARRAAYYYAYAYAYAYA to fix doubling issue
+        //DISTINCT ARRAAY to fix doubling issue
         var uniqueName: Set = ["blobfish5000000xr"] //this is a dummy name value to initialize (nothing will have this name)
         var uniqueTasks : [Task] = []
         for thing in tasks{
@@ -108,17 +102,15 @@ class TaskListTableViewController: UITableViewController {
                 uniqueName.insert(thing.name) //add it in
             }
         }
-
         let task = uniqueTasks[indexPath.row]
         
         //cell.textLabel!.font = UIFont(name: "SF Pro Display", size: 18)
         if task.important == "true" {
-            cell.textLabel?.text = "* " + task.name + " *"
+            cell.textLabel?.text = task.name + " ❗️"
         }
         else{
-            cell.textLabel?.text = " " + task.name
+            cell.textLabel?.text = task.name
         }
-        //tableView.reloadData()
         return cell
     }
     

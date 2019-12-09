@@ -24,8 +24,12 @@ class TaskCompletedViewController: UIViewController {
     }
     
     @IBAction func completedClicked(_ sender: Any) {
-        ref.child(self.roomIdentifier!).child("taskList").child(task!.idCounter).setValue(["completed": "true", "important": task!.important, "name": task!.name,])
-
+        if task!.important == "true"{
+            ref.child(self.roomIdentifier!).child("taskList").child(task!.idCounter).setValue(["completed": "true", "important": task!.important, "name": task!.name + " ❗️",])
+        }
+        else{
+            ref.child(self.roomIdentifier!).child("taskList").child(task!.idCounter).setValue(["completed": "true", "important": task!.important, "name": task!.name,])
+        }
         completedButton.isHidden = true
     }
 }
