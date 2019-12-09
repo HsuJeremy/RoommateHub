@@ -1,4 +1,9 @@
-# RoommateHub: IOS App
+# RoommateHub: iOS App
+Jeremy Hsu & Geena Kim
+
+CS50 Final Project 
+
+December 8, 2019
 
 ## How to use RoommateHub
 
