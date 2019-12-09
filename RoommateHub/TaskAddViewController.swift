@@ -11,9 +11,7 @@ import UIKit
 import FirebaseDatabase
 
 class TaskAddViewController: UIViewController {
-    
-    var prevVC = TaskListTableViewController()//reference to previous view controller
-    
+        
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var importantLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
@@ -31,7 +29,6 @@ class TaskAddViewController: UIViewController {
     
     @IBAction func addClicked(_ sender: Any) {
         let ref = Database.database().reference()
-        print("addClick Start")
         var task = Task()
         task.name = titleTextField.text!
         if importantSwitch.isOn{
@@ -42,22 +39,9 @@ class TaskAddViewController: UIViewController {
             "important": task.important,
             "completed": task.completed,
         ]
-        print("addClick middle")
-
         ref.child(self.roomIdentifier!).child("taskList").child(String(counter!)).setValue(taskData)
-        print("below is id")
-        print(String(counter!))
-        print(taskData)
-        print("above is taskData")
-        
-        //prevVC.tasks.append(task)
-        //prevVC.tableView.reloadData() //update tableView
-        
         navigationController?.popViewController(animated: true)
-        print("addClick ended")
-
     }
-    
     
     // From Code Pro on YouTube
     private func configureTapGesture() {
@@ -70,6 +54,4 @@ class TaskAddViewController: UIViewController {
        print("Handle tap was called")
        view.endEditing(true)
     }
-
-
 }

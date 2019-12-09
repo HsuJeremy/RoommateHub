@@ -38,18 +38,10 @@ class TaskListTableViewController: UITableViewController {
     let ref = Database.database().reference()
     
     override func viewDidLoad() {
-
             //let ref = Database.database().reference()
-            if roomIdentifier! == nil {
-                print("ahhh crappppppppp wHY")
-            }
-            print(roomIdentifier!)
-            print("above is roomidenifyer")
-        
             ref.child(roomIdentifier!).child("taskList").observe(.value, with: { (snapshot) in
                 // Get NSDictionary of user tasks
                 let taskProfiles = snapshot.value as? NSDictionary
-                print(taskProfiles)
 
                 // Unwrap roommateProfiles
                 guard let tasks = taskProfiles else { return }
@@ -58,18 +50,15 @@ class TaskListTableViewController: UITableViewController {
                 //tasks holds everything
                 for (key, value) in tasks {
                     // Cast task as a Swift Dictionary
-                    let taskDict = (value as! [String : Any])
-                    print("print dict below") //["completed": false, "name": hi, "important": false]
-                    print(taskDict)
+                    let taskDict = (value as! [String : Any]) //["completed": false, "name": hi, "important": false]
                     let name = key //this is the idNumber
                     let important = value //this is {completed = false;important = false;name = hi;}
                     
-                    print(taskDict["completed"]) //Optional(false)
+                    //taskDict["completed"] prints Optional(false)
                     let checkCompleted = taskDict["completed"] as! String
                     
                     if checkCompleted == "false"{
                         //if checkCompleted is false then add it to the array that will be used to show up on this page
-                        print("it's false sooooo")
                         let id = key
                         let important = taskDict["important"]
                         let name = taskDict["name"]
@@ -82,42 +71,30 @@ class TaskListTableViewController: UITableViewController {
                             important: important as! String,
                             completed: important as! String
                         ))
-                        print(tasks) //tasks hold eEVerythignngngn
-
+                        //tasks holds everything
                     }
-
-                    print(name)
-                    print(important)
-                    print(tasks)
-
                     self.tableView.reloadData()
-
                 }
             })
             { (error) in
                 print(error.localizedDescription)
             }
-
-        print("below is tasks from VDL")
-        print(tasks)
         }
 
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        print("tableview num")
-    //        print(tasks.count)
-    //        print("tableview num end")
-            var uniqueName: Set = ["blobfish5000000xr"] //this is a dummy name value to initialize (nothing will have this name)
-            var uniqueTasks : [Task] = []
-            for thing in tasks{
-                if !uniqueName.contains(thing.name) {
-                    //it's a new one!
-                    uniqueTasks.append(thing) //add to uniqueTasks
-                    uniqueName.insert(thing.name) //add it in
-                }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //this is a dummy name value to initialize (nothing will have this name)
+        var uniqueName: Set = ["blobfish5000000xr"]
+        var uniqueTasks : [Task] = []
+        for thing in tasks{
+            if !uniqueName.contains(thing.name) {
+                //it's a new one!
+                uniqueTasks.append(thing) //add to uniqueTasks
+                uniqueName.insert(thing.name) //add it in
             }
-            return uniqueTasks.count
         }
-        
+        return uniqueTasks.count
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
         
@@ -132,17 +109,8 @@ class TaskListTableViewController: UITableViewController {
             }
         }
 
-        
-        print("below is tasks")
-        print(uniqueTasks)
         let task = uniqueTasks[indexPath.row]
-        print("tableView")
-        print("below is indexPath.row task")
-        print(indexPath.row)
-        print(task)
         
-        
-
         //cell.textLabel!.font = UIFont(name: "SF Pro Display", size: 18)
         if task.important == "true" {
             cell.textLabel?.text = "* " + task.name + " *"
@@ -150,9 +118,7 @@ class TaskListTableViewController: UITableViewController {
         else{
             cell.textLabel?.text = " " + task.name
         }
-        print("tableView end")
         //tableView.reloadData()
-
         return cell
     }
     
@@ -170,35 +136,19 @@ class TaskListTableViewController: UITableViewController {
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        /*if let addingVC = segue.destination as? TaskAddViewController {
-            addingVC.prevVC = self
-        }*/
         if segue.identifier == "isCompletedSegue",
             let destination = segue.destination as? TaskCompletedViewController,
             let index = tableView.indexPathForSelectedRow?.row {
-            print("isCompleted shenenigans start here")
-            print(String(index))
-            print(uniqueTasks[index])
                 destination.task = uniqueTasks[index]
                 destination.roomIdentifier = roomIdentifier
-            print("isCompleted shenenigans end here")
-
             }
         else if segue.identifier == "AddTaskSegue", let destination = segue.destination as? TaskAddViewController {
-            //print("Performed segue")
             destination.roomIdentifier = roomIdentifier
             let counter = Date().timer()
-            print(counter!)
             destination.counter = counter!
         }
         else if segue.identifier == "CompletedTaskListSegue", let destination = segue.destination as? CompletedTaskListTableViewController {
             destination.roomIdentifier = roomIdentifier
         }
-
-
-        
     }
-
-
 }
-
