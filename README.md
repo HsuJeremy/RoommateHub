@@ -5,6 +5,9 @@ CS50 Final Project
 
 December 8, 2019
 
+This centralized app will allow roommates to streamline their room operations by coordinating roommate interactions and activities. Roommates will be able to learn more about each other through profile pages which also feature a text message option. They can also easily check a shared to do list for the room, allowing easy allocation of chores. Our app also features an anonymous message board for all your favorite hard-to-have conversations.
+RoommateHub is executed using Swift.
+
 ## How to use RoommateHub
 
 ### Compile
