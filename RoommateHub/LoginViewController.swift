@@ -6,7 +6,6 @@
 //  Copyright © 2019 Jeremy Hsu. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
@@ -16,7 +15,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var house: UITextField!
     @IBOutlet weak var roomNumber: UITextField!
-    // @IBOutlet weak var errorLabel: UILabel!
     
     var userSignedIn: Bool = false
     var sentHouse: String? = nil
@@ -28,6 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginAction(_ sender: Any) {
+        // Check that all the user entries are valid and trim responses
         guard let email = email.text else { return }
         let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0]
         self.sentEmail = trimmedEmail
@@ -70,10 +69,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    // Prevent segue from automatically triggering upon button action
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return false
     }
     
+    // Send house, roomNumber, and email to HomeViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginToHome", let destination = segue.destination as? HomeViewController {
             destination.house = self.sentHouse!

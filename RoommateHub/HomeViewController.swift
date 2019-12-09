@@ -6,8 +6,6 @@
 //  Copyright © 2019 Jeremy Hsu. All rights reserved.
 //
 
-//this view controller is for the HOMEPAGE and just directs you to all the other storyboards
-
 import UIKit
 import Firebase
 import FirebaseDatabase
@@ -17,6 +15,7 @@ class HomeViewController: UIViewController {
     var roomNumber: String? = nil
     var email: String? = nil
     var roomIdentifier: String? = nil
+     var homePageList: [String] = []
     
     @IBAction func logOutAction(_ sender: Any) {
         // From official Firebase documentation
@@ -32,9 +31,7 @@ class HomeViewController: UIViewController {
         let initial = storyboard.instantiateInitialViewController()
         UIApplication.shared.keyWindow?.rootViewController = initial
     }
-    
-    var homePageList: [String] = []
-//
+
     @IBOutlet var hpTitle: UILabel! //hp stands for homepage
     @IBOutlet weak var currentUser: UILabel!
     
@@ -63,14 +60,13 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    // Pass roomIdentifier to RoommateListViewController, MessagesListViewController, and TaskListViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homeToRoommateList", let destination = segue.destination as? RoommateListViewController {
             destination.roomIdentifier = roomIdentifier
-        }
-        else if segue.identifier == "homeToMessageList", let destination = segue.destination as? MessagesListViewController {
+        } else if segue.identifier == "homeToMessageList", let destination = segue.destination as? MessagesListViewController {
             destination.roomIdentifier = roomIdentifier
-        }
-        else if segue.identifier == "homeToTaskList", let destination = segue.destination as? TaskListTableViewController {
+        } else if segue.identifier == "homeToTaskList", let destination = segue.destination as? TaskListTableViewController {
             destination.roomIdentifier = roomIdentifier
         }
     }

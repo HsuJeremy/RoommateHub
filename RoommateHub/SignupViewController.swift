@@ -6,13 +6,11 @@
 //  Copyright © 2019 Jeremy Hsu. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
-    
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var hometown: UITextField!
     @IBOutlet weak var concentration: UITextField!
@@ -26,11 +24,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordConfirm: UITextField!
     @IBOutlet weak var signUp: UIButton!
     
-    var userCreated: Bool = false
     var roomIdentifier: String? = nil
     
     @IBAction func signUpAction(_ sender: Any) {
-        // Verify that all the fields are entered in
+        // Verify that all the fields are entered in and trim user responses
         guard let fullName = fullName.text else { return }
         let fullNameArr = fullName.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
         if fullNameArr.count != 2 { return }
@@ -81,7 +78,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 self.roomIdentifier = self.createRoomIdentifier(house: house, roomNumber: roomNumber)
                 ref.child(self.roomIdentifier!).child("users").child(trimmedEmail.replacingOccurrences(of: "@", with: "_").replacingOccurrences(of: ".", with: "_")).setValue(profileData)
         
-                self.userCreated = true
                 self.signUp.isHidden = true
                 print("User created")
             } else {
@@ -90,12 +86,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Return formatted roomIdentifier
     func createRoomIdentifier(house: String, roomNumber: String) -> String {
         return house.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased() + roomNumber.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")[0].lowercased()
-    }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return self.userCreated
     }
     
     // From Code Pro on YouTube
