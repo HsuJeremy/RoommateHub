@@ -38,48 +38,48 @@ class TaskListTableViewController: UITableViewController {
     let ref = Database.database().reference()
     
     override func viewDidLoad() {
-            //let ref = Database.database().reference()
-            ref.child(roomIdentifier!).child("taskList").observe(.value, with: { (snapshot) in
-                // Get NSDictionary of user tasks
-                let taskProfiles = snapshot.value as? NSDictionary
+        
+        ref.child(roomIdentifier!).child("taskList").observe(.value, with: { (snapshot) in
+            // Get NSDictionary of user tasks
+            let taskProfiles = snapshot.value as? NSDictionary
 
-                // Unwrap roommateProfiles
-                guard let tasks = taskProfiles else { return }
+            // Unwrap roommateProfiles
+            guard let tasks = taskProfiles else { return }
 
-                // Iterate through NSDictionary
-                //tasks holds everything
-                for (key, value) in tasks {
-                    // Cast task as a Swift Dictionary
-                    let taskDict = (value as! [String : Any]) //["completed": false, "name": hi, "important": false]
-                    let name = key //this is the idNumber
-                    let important = value //this is {completed = false;important = false;name = hi;}
-                    
-                    //taskDict["completed"] prints Optional(false)
-                    let checkCompleted = taskDict["completed"] as! String
-                    
-                    if checkCompleted == "false"{
-                        //if checkCompleted is false then add it to the array that will be used to show up on this page
-                        let id = key
-                        let important = taskDict["important"]
-                        let name = taskDict["name"]
-                        let completed = taskDict["completed"]
+            // Iterate through NSDictionary
+            //tasks holds everything
+            for (key, value) in tasks {
+                // Cast task as a Swift Dictionary
+                let taskDict = (value as! [String : Any]) //["completed": false, "name": hi, "important": false]
+                let name = key //this is the idNumber
+                let important = value //this is {completed = false;important = false;name = hi;}
+                
+                //taskDict["completed"] prints Optional(false)
+                let checkCompleted = taskDict["completed"] as! String
+                
+                if checkCompleted == "false"{
+                    //if checkCompleted is false then add it to the array that will be used to show up on this page
+                    let id = key
+                    let important = taskDict["important"]
+                    let name = taskDict["name"]
+                    let completed = taskDict["completed"]
 
-                        // Append new task to result Array
-                        self.tasks.append(Task(
-                            idCounter: id as! String,
-                            name: name as! String,
-                            important: important as! String,
-                            completed: important as! String
-                        ))
-                        //tasks holds everything
-                    }
-                    self.tableView.reloadData()
+                    // Append new task to result Array
+                    self.tasks.append(Task(
+                        idCounter: id as! String,
+                        name: name as! String,
+                        important: important as! String,
+                        completed: important as! String
+                    ))
+                    //tasks holds everything
                 }
-            })
-            { (error) in
-                print(error.localizedDescription)
+                self.tableView.reloadData()
             }
+        })
+        { (error) in
+            print(error.localizedDescription)
         }
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //this is a dummy name value to initialize (nothing will have this name)

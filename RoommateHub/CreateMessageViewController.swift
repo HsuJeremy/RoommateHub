@@ -20,7 +20,7 @@ class CreateMessageViewController: UIViewController {
     
     @IBAction func createMessage(_ sender: Any) {
         let ref = Database.database().reference()
-    ref.child(self.roomIdentifier!).child("messageBoard").child(self.timeStamp!).setValue(textView.text)
+        ref.child(self.roomIdentifier!).child("messageBoard").child(self.timeStamp!).setValue(textView.text)
         
         createMessage.isHidden = true
     }
