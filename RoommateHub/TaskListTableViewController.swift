@@ -35,24 +35,21 @@ class TaskListTableViewController: UITableViewController {
         ref.child(roomIdentifier!).child("taskList").observe(.value, with: { (snapshot) in
             // Get NSDictionary of user tasks
             let taskProfiles = snapshot.value as? NSDictionary
-            print(snapshot.value)
 
             // Unwrap roommateProfiles
             guard let tasks = taskProfiles else { return }
 
             // Iterate through NSDictionary
-            //tasks holds everything
+            // Tasks holds everything
             for (key, value) in tasks {
                 // Cast task as a Swift Dictionary
-                let taskDict = (value as! [String : Any]) //["completed": false, "name": hi, "important": false]
-                let name = key //this is the idNumber
-                let important = value //this is {completed = false;important = false;name = hi;}
+                let taskDict = (value as! [String : Any]) // ["completed": false, "name": hi, "important": false]
                 
-                //taskDict["completed"] prints Optional(false)
+                // taskDict["completed"] prints Optional(false)
                 let checkCompleted = taskDict["completed"] as! String
                 
-                if checkCompleted == "false"{
-                    //if checkCompleted is false then add it to the array that will be used to show up on this page
+                if checkCompleted == "false" {
+                    // If checkCompleted is false then add it to the array that will be used to show up on this page
                     let id = key
                     let important = taskDict["important"]
                     let name = taskDict["name"]
@@ -65,25 +62,24 @@ class TaskListTableViewController: UITableViewController {
                         important: important as! String,
                         completed: completed as! String
                     ))
-                    //tasks holds everything
+                    // Tasks holds everything
                 }
                 self.tableView.reloadData()
             }
-        })
-        { (error) in
+        }) { (error) in
             print(error.localizedDescription)
         }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //this is a dummy name value to initialize (nothing will have this name)
+        // This is a dummy name value to initialize (nothing will have this name)
         var uniqueName: Set = ["blobfish5000000xr"]
         var uniqueTasks : [Task] = []
         for thing in tasks{
             if !uniqueName.contains(thing.name) {
-                //it's a new one!
-                uniqueTasks.append(thing) //add to uniqueTasks
-                uniqueName.insert(thing.name) //add it in
+                // Append to uniqueTasks
+                uniqueTasks.append(thing)
+                uniqueName.insert(thing.name)
             }
         }
         return uniqueTasks.count
@@ -92,14 +88,14 @@ class TaskListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
         
-        //DISTINCT ARRAAY to fix doubling issue
-        var uniqueName: Set = ["blobfish5000000xr"] //this is a dummy name value to initialize (nothing will have this name)
+        // Distinct Array to fix doubling issue
+        var uniqueName: Set = ["blobfish5000000xr"] // This is a dummy name value to initialize (nothing will have this name)
         var uniqueTasks : [Task] = []
         for thing in tasks{
             if !uniqueName.contains(thing.name) {
-                //it's a new one!
-                uniqueTasks.append(thing) //add to uniqueTasks
-                uniqueName.insert(thing.name) //add it in
+                // Append to uniqueTasks
+                uniqueTasks.append(thing)
+                uniqueName.insert(thing.name)
             }
         }
         let task = uniqueTasks[indexPath.row]
@@ -107,8 +103,7 @@ class TaskListTableViewController: UITableViewController {
         cell.textLabel!.font = UIFont(name: "SF Pro Display", size: 18)
         if task.important == "true" {
             cell.textLabel?.text = task.name + " ❗️"
-        }
-        else{
+        } else {
             cell.textLabel?.text = task.name
         }
         return cell
@@ -116,21 +111,19 @@ class TaskListTableViewController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //DISTINCT ARRAAYYYAYAYAYAYA to fix doubling issue
-        var uniqueName: Set = ["blobfish5000000xr"] //this is a dummy name value to initialize (nothing will have this name)
+        // Distinct Array to fix doubling issue
+        var uniqueName: Set = ["blobfish5000000xr"] // This is a dummy name value to initialize (nothing will have this name)
         var uniqueTasks : [Task] = []
         for thing in tasks{
             if !uniqueName.contains(thing.name) {
-                //it's a new one!
-                uniqueTasks.append(thing) //add to uniqueTasks
-                uniqueName.insert(thing.name) //add it in
+                // Append to uniqueTasks
+                uniqueTasks.append(thing)
+                uniqueName.insert(thing.name)
             }
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "isCompletedSegue",
-            let destination = segue.destination as? TaskCompletedViewController,
-            let index = tableView.indexPathForSelectedRow?.row {
+        if segue.identifier == "isCompletedSegue", let destination = segue.destination as? TaskCompletedViewController, let index = tableView.indexPathForSelectedRow?.row {
                 destination.task = uniqueTasks[index]
                 destination.roomIdentifier = roomIdentifier
             }
