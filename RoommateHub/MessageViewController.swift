@@ -11,18 +11,18 @@ import UIKit
 import FirebaseDatabase
 
 class MessageViewController: UIViewController {
-    @IBOutlet weak var messageContent: UILabel!
-    @IBOutlet weak var time: UILabel!
+  @IBOutlet weak var messageContent: UILabel!
+  @IBOutlet weak var time: UILabel!
+  
+  var roomIdentifier: String? = nil
+  var message: String? = nil
+  var timeStamp: String? = nil
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     
-    var roomIdentifier: String? = nil
-    var message: String? = nil
-    var timeStamp: String? = nil
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        messageContent.text = message!
-        time.text = "⏰ Posted on \(timeStamp!)"
-    }
+    messageContent.text = message!
+    time.text = "⏰ Posted on \(timeStamp!)"
+  }
 }
 

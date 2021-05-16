@@ -12,36 +12,37 @@ import UIKit
 import FirebaseDatabase
 
 class CreateMessageViewController: UIViewController {
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var createMessage: UIButton!
+  @IBOutlet weak var textView: UITextView!
+  @IBOutlet weak var createMessage: UIButton!
+  
+  var roomIdentifier: String? = nil
+  var timeStamp: String? = nil
+  
+  @IBAction func createMessage(_ sender: Any) {
+    let roomReference = Database.database().reference().child(self.roomIdentifier!)
+    roomReference.child("messageBoard").child(self.timeStamp!).setValue(textView.text)
+    createMessage.isHidden = true
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    var roomIdentifier: String? = nil
-    var timeStamp: String? = nil 
-    
-    @IBAction func createMessage(_ sender: Any) {
-        let ref = Database.database().reference()
-        ref.child(self.roomIdentifier!).child("messageBoard").child(self.timeStamp!).setValue(textView.text)
-        
-        createMessage.isHidden = true
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Configure UITextField delegates and tap gestures
-        configureTapGesture()
-    }
-    
-    
-    // From Code Pro on YouTube
-    private func configureTapGesture() {
-       let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateMessageViewController.handleTap))
-       view.addGestureRecognizer(tapGesture)
-    }
+    // Configure UITextField delegates and tap gestures
+    configureTapGesture()
+  }
+  
+  // From Code Pro on YouTube
+  private func configureTapGesture() {
+    let tapGesture = UITapGestureRecognizer(
+      target: self,
+      action: #selector(CreateMessageViewController.handleTap)
+    )
+    view.addGestureRecognizer(tapGesture)
+  }
 
-    // From Code Pro on YouTube
-    @objc func handleTap() {
-       print("Handle tap was called")
-       view.endEditing(true)
-    }
+  // From Code Pro on YouTube
+  @objc func handleTap() {
+    print("Handle tap was called")
+    view.endEditing(true)
+  }
 }

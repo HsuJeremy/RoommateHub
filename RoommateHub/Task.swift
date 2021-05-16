@@ -11,8 +11,8 @@ import UIKit
 import FirebaseDatabase
 
 struct Task {
-    var idCounter = "1010"
-    var name = ""
-    var important = "false"
-    var completed = "false"
+  var idCounter = "1010"
+  var name = ""
+  var important = "false"
+  var completed = "false"
 }

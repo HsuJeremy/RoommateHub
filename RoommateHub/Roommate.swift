@@ -9,6 +9,11 @@ import Foundation
 import FirebaseDatabase
 
 struct Roommate {
-    var firstName, lastName, hometown, concentration: String
-    var gradYear, age, cellPhoneNumber: Int
+  var firstName: String
+  var lastName: String
+  var hometown: String
+  var concentration: String
+  var gradYear: Int
+  var age: Int
+  var cellPhoneNumber: Int
 }
