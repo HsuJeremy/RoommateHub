@@ -1,12 +1,14 @@
 # RoommateHub
 
+**Authors**: Jeremy Hsu and Geena Kim
+
 RoommateHub is an iOS app designed to improve the shared living experience by
 enabling roommates to coordinate tasks, learn more about each other, and send
 each other direct messages.
 
-**Note**: This project was originally written as our CS 50 project in fall 2019.
-The original `README.md` and `DESIGN.md` files can be found in the
-`Documentation` folder.
+**Note**: This project was originally written as our CS 50 project in Fall 2019.
+The `README.md` and `DESIGN.md` files written as part of the original course
+project write-up can be found in the `Documentation` folder.
 
 ## Walkthrough
 
@@ -89,7 +91,3 @@ room can accomplish.
 - Swift and UIKit
 - Firebase for authentication and data storage
 - MessageUI to send direct messages through iMessage
-
-## Contributors
-- Jeremy Hsu
-- Geena Kim
