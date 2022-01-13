@@ -34,11 +34,13 @@ project write-up can be found in the `Documentation` folder.
 
 ## Architecture Overview
 
+The high-level architecture of RoommateHub is as follows:
+
 <img
   src="Images/full-architecture.png"
   title="Full Architecture"
   alt="Full Architecture"
-  height="600"
+  height="400"
 />
 
 RoommateHub uses:
