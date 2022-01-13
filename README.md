@@ -19,15 +19,15 @@ an account, you can create one.
   src="Images/Login.PNG"
   title="Login"
   alt="Login Page"
-  height="611"
-  width="285"
+  height="536"
+  width="250"
 />
 <img
   src="Images/CreateAccount.PNG"
   title="Create Account"
   alt="Create Account Page"
-  height="611"
-  width="285"
+  height="536"
+  width="250"
 />
 
 Once you sign in, you arrive at the home page.
@@ -36,8 +36,8 @@ Once you sign in, you arrive at the home page.
   src="Images/Home.PNG"
   title="Home"
   alt="Home"
-  height="611"
-  width="285"
+  height="536"
+  width="250"
 />
 
 Upon creating their account, each user gets their own roommate profile. They
@@ -47,22 +47,22 @@ can view the profiles of their other roommates in addition to their own.
   src="Images/RoommateList.PNG"
   title="Roommate List"
   alt="Roommate List View"
-  height="611"
-  width="285"
+  height="536"
+  width="250"
 />
 <img
   src="Images/GeenaRoommateProfile.PNG"
   title="Geena's Profile"
   alt="Geena's Profile"
-  height="611"
-  width="285"
+  height="536"
+  width="250"
 />
 <img
   src="Images/JeremyRoommateProfile.PNG"
   title="Jeremy's Profile"
   alt="Jeremy's Profile"
-  height="611"
-  width="285"
+  height="536"
+  width="250"
 />
 
 You can also send an SMS or iMessage to a roommate right from their profile page,
@@ -72,8 +72,8 @@ assuming they provided their phone number.
   src="Images/SendTextMessage.PNG"
   title="Text Message"
   alt="Text Message"
-  height="611"
-  width="285"
+  height="536"
+  width="250"
 />
 
 You can also post to an anonymous message board, or set tasks that anyone in the
@@ -83,8 +83,8 @@ room can accomplish.
   src="Images/CreateMessage.PNG"
   title="Create Anonymous Message"
   alt="Create Anonymous Message"
-  height="611"
-  width="285"
+  height="536"
+  width="250"
 />
 
 ## Tech Stack
