@@ -34,7 +34,9 @@ project write-up can be found in the `Documentation` folder.
 
 ## Architecture Overview
 
-The high-level architecture of RoommateHub is as follows:
+RoommateHub is written in Swift and UIKit, uses Firebase for user authentication
+and data storage, and MessageUI to embed iMessage into the app. The high-level 
+architecture of RoommateHub is as follows:
 
 <img
   src="Images/full-architecture.png"
@@ -42,11 +44,6 @@ The high-level architecture of RoommateHub is as follows:
   alt="Full Architecture"
   height="400"
 />
-
-RoommateHub uses:
-- Swift and UIKit
-- Firebase for authentication and data storage
-- MessageUI to send direct messages through iMessage
 
 ## Full Walkthrough
 
