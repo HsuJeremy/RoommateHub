@@ -34,6 +34,14 @@ project write-up can be found in the `Documentation` folder.
 
 ## Architecture Overview
 
+<img
+  src="Images/full-architecture.png"
+  title="Full Architecture"
+  alt="Full Architecture"
+  height="600"
+/>
+
+RoommateHub uses:
 - Swift and UIKit
 - Firebase for authentication and data storage
 - MessageUI to send direct messages through iMessage
