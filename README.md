@@ -36,9 +36,12 @@ project write-up can be found in the `Documentation` folder.
 
 ## Architecture Overview
 
-RoommateHub is written in Swift and UIKit, uses Firebase for user authentication
-and data storage, and MessageUI to embed iMessage into the app. The high-level 
-architecture of RoommateHub is as follows:
+RoommateHub is written in Swift and UIKit and uses the 
+[Firebase Realtime Database](https://firebase.google.com/docs/database) as the
+primary data store, [Firebase Authentication](https://firebase.google.com/docs/auth)
+for user login and creation,  and 
+[MessageUI](https://developer.apple.com/documentation/messageui) to embed 
+iMessage into the app. The high-level architecture of RoommateHub is as follows:
 
 <div align="center">
 <img
